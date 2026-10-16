@@ -63,10 +63,18 @@ avatar:
 disable_top_img: false
 
 # 如果页面未设置横幅，将显示默认顶部图片
-default_top_img: 
+# false = 没在 front-matter 里单独指定 top_img 的页面一律不显示横幅：
+# 抬头变透明（只剩顶部导航条，页面壁纸透出来），标题移进正文以 .page-title 呈现。
+# 首页在自己 front-matter 里写了 top_img，因此不受这里影响。
+# 想让全站都有同一张默认横幅，把这里改成图片路径即可。
+default_top_img: false
 
 # 首页横幅图片
-index_img: /img/background.webp
+# 注意：本站首页是 page 类型（source/index.md），主题只在 globalPageType 为 home
+# 时才读这一项，所以它对首页并不生效 —— 首页横幅由 tools/lib/notes-core.js 写进
+# front-matter 的 top_img 控制（见该文件 HEADER_IMG）。此处保留仅为将来首页
+# 若改回文章列表的情况。
+# index_img: /img/background.webp
 
 # 归档页横幅图片
 archive_img: 

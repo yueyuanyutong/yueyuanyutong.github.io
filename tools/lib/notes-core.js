@@ -8,9 +8,10 @@
  *   - 文件名即 URL 片段（保持英文），分区名另由 _sections.yml 映射成英文片段
  *   - front-matter 只写 title / date / kind / tags / excerpt / source
  *
- * 被两处共用：
- *   - tools/notes.js   构建前执行，生成 /notes/ 下的页面
- *   - scripts/home.js  Hexo 构建期执行，把首页改成知识库入口
+ * 被三处共用：
+ *   - tools/notes.js   构建前执行，生成 /notes/ 下的页面与首页源文件
+ *   - scripts/hero.js  Hexo 构建期执行，给每个页面注入「个人介绍」区块
+ *   - scripts/search.js Hexo 构建期执行，清理 search.xml 里的列表页噪音
  */
 
 const fs = require('fs');
@@ -294,11 +295,12 @@ function renderChips(data, currentUrl) {
 }
 
 /**
- * 首页的「个人介绍」区块。
+ * 页面的「个人介绍」区块。
  *
- * 只在窄屏（CSS 里 ≤900px）显示 —— 宽屏时个人介绍由侧边栏的作者卡承担，
- * 这个区块是 display:none；窄屏时主题把整列侧栏挪到正文之后，自我介绍会沉到
- * 页面中段，才由它出头顶到正文最前面（同时隐藏重复的作者卡）。
+ * 每个页面都有（由 scripts/hero.js 注入到 #page 顶部），但只在窄屏显示：
+ * 宽屏时个人介绍由侧边栏的作者卡承担；窄屏（CSS 里 ≤900px）主题会把整列侧栏
+ * 挪到正文之后，作者卡会沉到页面中段，这时才由这个区块出头顶到正文最前面
+ * （同时隐藏侧栏里重复的作者卡）。
  * 数据全部来自现有配置（见 readProfile），改名字/签名/头像只需改配置文件。
  */
 function renderHero(data) {
@@ -330,13 +332,10 @@ function renderHero(data) {
 }
 
 function renderHomeBlock(data) {
-  const hero = renderHero(data);
-  const foot = (html) => [hero, html].filter(Boolean).join('\n');
-
   if (!data.notes.length) {
-    return foot('<div class="kb-home"><div class="kb-heading">知识库</div>'
+    return '<div class="kb-home"><div class="kb-heading">知识库</div>'
       + '<div class="kb-intro">还没有笔记。在 <code>source/_notes/</code> 下建个文件夹、放一个 .md 文件，'
-      + '构建时会自动出现在这里。</div></div>');
+      + '构建时会自动出现在这里。</div></div>';
   }
 
   const cards = data.topSections.filter((sec) => sec.count).map((sec) =>
@@ -348,7 +347,7 @@ function renderHomeBlock(data) {
 
   const recent = data.notes.slice(0, 6);
 
-  return foot([
+  return [
     '<div class="kb-home">',
     '<div class="kb-heading">分区</div>',
     '<div class="kb-sections">' + cards + '</div>',
@@ -358,7 +357,15 @@ function renderHomeBlock(data) {
     '</div>',
     renderList(recent, data.base),
     '</div>'
-  ].join('\n'));
+  ].join('\n');
+}
+
+/**
+ * 供构建期过滤器（scripts/hero.js）调用：读配置 + 渲染个人介绍区块。
+ * 每个页面的 #page 顶部都会被注入这一块。
+ */
+function heroBlock() {
+  return renderHero({ profile: readProfile(), base: readBase() });
 }
 
 /**
@@ -367,9 +374,25 @@ function renderHomeBlock(data) {
  * 文章体系退役后 _posts 为空，hexo-generator-index 便不再产出 index.html
  * （hexo-pagination 在 perPage 与 length 均为 0 时循环体一次都不执行），
  * 首页由这里直接接管。
+ *
+ * 个人介绍区块不写在这里 —— scripts/hero.js 会把它注入到每个页面，
+ * 首页只是其中之一，避免同一份 HTML 出现两次。
+ * top_img 是主题的逐页配置：只有首页的「知识库」抬头铺图，其余页面保持原样。
+ * 若想让 /notes/、/about/ 等所有页面都用同一张图，把 _config.butterfly.yml 的
+ * default_top_img 指向 HEADER_IMG 即可，这里的 front-matter 就可以删掉。
  */
+const HEADER_IMG = '/img/header.webp';
+
 function homePage(data) {
-  return ['---', 'title: 知识库', '---', '', renderHomeBlock(data), ''].join('\n');
+  return [
+    '---',
+    'title: 知识库',
+    'top_img: ' + HEADER_IMG,
+    '---',
+    '',
+    renderHomeBlock(data),
+    ''
+  ].join('\n');
 }
 
 function notePage(note) {
@@ -447,6 +470,7 @@ module.exports = {
   renderList,
   renderChips,
   renderHero,
+  heroBlock,
   renderHomeBlock,
   homePage,
   notePage,
