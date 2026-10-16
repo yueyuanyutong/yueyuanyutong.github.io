@@ -233,6 +233,19 @@ git push origin master            # 触发 GitHub Actions，几十秒后线上�
   netstat -ano | grep LISTENING | grep 127.0.0.1
   # 逐个 curl -x http://127.0.0.1:端口 https://github.com 验证
   ```
+- **沙箱把 schannel 和 `sh.exe` 都打了（2026-10-16 实测，别在这上面空转）**：
+  - `git push` 报 `schannel: AcquireCredentialsHandle failed: SEC_E_NO_CREDENTIALS`，
+    `curl` 走代理报 `curl: (35) schannel: ...` —— 是同一堵墙，与网络/代理无关。
+    本仓库 `.git/config` 已写死 `http.sslBackend = openssl`（**只影响本仓库**，
+    所以 `git push origin master` 照旧可用）；`curl.exe` 没有等价开关，**验收线上请改用
+    自带 Python + 显式 `ProxyHandler`** —— 它走自带 OpenSSL，完全不碰 schannel
+  - 更硬的一层：沙箱里 git 起不了 `sh.exe`（`couldn't create signal pipe, Win32 error 5`）。
+    已确认与 helper 写法无关 —— 把 helper 直指 `git-credential-manager.exe` 绝对路径同样失败
+    （凭据本身是可取的：手动跑 `git-credential-manager.exe get` 能返回 username/password）。
+    凭据 helper 与 askpass 都走 shell，于是退化成
+    `fatal: could not read Username for 'https://github.com'`。
+    **沙箱内绕不过**：用 `sandbox_permissions: danger-full-access` 放行那一次 push，
+    或请用户在自己的终端里 push
 
 ---
 
@@ -293,7 +306,9 @@ done
 
 ## 10. 当前状态快照（2026-10-16 晚）
 
-- 远端：`master = 5e6f8e4`（源码）、`main = 8dc4c1b`（站点），CI 两次运行均 success
+- 远端：`master = 2d2eb3d`（源码）、`main = b32826f`（站点），CI success。
+  `2d2eb3d` 那次是新 check 闸门**第一次上线跑**（run `38914343737`），过了才推的 `main`；
+  之后 `main` 那次运行为 run `38914385459`
 - 页面共 **13 个 HTML**：12 个由主题渲染（首页 / `/notes/` / 4 个分区页 /
   4 篇笔记正文 / `/about/` / `/links/`，全部已注入个人介绍区块），
   外加 1 个 `skip_render` 的旧地址跳转页（纯 meta refresh，无主题布局）
@@ -326,3 +341,6 @@ done
   **外部动作（push / 改仓库可见性 / 删文件）前必须先确认**
 - 改完先给可点的本地预览地址，等他确认；他常会再用手机看一遍线上
 - 涉及版本覆盖风险时，他的原则是「以最新的为准」
+- **卡住就问，不要死磕**（用户 2026-10-16 明确要求）：环境/沙箱这类他能从外部解决的问题，
+  长时间试不出来就主动说清楚「卡在哪一步、报什么错、需要你做什么」（例如放行一次提权、
+  或在他的终端里跑一条命令），不要反复试同一类办法
