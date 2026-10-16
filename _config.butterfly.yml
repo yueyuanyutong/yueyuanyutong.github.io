@@ -52,10 +52,10 @@ social:
 # 图片设置
 # --------------------------------------
 
-favicon: /img/331ec743bc60c0eddcb5a2df487cc8c.jpg
+favicon: /img/avatar.jpg
 
 avatar:
-  img: /img/331ec743bc60c0eddcb5a2df487cc8c.jpg
+  img: /img/avatar.jpg
   effect: false
 
 # 禁用所有横幅图片
@@ -65,7 +65,7 @@ disable_top_img: false
 default_top_img: 
 
 # 首页横幅图片
-index_img: /img/background.png
+index_img: /img/background.webp
 
 # 归档页横幅图片
 archive_img: 
@@ -91,7 +91,7 @@ footer_img: true
 
 # Website Background
 # Can set it to color or image url
-background: /img/background2.jpg
+background: /img/background2.webp
   
   # When cover is not set, the default cover is displayed
   
