@@ -5,6 +5,7 @@
   "scripts": {
     "notes": "node tools/notes.js",
     "build": "node tools/notes.js && hexo generate",
+    "check": "node tools/check.js",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "node tools/notes.js && hexo server"
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "hexo": "^7.3.0",
+    "js-yaml": "^4.1.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -24,7 +26,6 @@
     "hexo-renderer-marked": "^7.0.0",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.1",
-    "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^1.0.0"
+    "hexo-server": "^3.0.0"
   }
 }

@@ -34,6 +34,11 @@ jobs:
       - name: Build site
         run: npx hexo clean && npm run build
 
+      # 站点契约：tools/check.js 的 40 项断言。构建产物不合格就不部署 ——
+      # 这一步必须在 Deploy 之前，否则失败的构建照样会推上 main。
+      - name: Verify build artifacts
+        run: npm run check
+
       - name: Deploy to main branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
