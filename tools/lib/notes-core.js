@@ -20,6 +20,8 @@ const yaml = require('js-yaml');
 const ROOT = path.resolve(__dirname, '..', '..');
 const SRC = path.join(ROOT, 'source', '_notes');
 const CONFIG_FILE = path.join(SRC, '_sections.yml');
+const SITE_CONFIG = path.join(ROOT, '_config.yml');
+const THEME_CONFIG = path.join(ROOT, '_config.butterfly.yml');
 
 const KIND_LABEL = {
   concept: '概念卡',
@@ -66,11 +68,46 @@ function splitFrontMatter(text) {
 
 function readBase() {
   try {
-    const cfg = yaml.load(fs.readFileSync(path.join(ROOT, '_config.yml'), 'utf8')) || {};
+    const cfg = yaml.load(fs.readFileSync(SITE_CONFIG, 'utf8')) || {};
     return String(cfg.root || '/').replace(/\/+$/, '');
   } catch (err) {
     return '';
   }
+}
+
+/**
+ * 首页「个人介绍」区块的数据。
+ *
+ * 不新增配置文件 —— 直接复用已有的两处身份配置，避免同一份信息写两遍：
+ *   _config.yml           → author（名字）、description（签名）
+ *   _config.butterfly.yml → avatar.img（头像）、card_author（一句话简介 + 按钮链接）
+ */
+function readProfile() {
+  const prof = { name: 'YueYuan', tagline: '', motto: '', avatar: '', link: '' };
+
+  try {
+    const cfg = yaml.load(fs.readFileSync(SITE_CONFIG, 'utf8')) || {};
+    if (cfg.author) prof.name = String(cfg.author);
+    if (cfg.description) prof.motto = String(cfg.description);
+  } catch (err) {
+    console.warn('[notes] _config.yml 读取个人介绍失败：' + err.message);
+  }
+
+  try {
+    const th = yaml.load(fs.readFileSync(THEME_CONFIG, 'utf8')) || {};
+    const avatar = th.avatar;
+    if (avatar && typeof avatar === 'object' && avatar.img) prof.avatar = String(avatar.img);
+    const card = th.aside && th.aside.card_author;
+    if (card) {
+      if (card.description) prof.tagline = String(card.description);
+      const btn = card.button;
+      if (btn && btn.enable && btn.link) prof.link = String(btn.link);
+    }
+  } catch (err) {
+    console.warn('[notes] _config.butterfly.yml 读取个人介绍失败：' + err.message);
+  }
+
+  return prof;
 }
 
 function readConfig() {
@@ -202,6 +239,7 @@ function collect() {
 
   return {
     base: readBase(),
+    profile: readProfile(),
     notes,
     tree,
     sections: flattenSections(tree),
@@ -255,11 +293,50 @@ function renderChips(data, currentUrl) {
   return '<div class="kb-chips">' + items.join('') + '</div>';
 }
 
+/**
+ * 首页的「个人介绍」区块。
+ *
+ * 只在窄屏（CSS 里 ≤900px）显示 —— 宽屏时个人介绍由侧边栏的作者卡承担，
+ * 这个区块是 display:none；窄屏时主题把整列侧栏挪到正文之后，自我介绍会沉到
+ * 页面中段，才由它出头顶到正文最前面（同时隐藏重复的作者卡）。
+ * 数据全部来自现有配置（见 readProfile），改名字/签名/头像只需改配置文件。
+ */
+function renderHero(data) {
+  const prof = data.profile;
+  if (!prof) return '';
+
+  const avatar = prof.avatar
+    ? '<img class="kb-hero-avatar" src="' + esc(prof.avatar) + '" alt="' + esc(prof.name) + '">'
+    : '';
+
+  const links = [];
+  if (prof.link) {
+    links.push('<a class="kb-hero-link" href="' + esc(prof.link) + '" target="_blank" rel="noopener">'
+      + '<i class="fab fa-github"></i> GitHub</a>');
+  }
+  links.push('<a class="kb-hero-link" href="' + href(data.base, '/about/') + '">关于笔者</a>');
+
+  return [
+    '<div class="kb-hero">',
+    avatar,
+    '<div class="kb-hero-body">',
+    '<div class="kb-hero-name">' + esc(prof.name) + '</div>',
+    prof.tagline ? '<div class="kb-hero-tagline">' + esc(prof.tagline) + '</div>' : '',
+    prof.motto ? '<div class="kb-hero-motto">' + esc(prof.motto) + '</div>' : '',
+    '<div class="kb-hero-links">' + links.join('') + '</div>',
+    '</div>',
+    '</div>'
+  ].filter(Boolean).join('\n');
+}
+
 function renderHomeBlock(data) {
+  const hero = renderHero(data);
+  const foot = (html) => [hero, html].filter(Boolean).join('\n');
+
   if (!data.notes.length) {
-    return '<div class="kb-home"><div class="kb-heading">知识库</div>'
+    return foot('<div class="kb-home"><div class="kb-heading">知识库</div>'
       + '<div class="kb-intro">还没有笔记。在 <code>source/_notes/</code> 下建个文件夹、放一个 .md 文件，'
-      + '构建时会自动出现在这里。</div></div>';
+      + '构建时会自动出现在这里。</div></div>');
   }
 
   const cards = data.topSections.filter((sec) => sec.count).map((sec) =>
@@ -271,7 +348,7 @@ function renderHomeBlock(data) {
 
   const recent = data.notes.slice(0, 6);
 
-  return [
+  return foot([
     '<div class="kb-home">',
     '<div class="kb-heading">分区</div>',
     '<div class="kb-sections">' + cards + '</div>',
@@ -281,7 +358,7 @@ function renderHomeBlock(data) {
     '</div>',
     renderList(recent, data.base),
     '</div>'
-  ].join('\n');
+  ].join('\n'));
 }
 
 /**
@@ -359,6 +436,8 @@ module.exports = {
   ROOT,
   SRC,
   CONFIG_FILE,
+  SITE_CONFIG,
+  THEME_CONFIG,
   KIND_LABEL,
   collect,
   esc,
@@ -367,6 +446,7 @@ module.exports = {
   renderCard,
   renderList,
   renderChips,
+  renderHero,
   renderHomeBlock,
   homePage,
   notePage,

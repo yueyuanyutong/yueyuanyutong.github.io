@@ -1,6 +1,91 @@
 /* 「笔记」栏目样式
    只用半透明灰 + 主题 CSS 变量，保证浅色/深色模式下都清楚可见 */
 
+/* ---------- 首页：个人介绍（只在窄屏显示） ----------
+   宽屏：个人介绍由侧边栏的作者卡承担，位置在正文右侧，不动。
+   窄屏（≤900px）：主题会把整列侧栏挪到正文「之后」（aside.styl 的 maxWidth900），
+   自我介绍因此沉到页面中段 —— 这时改用正文顶部这个区块，并隐藏重复的作者卡。
+   900px 是主题自己的断点（minWidth900 / maxWidth900），与侧栏下沉的时机完全同步。 */
+
+.kb-hero {
+  display: none;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 26px;
+  padding: 0 0 24px;
+  border-bottom: 1px solid rgba(128, 128, 128, .2);
+}
+
+@media screen and (max-width: 900px) {
+  .kb-hero {
+    display: flex;
+  }
+
+  /* 首页正文已把个人介绍放到最前面，窄屏下那张重复的作者卡就多余了。
+     :has() 不支持时只是重复显示一次，不影响可用。 */
+  body:has(.kb-hero) .card-info {
+    display: none;
+  }
+}
+
+.kb-hero-avatar {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(128, 128, 128, .3);
+}
+
+.kb-hero-body {
+  min-width: 0;
+}
+
+.kb-hero-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--font-color);
+}
+
+.kb-hero-tagline {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: .8;
+  margin-top: 3px;
+}
+
+.kb-hero-motto {
+  font-size: 13px;
+  line-height: 1.7;
+  opacity: .55;
+  margin-top: 2px;
+}
+
+.kb-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.kb-hero-link {
+  font-size: 12px;
+  line-height: 1.9;
+  padding: 1px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, .32);
+  color: var(--font-color);
+  opacity: .72;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+.kb-hero-link:hover {
+  opacity: 1;
+  border-color: rgba(128, 128, 128, .6);
+}
+
 /* ---------- 首页：知识库入口 ---------- */
 
 .kb-home {
@@ -226,6 +311,22 @@
 
   .kb-item {
     padding: 11px 13px;
+  }
+
+  .kb-hero {
+    gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 20px;
+  }
+
+  .kb-hero-avatar {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+  }
+
+  .kb-hero-name {
+    font-size: 18px;
   }
 
   .kb-sections {
