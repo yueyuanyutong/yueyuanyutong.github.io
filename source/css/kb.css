@@ -1,0 +1,90 @@
+/* 「笔记」栏目样式
+   只用半透明灰 + 主题 CSS 变量，保证浅色/深色模式下都清楚可见 */
+
+.kb-intro {
+  font-size: 14px;
+  line-height: 1.75;
+  opacity: .7;
+  margin: 0 0 18px;
+}
+
+.kb-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+.kb-item {
+  display: block;
+  padding: 13px 15px;
+  border: 1px solid rgba(128, 128, 128, .28);
+  border-radius: 10px;
+  text-decoration: none !important;
+  transition: border-color .18s, transform .18s;
+}
+
+.kb-item:hover {
+  border-color: rgba(128, 128, 128, .62);
+  transform: translateY(-1px);
+}
+
+.kb-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.kb-badge {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: var(--btn-bg, #5f5e5a);
+  color: var(--btn-color, #fff);
+}
+
+.kb-date {
+  font-size: 12px;
+  opacity: .55;
+  white-space: nowrap;
+}
+
+.kb-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--font-color);
+}
+
+.kb-excerpt {
+  font-size: 13px;
+  line-height: 1.65;
+  opacity: .7;
+  margin-top: 4px;
+}
+
+.kb-tags {
+  font-size: 12px;
+  opacity: .5;
+  margin-top: 6px;
+}
+
+.kb-note-meta {
+  font-size: 13px;
+  opacity: .6;
+  margin: 0 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, .25);
+}
+
+@media (max-width: 768px) {
+  .kb-title {
+    font-size: 14px;
+  }
+
+  .kb-item {
+    padding: 11px 13px;
+  }
+}

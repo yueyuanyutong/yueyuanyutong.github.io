@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "notes": "node tools/notes.js",
+    "build": "node tools/notes.js && hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "node tools/notes.js && hexo server"
   },
   "hexo": {
     "version": "7.3.0"

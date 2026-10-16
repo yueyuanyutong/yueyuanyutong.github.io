@@ -60,7 +60,7 @@ prismjs:
 # 站内搜索数据源（配合 hexo-generator-searchdb + Butterfly local_search 使用）
 search:
   path: search.xml
-  field: post
+  field: all
   content: true
   format: html
   limit: 10000

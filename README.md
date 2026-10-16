@@ -40,10 +40,14 @@
 ├── _config.butterfly.yml    # 主题配置（导航、头像、评论、搜索、统计等）
 ├── source/
 │   ├── _posts/              # 文章，Markdown
+│   ├── _notes/              # 笔记源文件（「笔记」栏目的唯一来源）
+│   ├── notes/               # 笔记栏目产物，由 tools/notes.js 生成（git 忽略）
 │   ├── _data/link.yml       # 友链数据（友链页用）
+│   ├── css/kb.css           # 「笔记」栏目样式
 │   ├── img/                 # 站点自有图片（背景、头像）
 │   ├── about/index.md       # 关于页
 │   └── links/index.md       # 友链页（front-matter 需 type: link）
+├── tools/notes.js           # 「笔记」栏目生成器
 ├── themes/butterfly/        # 主题（git submodule，固定于 ca03058）
 ├── scaffolds/               # 新建文章/页面的模板
 └── public/                  # 构建产物（git 忽略）
@@ -57,11 +61,14 @@
 # 安装依赖
 npm install
 
-# 本地预览，http://localhost:4000
-./node_modules/.bin/hexo server
+# 本地预览，http://localhost:4000（会先自动生成「笔记」栏目）
+npm run server
 
-# 仅构建
-./node_modules/.bin/hexo clean && ./node_modules/.bin/hexo generate
+# 仅构建（同样会先生成「笔记」栏目）
+npm run build
+
+# 只重新生成「笔记」栏目
+npm run notes
 ```
 
 新建文章：
@@ -82,6 +89,42 @@ tags:
 categories: 编程
 ---
 ```
+
+---
+
+## 「笔记」栏目
+
+`source/_notes/` 下的内容会在构建时自动汇总成 `/notes/` 栏目，用于承载
+**从对话、阅读、踩坑中沉淀下来的零散知识**——概念解释、速查表、踩坑记录、复盘。
+与 `_posts/`（成篇的文章）分开：笔记不进首页、不参与文章归档，只在自己的栏目里按时间倒序排列。
+
+### 新增一篇笔记
+
+在 `source/_notes/` 下新建一个 `.md` 文件即可，文件名即 URL（`xxx.md` → `/notes/xxx/`，
+需要自定义就加 `slug` 字段）：
+
+```yaml
+---
+title: TCP 为什么必须三次握手
+date: 2026-10-16 15:45:00
+kind: concept          # concept 概念卡 / cheatsheet 速查表 / pitfall 踩坑记录 / review 复盘 / note 随笔
+category: 计算机网络
+tags: [TCP, 网络协议]
+excerpt: 列表页上显示的一句话摘要
+source: 出处（可选）
+---
+
+正文 Markdown……
+```
+
+### 它是怎么工作的
+
+- `source/_notes/` 是**唯一真源**，下划线前缀让 Hexo 直接忽略该目录
+- `tools/notes.js` 扫描它，生成 `source/notes/index.md`（列表页）与
+  `source/notes/<slug>/index.md`（每篇笔记页面）
+- 产物目录 `source/notes/` 已写进 `.gitignore`，无需手动维护、也不要手动改
+- 生成动作已挂进 `npm run build` / `npm run server` 与 CI 工作流，无需额外操作
+- 笔记会被站内搜索收录（`_config.yml` 中 `search.field: all`）
 
 ---
 
@@ -135,8 +178,8 @@ netstat -ano | grep LISTENING | grep 127.0.0.1
 ## 当前配置状态
 
 - 站点 `url`：`https://yueyuanyutong.github.io`（若绑定自定义域名，只需改这一行）
-- 站内搜索：已启用（`local_search`）
-- 页面：`/about/`、`/links/` 均已建立
+- 站内搜索：已启用（`local_search`，`search.field: all`，笔记与页面均可被搜到）
+- 页面：`/about/`、`/links/`、`/notes/` 均已建立
 - 统计：仅 busuanzi（不蒜子）
 - **尚未配置**：评论系统、社交链接、数学公式
 
