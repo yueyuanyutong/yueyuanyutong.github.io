@@ -6,14 +6,14 @@
 title: YueYuan's Blog
 subtitle: ''
 description: '欲揽星河摘星辰，先铸千蹬上九天'
-keywords:
+keywords: 前端,算法,编程,学习笔记,YueYuan
 author: YueYuan
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://yueyuanyutong.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -56,6 +56,14 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+
+# 站内搜索数据源（配合 hexo-generator-searchdb + Butterfly local_search 使用）
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+  limit: 10000
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

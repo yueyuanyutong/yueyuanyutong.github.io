@@ -1,105 +1,100 @@
 # --------------------------------------
-# Hexo Butterfly Theme Configuration
-# If you have any questions, please refer to the documentation
-# Chinese: https://butterfly.js.org/
-# English: https://butterfly.js.org/en/
+# Hexo Butterfly 主题配置
+# 如有任何问题，请参考文档
+# 中文文档: https://butterfly.js.org/
+# 英文文档: https://butterfly.js.org/en/
 # --------------------------------------
 
 # --------------------------------------
-# Navigation Settings
+# 导航栏设置
 # --------------------------------------
 
 nav:
-  # Navigation bar logo image
+  # 导航栏logo图片
   logo:
   display_title: true
-  # Whether to fix navigation bar
-  fixed: false
+  # 是否固定导航栏
+  fixed: true
 
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+  主页: / || fas fa-home
+  友链: /links/ || fa fa-link
+  关于笔者: /about/ || fas fa-heart 
+
 
 # --------------------------------------
-# Code Blocks Settings
+# 代码块设置
 # --------------------------------------
 
 code_blocks:
-  # Code block theme: darker / pale night / light / ocean / false
+  # 代码块主题: darker / pale night / light / ocean / false
   theme: light
   macStyle: false
-  # Code block height limit (unit: px)
+  # 代码块高度限制(单位: px)
   height_limit: false
   word_wrap: false
 
-  # Toolbar
+  # 工具栏
   copy: true
   language: true
-  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
+  # true: 收缩代码块 | false: 展开代码块 | none: 展开代码块并隐藏按钮
   shrink: false
   fullpage: false
 
-# Social media links
-# Formal:
+# 社交媒体链接
+# 格式:
 #   icon: link || the description || color
 social:
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
 # --------------------------------------
-# Image Settings
+# 图片设置
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /img/331ec743bc60c0eddcb5a2df487cc8c.jpg
 
 avatar:
   img: /img/331ec743bc60c0eddcb5a2df487cc8c.jpg
   effect: false
 
-# Disable all banner images
+# 禁用所有横幅图片
 disable_top_img: false
 
-# If the banner of page not setting, it will show the default_top_img
-default_top_img:
+# 如果页面未设置横幅，将显示默认顶部图片
+default_top_img: 
 
-# The banner image of index page
-index_img:
+# 首页横幅图片
+index_img: /img/background.png
 
-# The banner image of archive page
-archive_img:
+# 归档页横幅图片
+archive_img: 
 
-# Note: tag page, not tags page
+# 注意: 单个标签页，非标签列表页
 tag_img:
 
-# The banner image of tag page, you can set the banner image for each tag
-# Format:
+# 标签页横幅图片，可为每个标签单独设置
+# 格式:
 #  - tag name: xxxxx
 tag_per_img:
 
-# Note: category page, not categories page
+# 注意: 单个分类页，非分类列表页
 category_img:
 
-# The banner image of category page, you can set the banner image for each category
+# 分类页横幅图片，可为每个分类单独设置
 # Format:
 #  - category name: xxxxx
 category_per_img:
 
-# The background image of footer
-footer_img: false
+# 页脚背景图片
+footer_img: true
 
 # Website Background
 # Can set it to color or image url
-background:
-
-cover:
-  # Disable the cover or not
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
+background: /img/background2.jpg
+  
   # When cover is not set, the default cover is displayed
-  default_cover:
+  
     # - xxx.jpg
 
 # Replace Broken Images
@@ -114,21 +109,21 @@ error_404:
   background: /img/error-page.png
 
 post_meta:
-  # Home Page
+  # 首页设置
   page:
-    # Choose: created / updated / both
+    # 选择: created(创建时间) / updated(更新时间) / both(两者)
     date_type: created
-    # Choose: date / relative
+    # 选择: date(日期) / relative(相对时间)
     date_format: date
     categories: true
     tags: false
     label: true
   post:
-    # Choose: left / center
+    # 选择: left(左) / center(中)
     position: left
-    # Choose: created / updated / both
+    # 选择: created(创建时间) / updated(更新时间) / both(两者)
     date_type: both
-    # Choose: date / relative
+    # 选择: date(日期) / relative(相对时间)
     date_format: date
     categories: true
     tags: true
@@ -138,33 +133,32 @@ post_meta:
 # Index page settings
 # --------------------------------------
 
-# The top_img settings of home page
-# default: top img - full screen, site info - middle
-# The position of site info, eg: 300px/300em/300rem/10%
-index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem
+# 首页顶部图片设置
+# 默认: 顶部图片全屏，站点信息居中
+# 站点信息位置，例如: 300px/300em/300rem/10%
+# 顶部图片高度，例如: 300px/300em/300rem
 index_top_img_height:
 
-# The subtitle on homepage
+# 首页副标题
 subtitle:
   enable: false
-  # Typewriter Effect
+  # 打字机效果
   effect: true
-  # Customize typed.js
-  # https://github.com/mattboldt/typed.js/#customization
+  # 自定义typed.js
+# 参考: https://github.com/mattboldt/typed.js/#customization
   typed_option:
-  # Source - Call the third-party service API (Chinese only)
-  # It will show the source first, then show the content of sub
-  # Choose: false/1/2/3
-  # false - disable the function
+  # 来源 - 调用第三方API(仅中文)
+# 先显示来源，再显示副标题内容
+# 选择: false/1/2/3
+# false - 禁用此功能
   # 1 - hitokoto.cn
   # 2 - https://api.aa1.cn/doc/yiyan.html
   # 3 - jinrishici.com
   source: false
-  # If you close the typewriter effect, the subtitle will only show the first line of sub
+  # 如果关闭打字机效果，副标题将只显示第一行
   sub:
 
-# Article layout on the homepage
+# 首页文章布局
 # 1: Cover on the left, info on the right
 # 2: Cover on the right, info on the left
 # 3: Cover and info alternate between left and right
@@ -174,14 +168,14 @@ subtitle:
 # 7: Masonry layout - Info displayed on the cover
 index_layout: 3
 
-# Display the article introduction on homepage
-# 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
+# 在首页显示文章简介
+# 1: 描述
+# 2: 两者(如果描述存在则显示描述，否则显示自动摘要)
+# 3: 自动摘要(默认)
+# false: 不显示文章简介
 index_post_content:
   method: 3
-  # If you set method to 2 or 3, the length need to config
+  # 如果选择方法2或3，需要配置长度
   length: 500
 
 # --------------------------------------
@@ -471,8 +465,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 搜索文章...
 
   # Algolia Search
   algolia_search:
@@ -825,7 +819,7 @@ hr_icon:
 # Typewriter Effect
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
   shake: true
   mobile: false
@@ -853,7 +847,7 @@ canvas_fluttering_ribbon:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   color: '0,0,255'
   # The opacity of line (0~1)
@@ -1056,7 +1050,7 @@ CDN:
 
   option:
     # abcjs_basic_js:
-    # activate_power_mode:
+     activate_power_mode:
     # algolia_js:
     # algolia_search:
     # aplayer_css:
@@ -1078,7 +1072,7 @@ CDN:
     # egjs_infinitegrid:
     # fancybox:
     # fancybox_css:
-    # fireworks:
+     fireworks:
     # fontawesome:
     # gitalk:
     # gitalk_css:
