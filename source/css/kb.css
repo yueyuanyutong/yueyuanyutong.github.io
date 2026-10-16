@@ -17,10 +17,6 @@
   margin: 0 0 11px;
 }
 
-.kb-heading-below {
-  margin: 24px 0 0;
-}
-
 .kb-heading-row {
   display: flex;
   align-items: baseline;
@@ -239,4 +235,16 @@
   .kb-section-name {
     font-size: 13px;
   }
+}
+
+/* ---------- 隐藏主题里硬编码的「文章 / 标签 / 分类」计数 ----------
+   文章体系退役后内容只剩笔记一种，但这两处计数写死在主题模板里，
+   没有配置开关；主题是 git submodule 不能改模板，故用 CSS 隐藏。
+     sidebar.pug      → #sidebar-menus .site-data   移动端菜单顶部
+     card_author.pug  → .card-info .site-data       桌面端作者卡
+   侧边栏「文章数目」一行由 card_webinfo.post_count 控制，已在配置中关闭。 */
+
+#sidebar-menus .site-data,
+.card-info .site-data {
+  display: none;
 }

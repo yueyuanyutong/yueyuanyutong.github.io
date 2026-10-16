@@ -2,8 +2,11 @@
 
 个人知识库站点，基于 Hexo + Butterfly 主题构建，托管在 GitHub Pages。
 
-**以「笔记」为核心**：首页是知识库入口（分区 + 最新笔记），而不是文章列表。
-`_posts/` 保留给成篇长文。
+**全站只有一种内容：笔记。** 首页是知识库入口（分区 + 最新笔记），而不是文章列表。
+
+Hexo 默认的「文章」体系（`_posts` + 归档 + 分类 + 标签 + 分页）已**整体退役** ——
+那套范式是给"人写给人看、量少而精"的公开博客设计的，与本站"产出后自己消费、
+按主题分区检索"的用法不符。详见下方[内容模型](#内容模型为什么没有文章)。
 
 线上地址：<https://yueyuanyutong.github.io>
 
@@ -42,23 +45,25 @@
 ├── _config.yml              # Hexo 主配置（站点信息、url、部署目标）
 ├── _config.butterfly.yml    # 主题配置（导航、头像、评论、搜索、统计等）
 ├── source/
-│   ├── _notes/              # 笔记源文件 —— 目录结构即分区（站点的核心内容）
+│   ├── _notes/              # 笔记源文件 —— 目录结构即分区（站点的唯一内容源）
 │   │   ├── _sections.yml    #   分区英文别名 + 首页排序
 │   │   └── 计算机/          #   文件夹名就是分区名，可继续嵌套
+│   │       ├── 算法/xxx.md
 │   │       ├── 网络/xxx.md
 │   │       └── 工具/xxx.md
+│   ├── index.md             # 首页源文件，由 tools/notes.js 生成（git 忽略）
 │   ├── notes/               # 笔记栏目产物，由 tools/notes.js 生成（git 忽略）
-│   ├── _posts/              # 成篇长文（与笔记分开）
+│   ├── _posts/              # 已清空 —— 文章体系退役（空目录不被 git 跟踪，克隆后不存在属正常）
 │   ├── _data/link.yml       # 友链数据（友链页用）
-│   ├── css/kb.css           # 「笔记」栏目样式
+│   ├── css/kb.css           # 笔记栏目样式
 │   ├── img/                 # 站点自有图片（背景、头像）
+│   ├── 2025/…/index.html    # 旧文章 URL 的跳转页（纯静态 HTML）
 │   ├── about/index.md       # 关于页
 │   └── links/index.md       # 友链页（front-matter 需 type: link）
 ├── tools/
-│   ├── notes.js             # 笔记页面生成器（CLI）
+│   ├── notes.js             # 页面生成器（首页 + 笔记栏目）
 │   └── lib/notes-core.js    #   共用内核：扫描、分区树、HTML 片段渲染
 ├── scripts/                 # Hexo 构建期脚本（站点根目录，自动加载）
-│   ├── home.js              #   首页改造：插入「分区 + 最新笔记」区块
 │   └── search.js            #   清理 search.xml：剔除列表页与非 HTML 资源
 ├── themes/butterfly/        # 主题（git submodule，固定于 ca03058）
 ├── scaffolds/               # 新建文章/页面的模板
@@ -83,28 +88,11 @@ npm run build
 npm run notes
 ```
 
-新建文章：
-
-```bash
-./node_modules/.bin/hexo new "文章标题"
-```
-
-文章写在 `source/_posts/`，front-matter 示例：
-
-```yaml
----
-title: 前缀和数组算法
-date: 2025-06-23
-tags:
-  - 算法
-  - 前缀和
-categories: 编程
----
-```
+新增内容请见下一节 —— 本站只有「笔记」一种内容，**不再使用 `hexo new` 创建文章**。
 
 ---
 
-## 「笔记」栏目（站点的核心）
+## 笔记（站点的全部内容）
 
 站点的入口是**知识库**，不是文章列表 —— 首页顶部就是分区入口与最新笔记。
 
@@ -118,6 +106,7 @@ categories: 编程
 ```
 source/_notes/
 ├── 计算机/
+│   ├── 算法/balanced-matrix-prefix-sum.md  → /notes/computer/algorithms/balanced-matrix-prefix-sum/
 │   ├── 网络/tcp-three-way-handshake.md   → /notes/computer/network/tcp-three-way-handshake/
 │   └── 工具/git-proxy-cheatsheet.md      → /notes/computer/tools/git-proxy-cheatsheet/
 ├── 考研/
@@ -136,7 +125,7 @@ source/_notes/
 ---
 title: TCP 为什么必须三次握手
 date: 2026-10-16 15:45:00
-kind: concept          # concept 概念卡 / cheatsheet 速查表 / pitfall 踩坑记录 / review 复盘 / note 随笔
+kind: concept          # concept 概念卡 / cheatsheet 速查表 / problem 题解 / pitfall 踩坑记录 / review 复盘 / note 随笔
 tags: [TCP, 网络协议]
 excerpt: 列表页上显示的一句话摘要
 source: 出处（可选）
@@ -161,7 +150,7 @@ aliases:
 
 | 页面 | 内容 |
 | --- | --- |
-| `/` | 分区入口卡片 + 最新 5 条笔记（主题原有的文章列表保留在下方，标注为「文章」） |
+| `/` | 分区入口卡片 + 最新 6 条笔记（由生成器直接产出，不是主题默认的文章列表） |
 | `/notes/` | 全部笔记 + 分区筛选栏 |
 | `/notes/<分区>/` | 该分区（含子分区）的全部笔记 + 子分区入口 |
 | `/notes/<分区>/…/<slug>/` | 笔记正文 |
@@ -170,16 +159,33 @@ aliases:
 
 - `source/_notes/` 是**唯一真源**，下划线前缀让 Hexo 直接忽略该目录
 - `tools/lib/notes-core.js` 是共用内核（扫描、建分区树、渲染 HTML 片段），
-  由 `tools/notes.js`（生成页面）与 `scripts/home.js`（改造首页）共同调用
-- 产物目录 `source/notes/` 已写进 `.gitignore`，无需手动维护、也不要手动改
+  由 `tools/notes.js` 生成**首页与全部笔记页面**
+- 产物 `source/index.md` 与 `source/notes/` 已写进 `.gitignore`，
+  无需手动维护、也不要手动改（构建时自动重建）
 - 生成动作已挂进 `npm run build` / `npm run server` 与 CI 工作流，无需额外操作
 - `scripts/search.js` 会把分区列表页与非 HTML 资源从 `search.xml` 中剔除，
   否则搜一个词会被同一篇笔记的分区页重复命中好几次
 
-### 与 `_posts/` 的关系
+### 内容模型：为什么没有「文章」
 
-`_posts/` 留给**成篇的长文**，它们不进知识库分区，仍在首页下方展示。
-目前只有一篇《前缀和数组算法》。如果将来觉得两套东西别扭，可以把文章也并入 `_notes/`。
+Hexo 默认的博客范式（`_posts` + 归档 + 分类 + 标签 + 分页）已**整体退役**：
+它是为"人写给人看、量少而精"的公开博客设计的，而本站是"自己 / AI 产出、自己消费"
+的知识库 —— 按主题分区检索，而不是按时间流浏览。两套并存只会互相干扰：
+首页要同时塞两种内容、导航里挂着永远为空的入口、搜索索引里两类混着。
+
+因此**全站只有笔记一种内容**。`_posts/` 保持为空后，Hexo 的四个生成器会自动静默：
+
+| 生成器 | 空 `_posts` 时的实际行为 |
+| --- | --- |
+| `hexo-generator-index` | 分页总数算得 0，循环体一次都不执行 |
+| `hexo-generator-archive` | `if (!allPosts.length) return;` |
+| `hexo-generator-category` / `tag` | 空分类 / 空标签直接跳过 |
+
+这带来两个直接结果：`/archives/`、`/categories/`、`/tags/` 三类页面**自然消失**，
+首页也彻底空出来交给生成器接管 —— **不需要在配置里禁用任何东西**。
+
+> 不要为了「分类」去用 Hexo 的 category / tag：那是文章体系的字段，会额外生成一整套
+> 页面、还要维护两套命名，与「目录即分区」语义重复。分区只认文件夹。
 
 ---
 
@@ -233,7 +239,11 @@ netstat -ano | grep LISTENING | grep 127.0.0.1
 ## 当前配置状态
 
 - 站点 `url`：`https://yueyuanyutong.github.io`（若绑定自定义域名，只需改这一行）
-- 首页：已由 `scripts/home.js` 改造为知识库入口（分区 + 最新笔记），**改首页内容改那个脚本**
+- 首页：由 `tools/notes.js` 生成 `source/index.md` 产出（分区 + 最新笔记），
+  **改首页内容改 `tools/lib/notes-core.js` 里的 `renderHomeBlock`**
+- 内容模型：只有笔记一种；`_posts/` 已空，归档 / 分类 / 标签页不再生成
+- 侧边栏：主题里硬编码的「文章 / 标签 / 分类」计数已用 CSS 隐藏（见 `kb.css` 末尾说明），
+  「文章数目」一行通过 `card_webinfo.post_count` 关闭
 - 导航：`主页 / 笔记 / 友链 / 关于笔者`
 - 站内搜索：已启用（`local_search`，`search.field: all`，笔记可被搜到）
 - 页面：`/about/`、`/links/`、`/notes/` 均已建立
@@ -277,6 +287,8 @@ git add themes/butterfly && git commit -m "chore: 升级 Butterfly 主题至 5.7
 - 主题为 **beta 版本**（5.4.0-b1），上游最新稳定版为 5.7.0，可按需升级
 - 图片资源已迁至 `source/img/`，主题目录内已无自定义资源
 - `about` / `links` 两页仍是通用模板文案，待按实际情况填写
-- 唯一那篇长文《前缀和数组算法》尚未并入 `_notes/`，暂时靠首页下方展示维持可达
-- 首页的「分区 + 最新笔记」区块由 `scripts/home.js` 注入；若将来升级主题导致
-  `#content-inner` 结构变化，需要同步调整该脚本里的 `MARKER` 常量
+- 移动端菜单与作者卡里的「文章 / 标签 / 分类」计数写死在主题模板中
+  （`sidebar.pug` / `card_author.pug`），没有配置开关，目前靠 CSS 隐藏。
+  **升级主题后需重新确认 `.site-data` 这个类名是否还在**，否则计数会露出来
+- 旧文章 URL `/2025/06/23/2025-06-23/` 已加跳转页；确认无人访问后可删除
+  `source/2025/` 目录，并同步移除 `_config.yml` 里的 `skip_render` 配置

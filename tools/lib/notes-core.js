@@ -24,6 +24,7 @@ const CONFIG_FILE = path.join(SRC, '_sections.yml');
 const KIND_LABEL = {
   concept: '概念卡',
   cheatsheet: '速查表',
+  problem: '题解',
   pitfall: '踩坑记录',
   review: '复盘',
   note: '随笔'
@@ -254,8 +255,7 @@ function renderChips(data, currentUrl) {
   return '<div class="kb-chips">' + items.join('') + '</div>';
 }
 
-function renderHomeBlock(data, options) {
-  const opts = options || {};
+function renderHomeBlock(data) {
   if (!data.notes.length) {
     return '<div class="kb-home"><div class="kb-heading">知识库</div>'
       + '<div class="kb-intro">还没有笔记。在 <code>source/_notes/</code> 下建个文件夹、放一个 .md 文件，'
@@ -269,9 +269,9 @@ function renderHomeBlock(data, options) {
     + '</a>'
   ).join('');
 
-  const recent = data.notes.slice(0, 5);
+  const recent = data.notes.slice(0, 6);
 
-  const block = [
+  return [
     '<div class="kb-home">',
     '<div class="kb-heading">分区</div>',
     '<div class="kb-sections">' + cards + '</div>',
@@ -282,9 +282,17 @@ function renderHomeBlock(data, options) {
     renderList(recent, data.base),
     '</div>'
   ].join('\n');
+}
 
-  // 下面紧跟主题渲染的文章列表，补一个小标题把两种内容分开
-  return opts.hasPosts ? block + '\n<div class="kb-heading kb-heading-below">文章</div>' : block;
+/**
+ * 站点首页的源文件内容。
+ *
+ * 文章体系退役后 _posts 为空，hexo-generator-index 便不再产出 index.html
+ * （hexo-pagination 在 perPage 与 length 均为 0 时循环体一次都不执行），
+ * 首页由这里直接接管。
+ */
+function homePage(data) {
+  return ['---', 'title: 知识库', '---', '', renderHomeBlock(data), ''].join('\n');
 }
 
 function notePage(note) {
@@ -360,6 +368,7 @@ module.exports = {
   renderList,
   renderChips,
   renderHomeBlock,
+  homePage,
   notePage,
   sectionPage,
   indexPage

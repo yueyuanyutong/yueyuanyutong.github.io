@@ -271,23 +271,26 @@ aside:
   mobile: true
   # Position: left / right
   position: right
+  # 仅在 archive / category / tag 三类页面上生效（决定其是否显示侧边栏）。
+  # 本站文章体系已退役、这三类页面不再生成，故此项已无实际作用，保留默认值。
   display:
     archive: true
     tag: true
     category: true
   card_author:
     enable: true
-    description:
+    description: 学习笔记与踩坑记录
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
+      text: GitHub
+      link: https://github.com/yueyuanyutong
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 从对话、阅读与踩坑里沉淀下来的东西
   card_recent_post:
-    enable: true
+    # 数据源是文章，文章体系已退役，恒为空
+    enable: false
     # If set 0 will show all
     limit: 5
     # Sort: date / updated
@@ -301,14 +304,16 @@ aside:
     storage: 10
     avatar: true
   card_categories:
-    enable: true
+    # 数据源是文章分类，已退役
+    enable: false
     # If set 0 will show all
     limit: 8
     # Choose: none / true / false
     expand: none
     sort_order:
   card_tags:
-    enable: true
+    # 数据源是文章标签，已退役
+    enable: false
     # If set 0 will show all
     limit: 40
     color: false
@@ -318,7 +323,8 @@ aside:
     order: 1
     sort_order:
   card_archives:
-    enable: true
+    # 数据源是文章归档，已退役
+    enable: false
     # Type: monthly / yearly
     type: monthly
     # Eg: YYYY年MM月
@@ -329,7 +335,8 @@ aside:
     limit: 8
     sort_order:
   card_post_series:
-    enable: true
+    # 数据源是文章系列，已退役
+    enable: false
     # The title shows the series name
     series_title: false
     # Order by title or date
@@ -338,7 +345,8 @@ aside:
     order: -1
   card_webinfo:
     enable: true
-    post_count: true
+    # 「文章数目」一行，数据源是文章，已退役
+    post_count: false
     last_push_date: true
     sort_order:
     # Time difference between publish date and now

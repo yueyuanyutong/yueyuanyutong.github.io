@@ -8,6 +8,7 @@
  *   source/_notes/_sections.yml                分区的英文别名与首页排序
  *
  * 产物（已写入 .gitignore，构建时自动重建）：
+ *   source/index.md                                站点首页（知识库入口）
  *   source/notes/index.md                          笔记总览 + 分区筛选
  *   source/notes/<分区>/index.md                   一级分区页
  *   source/notes/<分区>/<子分区>/index.md          二级分区页
@@ -48,6 +49,10 @@ function main() {
   }
 
   writePage(OUT, core.indexPage(data));
+
+  // 站点首页。文章体系退役后 _posts 为空，hexo-generator-index 不再产出
+  // index.html，首页由这里直接接管。
+  fs.writeFileSync(path.join(core.ROOT, 'source', 'index.md'), core.homePage(data), 'utf8');
 
   const parts = data.topSections
     .filter((s) => s.count)
