@@ -2,7 +2,6 @@
 title: VPN 明明开着，git push 却不动
 date: 2026-10-16 15:47:00
 kind: pitfall
-category: 工具链
 tags: [Git, 代理, 排查]
 excerpt: 症状是"浏览器打得开 GitHub，命令行却超时"。根因是 git 不读系统代理。记一次完整排查过程。
 ---

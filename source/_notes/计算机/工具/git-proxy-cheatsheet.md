@@ -2,7 +2,6 @@
 title: Git 走代理与 GitHub 推送速查
 date: 2026-10-16 15:46:00
 kind: cheatsheet
-category: 工具链
 tags: [Git, 代理, GitHub]
 excerpt: 命令行 git 不读系统代理。要么配 git 自己的 http.proxy，要么导 http_proxy 环境变量。
 ---
