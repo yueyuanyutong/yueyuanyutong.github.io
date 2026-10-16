@@ -301,6 +301,26 @@ done
 | push 报 `CONNECT tunnel failed` / `Empty reply` | git 代理没生效或 VPN 关了 | 检查并设置 `http.https://github.com/.proxy`；确认 `7892` 在监听 |
 | 侧栏冒出「文章 0 / 标签 0 / 分类 0」 | `kb.css` 里 `.site-data` 的隐藏规则被覆盖或主题类名变了 | 检查 `kb.css` 末尾与环境配置；`npm run check` 会报该项失败 |
 | 移动端个人介绍出现两次 | 浏览器不支持 `:has()`，或断点被改 | 确认断点仍是 900px；`body:has(.kb-hero) .card-info` 规则在位 |
+| **提问后长时间「思考中」，最后只回 `Error: [object Object]`** | 本会话是 IM（QQ）会话（`im:qq_*`）→ `@michengai/dsh-im-connect` 接管了 `userQuestions`，`ask_user_question` 只投递到 QQ，网页 GUI **永远弹不出控件**；GUI 里打的字只被排队、答不了那个问题；工具 legacy 模式**无超时** → 双方互等。在 GUI 再发一条会 `splice target=next-step` 中断当前步骤，插件把中断原因（普通对象 `{kind:"aborted",…}`，非 `Error`、无 `message`）原样抛出 → 渲染层 `String()` 成 `[object Object]` | 见下方**两条硬规则**。已经卡住时：在 QQ 里回「1」或文字作答（问题挂起期间该会话任何**非 `/` 开头**的文字都会被当成答案，不会变成新任务），或发 `/stop` 跳出，或 `/new` `/clear` |
+| QQ 侧收到临时 `.js` 文件，PC 侧却看不到 | `file-delivery.ts` 把 `write`/`edit` 写出的文件在**回合结束时**自动推到 IM 聊天，且**不过滤路径与类型**（`%TEMP%` 里的草稿脚本照样推）；网页 GUI 不自动推文件，只在 `present` 时出附件卡片 | 临时脚本别用 `write` 工具，改用 `pwsh` here-string / `Set-Content`；收到 `.js` 不一定是真要交付的产物 |
+
+**两条硬规则（2026-10-16 由用户确认写入）**
+
+1. **在 IM 会话里不要用 `ask_user_question`** —— 一律改用纯文本编号提问（结论 + 选项表 + 「回个数字就行」）。
+   本会话身份是 `im:qq_ab15490b3ae5:dm:…`，插件启动时就「接管」了提问通道，
+   一旦弹选项必然互等，且 GUI 侧看不到任何提示。
+2. **在 IM 会话里不要用 `write` 工具写临时/草稿文件** —— 改用 `pwsh` here-string，否则草稿会被推到用户的 QQ。
+
+> 这两条只是**代理侧**的规避；根因在插件（`dsh-im-connect` 抛裸中断原因、并对同时在 GUI 打开的会话接管提问）。
+
+**QQ 侧的手动闸门（2026-10-17 查源码 + 日志确认：功能一直有，只是没被用过）**
+
+- `/stop` → `sessionController.cancel({ sessionId })`：**真正中断当前运行**，排队消息保留，停下后直接发消息即可续聊
+  （回复「已请求停止当前运行；排队消息保留，可用 /queue 查看」）。`gateway.log` 里搜不到任何 `/stop`，说明用户此前从没发过 —— 不是功能缺失。
+- `/steer 补充要求` → `sessionController.prompt({ mode: 'steer' })`：**运行中插入补充指令**（边跑边改需求，不打断本轮）。
+- 同族命令：`/queue`（含 `remove|steer|edit <消息ID>`）、`/status`（带「停止任务」按钮）、`/delivery`、`/unbind`、`/mute`/`/unmute`、`/history`、`/new`(`/clear`)、`/sessions`、`/rename`、`/fork`、`/model`、`/reasoning`、`/presets`、`/help`。
+  命令开关在 `channels.json → commandPermissions.dm.enabled`（当前为 `true`）。
+- **代理提示**：长任务途中用户在 QQ 侧可以自理（`/stop`、`/steer`）；但**用户在网页 GUI 发消息**会走 `splice target=next-step` 打断当前步骤，那才是 `[object Object]` 的触发路径。
 
 ---
 
@@ -344,3 +364,7 @@ done
 - **卡住就问，不要死磕**（用户 2026-10-16 明确要求）：环境/沙箱这类他能从外部解决的问题，
   长时间试不出来就主动说清楚「卡在哪一步、报什么错、需要你做什么」（例如放行一次提权、
   或在他的终端里跑一条命令），不要反复试同一类办法
+- **在 IM 会话里提问一律用纯文本**（不要 `ask_user_question`），**临时文件不要用 `write` 工具写** ——
+  理由与处置见第 9 节的「两条硬规则」（2026-10-16 用户确认写入）
+- 同一个会话可能**同时挂在 QQ 和网页 GUI 两个客户端**上：GUI 消息在回合运行中只排队，
+  再发一条会把前一条顶掉；这类「双通道」现象先想到 IM 插件（`@michengai/dsh-im-connect`）
