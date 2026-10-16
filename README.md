@@ -11,7 +11,7 @@
 | 层次 | 选型 |
 | --- | --- |
 | 静态站点生成 | Hexo 7.3.0 |
-| 主题 | Butterfly 5.4.0-b1 |
+| 主题 | Butterfly 5.4.0-b1（以 git submodule 引入，固定于 `ca03058`） |
 | 渲染器 | hexo-renderer-marked / pug / ejs / stylus |
 | 站点搜索 | hexo-generator-searchdb + Butterfly `local_search` |
 | 部署 | hexo-deployer-git → GitHub Pages |
@@ -44,7 +44,7 @@
 │   ├── img/                 # 站点自有图片（背景、头像）
 │   ├── about/index.md       # 关于页
 │   └── links/index.md       # 友链页（front-matter 需 type: link）
-├── themes/butterfly/        # 主题（整包拷贝）
+├── themes/butterfly/        # 主题（git submodule，固定于 ca03058）
 ├── scaffolds/               # 新建文章/页面的模板
 └── public/                  # 构建产物（git 忽略）
 ```
@@ -140,7 +140,39 @@ netstat -ano | grep LISTENING | grep 127.0.0.1
 - 统计：仅 busuanzi（不蒜子）
 - **尚未配置**：评论系统、社交链接、数学公式
 
+## 主题管理（git submodule）
+
+主题以 git submodule 形式引入，固定在上游提交 `ca03058`（即 `5.4.0-b1` 快照）。
+
+**首次克隆仓库必须带 submodule**，否则主题目录为空、构建会失败：
+
+```bash
+git clone --recursive <repo-url>
+# 若已克隆过，补拉子模块：
+git submodule update --init --recursive
+```
+
+**查看当前固定的版本：**
+
+```bash
+git -C themes/butterfly log -1 --format="%h %ad %s" --date=short
+```
+
+**升级主题：** 先切到目标 tag（如 5.7.0），构建并与线上比对，确认无误后再提交。
+站点自有图片已迁至 `source/img/`，主题目录内不含任何自定义资源，升级不会覆盖你的东西。
+
+```bash
+git -C themes/butterfly fetch --tags
+git -C themes/butterfly checkout 5.7.0
+./node_modules/.bin/hexo clean && ./node_modules/.bin/hexo generate
+# 本地预览确认无异常后：
+git add themes/butterfly && git commit -m "chore: 升级 Butterfly 主题至 5.7.0"
+```
+
+> 注意：主题跨大版本升级时 `_config.butterfly.yml` 可能需要补充新增配置项，
+> 建议先对照 `themes/butterfly/_config.yml` 的 diff。
+
 ## 待办 / 隐患
 
-- 主题为 **beta 版本**且为整包拷贝，无版本管理，升级时需手工覆盖（建议改为 git submodule）
-- 图片资源已迁至 `source/img/`，但主题目录更新仍需注意不要覆盖站内资源
+- 主题为 **beta 版本**（5.4.0-b1），上游最新稳定版为 5.7.0，可按需升级
+- 图片资源已迁至 `source/img/`，主题目录内已无自定义资源
