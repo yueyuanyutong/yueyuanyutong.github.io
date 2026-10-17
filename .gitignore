@@ -8,3 +8,6 @@ source/index.md
 source/notes/
 .deploy*/
 _multiconfig.yml
+
+# 代理交接手册：只在本地维护，不入库（2026-10-17 用户要求）
+AGENTS.md

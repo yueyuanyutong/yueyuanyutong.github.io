@@ -10,8 +10,7 @@ Hexo 默认的「文章」体系（`_posts` + 归档 + 分类 + 标签 + 分页�
 
 线上地址：<https://yueyuanyutong.github.io>
 
-> **在本仓库动手的 AI 代理请先读 [AGENTS.md](./AGENTS.md)** —— 那里是当前实际状态、  
-> 操作手册与陷阱清单。本文件讲的是设计与缘由。
+> **本文件讲的是设计与缘由。** 当前实际状态、操作手册与陷阱清单由维护者在本地维护（`AGENTS.md`，不入库）。
 
 ---
 
@@ -74,7 +73,6 @@ Hexo 默认的「文章」体系（`_posts` + 归档 + 分类 + 标签 + 分页�
 ├── scripts/                 # Hexo 构建期脚本（站点根目录，自动加载）
 │   ├── hero.js              #   给每个页面注入「个人介绍」区块
 │   └── search.js            #   清理 search.xml：剔除列表页与非 HTML 资源
-├── AGENTS.md                # 代理交接手册（当前状态 / 操作 / 陷阱）
 ├── themes/butterfly/        # 主题（git submodule，固定于 ca03058）
 ├── scaffolds/               # 新建页面模板（文章体系已退役，post/draft 模板已移除）
 └── public/                  # 构建产物（git 忽略）
@@ -308,7 +306,7 @@ git add themes/butterfly && git commit -m "chore: 升级 Butterfly 主题至 5.7
 
 ## 待办 / 隐患
 
-> 权威清单见 [AGENTS.md §11](./AGENTS.md#11-待办)，下面这份是面向人的概述。
+> 下面是面向人的概述；维护者本地的代理手册（`AGENTS.md`，不入库）里有更细的权威清单。
 
 - 主题为 **beta 版本**（5.4.0-b1），上游最新稳定版为 5.7.0，可按需升级
 - 图片资源已迁至 `source/img/`，主题目录内已无自定义资源
