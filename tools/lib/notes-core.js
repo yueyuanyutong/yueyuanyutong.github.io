@@ -395,6 +395,14 @@ function homePage(data) {
   ].join('\n');
 }
 
+// 正文里是否出现数学公式：用于决定这一页要不要在 front-matter 打开 mathjax。
+// 匹配 $...$（行内）与 $$...$$（块级），不跨行匹配 $，避免把"$100"这类文本当成公式。
+const MATH_RE = /\$\$[\s\S]*?\$\$|\$[^$\n]{2,}\$/;
+
+function hasMath(text) {
+  return MATH_RE.test(String(text || ''));
+}
+
 function notePage(note) {
   const meta = [kindLabel(note.kind), note.sectionPath, fmtDate(note.date)]
     .filter(Boolean).join(' · ');
@@ -403,6 +411,8 @@ function notePage(note) {
     '---',
     'title: ' + JSON.stringify(note.title),
     'date: ' + (fmtDate(note.date) || '1970-01-01') + ' 00:00:00',
+    // 只有含公式的笔记才加载 MathJax（主题 math.per_page 为 false 时靠这个开关）
+    ...(hasMath(note.body) ? ['mathjax: true'] : []),
     '---',
     '',
     '<div class="kb-note-meta">' + esc(meta) + '</div>',

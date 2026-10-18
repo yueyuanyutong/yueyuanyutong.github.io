@@ -163,6 +163,25 @@ function main() {
     check('header.webp 体积合理（<60 KB）', kb < 60, kb.toFixed(1) + ' KB');
   }
 
+  /* ---------- 8. 数学公式：按页按需加载 MathJax ---------- */
+  const MATH_RE = /\$\$[\s\S]*?\$\$|\$[^$\n]{2,}\$/;
+  const mathNotes = data.notes.filter((n) => MATH_RE.test(String(n.body || '')));
+  const mathLoaded = mathNotes.filter((n) =>
+    (read(path.join(PUBLIC, routePath(n.url))) || '').includes('window.MathJax'));
+  check('含公式的笔记注入了 MathJax', mathNotes.length > 0 && mathLoaded.length === mathNotes.length,
+    mathLoaded.length + '/' + mathNotes.length + ' 篇');
+
+  const mathFree = ['notes/index.html', 'about/index.html', 'links/index.html']
+    .filter((rel) => (read(path.join(PUBLIC, rel)) || '').includes('MathJax'));
+  check('不含公式的页面不加载 MathJax', mathFree.length === 0, mathFree.join(', ') || '（无）');
+
+  const firstMathHtml = mathNotes.length
+    ? (read(path.join(PUBLIC, routePath(mathNotes[0].url))) || '')
+    : '';
+  check('公式分隔符与 LaTeX 命令未被 markdown 吃掉',
+    firstMathHtml.includes('$') && firstMathHtml.includes('\\frac'),
+    mathNotes.length ? mathNotes[0].title : '没有含公式的笔记');
+
   /* ---------- 汇总 ---------- */
   const failed = results.filter((r) => !r.ok);
   console.log('\n' + '─'.repeat(56));
