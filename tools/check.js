@@ -182,6 +182,16 @@ function main() {
     firstMathHtml.includes('$') && firstMathHtml.includes('\\frac'),
     mathNotes.length ? mathNotes[0].title : '没有含公式的笔记');
 
+  // 自托管 MathJax：国内浏览器打不开 jsdelivr，公式会退化成 $...$ 原文
+  const localMathjax = path.join(PUBLIC, 'js', 'mathjax', 'tex-svg.js');
+  const mathjaxBytes = fs.existsSync(localMathjax) ? fs.statSync(localMathjax).size : 0;
+  check('MathJax 已自托管且文件完整（>1.5 MB）', mathjaxBytes > 1.5 * 1024 * 1024,
+    mathjaxBytes ? (mathjaxBytes / 1048576).toFixed(2) + ' MB' : '缺失 public/js/mathjax/tex-svg.js');
+  check('公式页引用本地 MathJax，不依赖 CDN',
+    firstMathHtml.includes('/js/mathjax/tex-svg.js')
+      && !firstMathHtml.includes('cdn.jsdelivr.net/npm/mathjax'),
+    firstMathHtml.includes('/js/mathjax/tex-svg.js') ? '同源路径' : '仍指向 CDN');
+
   /* ---------- 汇总 ---------- */
   const failed = results.filter((r) => !r.ok);
   console.log('\n' + '─'.repeat(56));

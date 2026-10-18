@@ -1071,8 +1071,12 @@ CDN:
   custom_format:
 
   option:
+    # 数学公式：改用站点自带的 MathJax（SVG 输出，单文件、无需字体、不依赖 CDN）
+    # 原因：cdn.jsdelivr.net 在国内浏览器常被阻断 -> 公式会退化成 $...$ 原文
+    # 升级方式：换掉 source/js/mathjax/tex-svg.js 这一个文件即可
+    mathjax: /js/mathjax/tex-svg.js
     # abcjs_basic_js:
-     activate_power_mode:
+    # activate_power_mode:
     # algolia_js:
     # algolia_search:
     # aplayer_css:
@@ -1094,7 +1098,7 @@ CDN:
     # egjs_infinitegrid:
     # fancybox:
     # fancybox_css:
-     fireworks:
+    # fireworks:
     # fontawesome:
     # gitalk:
     # gitalk_css:

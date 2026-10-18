@@ -39,7 +39,7 @@ Hexo 默认的「文章」体系（`_posts` + 归档 + 分类 + 标签 + 分页�
 
 因此：向 `master` 推送源码会触发 CI 自动构建部署（`npm ci` → `hexo clean` + `npm run build`
 → `npm run check` → 强推 `main`）。**`npm run check` 不通过时 CI 直接失败，不会上线** ——
-站点契约（`tools/check.js` 的 53 项断言）在 CI 与本地是同一条。本地只在 CI 不可用时
+站点契约（`tools/check.js` 的 55 项断言）在 CI 与本地是同一条。本地只在 CI 不可用时
 才需要手动发布，见[发布](#发布)。
 
 ---
@@ -68,7 +68,7 @@ Hexo 默认的「文章」体系（`_posts` + 归档 + 分类 + 标签 + 分页�
 │   └── links/index.md       # 友链页（front-matter 需 type: link）
 ├── tools/
 │   ├── notes.js             # 页面生成器（首页 + 笔记栏目）
-│   ├── check.js             # 构建产物验收（npm run check，53 项断言）
+│   ├── check.js             # 构建产物验收（npm run check，55 项断言）
 │   └── lib/notes-core.js    #   共用内核：扫描、分区树、HTML 片段渲染
 ├── scripts/                 # Hexo 构建期脚本（站点根目录，自动加载）
 │   ├── hero.js              #   给每个页面注入「个人介绍」区块
@@ -95,7 +95,7 @@ npm run build
 # 只重新生成「笔记」栏目
 npm run notes
 
-# 验收构建产物（53 项断言：页面清单、个人介绍注入、搜索索引、样式规则…）
+# 验收构建产物（55 项断言：页面清单、个人介绍注入、搜索索引、样式规则…）
 npm run check
 ```
 
