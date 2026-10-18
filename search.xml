@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>关于笔者</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<h2 id="你好，我是-YueYuan"><a href="#你好，我是-YueYuan" class="headerlink" title="你好，我是 YueYuan"></a>你好，我是 YueYuan</h2><blockquote>
+<p>欲揽星河摘星辰，先铸千蹬上九天</p>
+</blockquote>
+<p>这里是我的个人博客，用来记录学习过程中的思考与沉淀。</p>
+<p>目前主要关注的方向：</p>
+<ul>
+<li><strong>算法与数据结构</strong> —— 刷题笔记、解题思路整理</li>
+<li><strong>编程学习笔记</strong> —— 踩过的坑与验证过的结论</li>
+</ul>
+<h2 id="关于这个站点"><a href="#关于这个站点" class="headerlink" title="关于这个站点"></a>关于这个站点</h2><p>本站基于 <a href="https://hexo.io/">Hexo</a> 构建，使用 <a href="https://butterfly.js.org/">Butterfly</a> 主题，托管在 GitHub Pages 上。</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><ul>
+<li>GitHub：<a href="https://github.com/yueyuanyutong">yueyuanyutong</a></li>
+</ul>
+<p>欢迎交流，也欢迎交换友链（见<a href="/links/">友链页</a>）。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>友链</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[<h2 id="交换友链"><a href="#交换友链" class="headerlink" title="交换友链"></a>交换友链</h2><p>欢迎志同道合的朋友交换友链。请先在贵站添加本站链接，然后通过 <a href="https://github.com/yueyuanyutong">GitHub</a> 或邮件告诉我以下信息：</p>
+<ul>
+<li>站点名称</li>
+<li>站点地址</li>
+<li>站点描述（一句话）</li>
+<li>头像图片地址</li>
+</ul>
+<p>我会尽快添加，感谢支持。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析公式速查（含例题）</title>
+    <url>/notes/civil-service/data-analysis/data-analysis-formulas/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-17</div>
+
+<h2 id="0-公式罗列（速记版）"><a href="#0-公式罗列（速记版）" class="headerlink" title="0. 公式罗列（速记版）"></a>0. 公式罗列（速记版）</h2><blockquote>
+<p>先抄这一节；下面各节是它的展开与例题。</p>
+</blockquote>
+<p><strong>基本关系</strong></p>
+<ul>
+<li>$A&#x3D;B(1+r)$</li>
+<li>$\Delta&#x3D;A-B&#x3D;Br&#x3D;\dfrac{Ar}{1+r}$</li>
+<li>$B&#x3D;\dfrac{A}{1+r}&#x3D;\dfrac{\Delta}{r}$</li>
+<li>$r&#x3D;\dfrac{A-B}{B}&#x3D;\dfrac{\Delta}{B}$</li>
+</ul>
+<p><strong>增长</strong></p>
+<ul>
+<li>隔年增长率：$r_{\text{隔}}&#x3D;r_1+r_2+r_1r_2$</li>
+<li>隔年基期：$B&#x3D;\dfrac{A}{1+r_{\text{隔}}}$</li>
+<li>年均增长量：$\dfrac{A-B}{n}$</li>
+<li>年均增长率：$\bar r&#x3D;\sqrt[n]{\dfrac{A}{B}}-1$</li>
+<li>增长量比较：$A_1\approx A_2$ 看 $r$；$r_1\approx r_2$ 看 $A$</li>
+</ul>
+<p><strong>比重</strong></p>
+<ul>
+<li>比重：$\dfrac{\text{部分}}{\text{整体}}\times100%$</li>
+<li>基期比重：$\dfrac{A_{\text{部}}}{1+r_{\text{部}}}\div\dfrac{A_{\text{整}}}{1+r_{\text{整}}}&#x3D;\text{现期比重}\times\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>比重变化（百分点）：$\text{现期比重}\times\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>升降判断：$r_{\text{部}}\gtrless r_{\text{整}}\Rightarrow$ 比重上升&#x2F;下降</li>
+</ul>
+<p><strong>平均数</strong></p>
+<ul>
+<li>平均数：$\dfrac{\text{总量}}{\text{份数}}$</li>
+<li>平均数增长率：$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</li>
+<li>基期平均数：$\text{现期平均数}\times\dfrac{1+r_{\text{份}}}{1+r_{\text{总}}}$</li>
+<li>平均数增长量：$\text{现期平均数}-\text{基期平均数}$</li>
+</ul>
+<p><strong>倍数与比值</strong></p>
+<ul>
+<li>是几倍：$\dfrac{A}{B}$</li>
+<li>多几倍：$\dfrac{A}{B}-1$</li>
+<li>基期倍数：$\dfrac{A_1&#x2F;(1+r_1)}{A_2&#x2F;(1+r_2)}$</li>
+</ul>
+<p><strong>指数 · 拉动 · 贡献率</strong></p>
+<ul>
+<li>指数：$\dfrac{\text{现期值}}{\text{基期值}}\times100$</li>
+<li>拉动增长率：$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</li>
+<li>贡献率：$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</li>
+</ul>
+<p><strong>混合增长率</strong></p>
+<ul>
+<li>区间：$\min(r_1,r_2)&lt;r&lt;\max(r_1,r_2)$，且 $r$ 偏向 $B$ 大的一侧</li>
+<li>十字交叉：$(r-r_2):(r_1-r)&#x3D;B_1:B_2$</li>
+</ul>
+<hr>
+<h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><table>
+<thead>
+<tr>
+<th>记号</th>
+<th>含义</th>
+<th>记号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$A$</td>
+<td>现期量</td>
+<td>$B$</td>
+<td>基期量</td>
+</tr>
+<tr>
+<td>$\Delta$</td>
+<td>增长量</td>
+<td>$r$</td>
+<td>增长率</td>
+</tr>
+<tr>
+<td>$r_{\text{部}}$、$r_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的增长率</td>
+<td>$A_{\text{部}}$、$A_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的现期量</td>
+</tr>
+<tr>
+<td>$n$</td>
+<td>间隔年数</td>
+<td>$\bar r$</td>
+<td>年均增长率</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="一、增长率与增长量"><a href="#一、增长率与增长量" class="headerlink" title="一、增长率与增长量"></a>一、增长率与增长量</h2><p>$$r&#x3D;\frac{A-B}{B}\times100% \qquad \Delta&#x3D;A-B&#x3D;Br&#x3D;\frac{Ar}{1+r}$$</p>
+<p><strong>例</strong> 2025 年 GDP 1200 亿元、2024 年 1000 亿元：$\Delta&#x3D;200$，$r&#x3D;20%$。</p>
+<p><strong>例</strong> 现期 660 万元、同比 $r&#x3D;10%$：$B&#x3D;\dfrac{660}{1.1}&#x3D;600$，$\Delta&#x3D;660-600&#x3D;60$（或 $\Delta&#x3D;\dfrac{660\times0.1}{1.1}&#x3D;60$，两式互验）。</p>
+<p><strong>例</strong> 增长量 30 万台、$r&#x3D;10%$：$B&#x3D;\dfrac{30}{0.1}&#x3D;300$，$A&#x3D;330$。</p>
+<blockquote>
+<p>增长量比较：$A_1\approx A_2$ 时看 $r$，$r$ 大者增量大；$r_1\approx r_2$ 时看 $A$，$A$ 大者增量大。</p>
+</blockquote>
+<hr>
+<h2 id="二、基期量（含隔年、年均）"><a href="#二、基期量（含隔年、年均）" class="headerlink" title="二、基期量（含隔年、年均）"></a>二、基期量（含隔年、年均）</h2><p>$$B&#x3D;\frac{A}{1+r} \qquad B_1-B_2&#x3D;\frac{A_1}{1+r_1}-\frac{A_2}{1+r_2}$$</p>
+<p><strong>例</strong> 收入 8400 元、$r&#x3D;20%$：$B&#x3D;\dfrac{8400}{1.2}&#x3D;7000$ 元。</p>
+<p><strong>例</strong> 两地 840 亿（$+20%$）与 550 亿（$+10%$）：基期 $700$ 与 $500$，差 $200$ 亿元。</p>
+<p><strong>隔年</strong>：</p>
+<p>$$r_{\text{隔}}&#x3D;r_1+r_2+r_1r_2 \qquad B&#x3D;\frac{A}{(1+r_1)(1+r_2)}&#x3D;\frac{A}{1+r_{\text{隔}}}$$</p>
+<p><strong>例</strong> $r_1&#x3D;10%$、$r_2&#x3D;20%$，2025 年 660 亿：$r_{\text{隔}}&#x3D;0.1+0.2+0.02&#x3D;32%$，2023 年 $&#x3D;\dfrac{660}{1.32}&#x3D;500$ 亿元。<br>验算：$500\times1.1\times1.2&#x3D;660$。</p>
+<p><strong>年均</strong>：</p>
+<p>$$\text{年均增长量}&#x3D;\frac{A-B}{n} \qquad \bar r&#x3D;\sqrt[n]{\frac{A}{B}}-1$$</p>
+<p><strong>例</strong> 2020 年 200 亿、2025 年 320 亿（$n&#x3D;5$）：年均增长量 $&#x3D;\dfrac{120}{5}&#x3D;24$ 亿元；$\bar r&#x3D;\sqrt[5]{1.6}-1\approx9.9%$。</p>
+<blockquote>
+<p>$n$ 是<strong>间隔年数</strong>：2020→2025 是 $n&#x3D;5$，不是 6。</p>
+</blockquote>
+<hr>
+<h2 id="三、比重"><a href="#三、比重" class="headerlink" title="三、比重"></a>三、比重</h2><p>$$\text{比重}&#x3D;\frac{\text{部分}}{\text{整体}}\times100% \qquad \text{基期比重}&#x3D;\text{现期比重}\times\frac{1+r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> 第三产业 3000 亿（$r_{\text{部}}&#x3D;20%$）、GDP 6000 亿（$r_{\text{整}}&#x3D;10%$）：现期比重 $50%$；<br>基期比重 $&#x3D;\dfrac{3000&#x2F;1.2}{6000&#x2F;1.1}&#x3D;\dfrac{2500}{5454.5}\approx45.8%$，<br>或 $50%\times\dfrac{1.1}{1.2}\approx45.8%$（两式一致）。</p>
+<p><strong>比重变化</strong>：</p>
+<p>$$\text{变化}&#x3D;\text{现期比重}-\text{基期比重}\approx\text{现期比重}\times\frac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> $50%-45.8%&#x3D;+4.2$ 个百分点；近似式 $50%\times\dfrac{0.2-0.1}{1.2}&#x3D;4.17$ 个百分点。</p>
+<p><strong>升降判断</strong>：</p>
+<p>$$r_{\text{部}}&gt;r_{\text{整}}\Rightarrow\text{上升} \qquad r_{\text{部}}&lt;r_{\text{整}}\Rightarrow\text{下降}$$</p>
+<p><strong>例</strong> $20%&gt;10%$，占比<strong>上升</strong>，无需算数值。</p>
+<blockquote>
+<p>单位：比重的变化叫「百分点」，不是「增长 4.2%」。</p>
+</blockquote>
+<hr>
+<h2 id="四、平均数"><a href="#四、平均数" class="headerlink" title="四、平均数"></a>四、平均数</h2><p>$$\text{平均数}&#x3D;\frac{\text{总量}}{\text{份数}} \qquad \text{平均数增长率}&#x3D;\frac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$$</p>
+<p><strong>例</strong> 总产 1200 万吨、面积 200 万亩：平均亩产 $6$ 吨。</p>
+<p><strong>例</strong> $r_{\text{总}}&#x3D;20%$、$r_{\text{份}}&#x3D;10%$：平均数增长率 $&#x3D;\dfrac{1.2}{1.1}-1\approx9.1%$。<br>（分子涨得比分母快 ⇒ 平均数上升）</p>
+<p><strong>基期平均数</strong>：</p>
+<p>$$\text{基期平均数}&#x3D;\text{现期平均数}\times\frac{1+r_{\text{份}}}{1+r_{\text{总}}}$$</p>
+<p><strong>例</strong> 现期 $6$ 吨&#x2F;亩、$r_{\text{总}}&#x3D;20%$、$r_{\text{份}}&#x3D;10%$：基期 $&#x3D;6\times\dfrac{1.1}{1.2}&#x3D;5.5$ 吨&#x2F;亩；增长量 $0.5$ 吨&#x2F;亩。</p>
+<blockquote>
+<p><strong>平均数增长率</strong>（%）与<strong>平均数增长量</strong>（带单位）是两个问题，别混。</p>
+</blockquote>
+<hr>
+<h2 id="五、倍数与比值"><a href="#五、倍数与比值" class="headerlink" title="五、倍数与比值"></a>五、倍数与比值</h2><p>$$\text{是几倍}&#x3D;\frac{A}{B} \qquad \text{多几倍}&#x3D;\frac{A}{B}-1 \qquad \text{基期倍数}&#x3D;\frac{A_1&#x2F;(1+r_1)}{A_2&#x2F;(1+r_2)}$$</p>
+<p><strong>例</strong> 甲 300 万、乙 120 万：甲是乙的 $2.5$ 倍，即<strong>多 1.5 倍</strong>。</p>
+<p><strong>例</strong> 甲 300 万（$+25%$）、乙 120 万（$+20%$）：基期倍数 $&#x3D;\dfrac{240}{100}&#x3D;2.4$ 倍。</p>
+<hr>
+<h2 id="六、指数、拉动增长与贡献率"><a href="#六、指数、拉动增长与贡献率" class="headerlink" title="六、指数、拉动增长与贡献率"></a>六、指数、拉动增长与贡献率</h2><p>$$\text{指数}&#x3D;\frac{\text{现期值}}{\text{基期值}}\times100$$</p>
+<p><strong>例</strong> 基期指数 100，现期 150：是基期的 $1.5$ 倍，即 $+50%$。</p>
+<p>$$\text{拉动增长率}&#x3D;\frac{\text{部分增长量}}{\text{整体基期量}} \qquad \text{贡献率}&#x3D;\frac{\text{部分增长量}}{\text{整体增长量}}$$</p>
+<p><strong>例</strong> GDP 基期 1000 亿、某产业增长 30 亿：拉动 $\dfrac{30}{1000}&#x3D;3$ 个百分点。</p>
+<p><strong>例</strong> GDP 增长 40 亿、某产业增长 30 亿：贡献率 $\dfrac{30}{40}&#x3D;75%$。</p>
+<blockquote>
+<p>分母不同：拉动除以「整体<strong>基期量</strong>」，贡献率除以「整体<strong>增长量</strong>」。</p>
+</blockquote>
+<hr>
+<h2 id="七、混合增长率（十字交叉）"><a href="#七、混合增长率（十字交叉）" class="headerlink" title="七、混合增长率（十字交叉）"></a>七、混合增长率（十字交叉）</h2><p>$$\min(r_1,r_2)&lt;r&lt;\max(r_1,r_2)$$</p>
+<p>$$r&#x3D;\frac{B_1r_1+B_2r_2}{B_1+B_2} \qquad (r-r_2):(r_1-r)&#x3D;B_1:B_2$$</p>
+<p><strong>例</strong> $B_1&#x3D;300$、$r_1&#x3D;10%$；$B_2&#x3D;100$、$r_2&#x3D;30%$：$r&#x3D;\dfrac{300\times10%+100\times30%}{400}&#x3D;15%$，<br>落在 $10%\sim30%$ 之间且偏向 $10%$（$B_1$ 更大）。<br>十字交叉：$(15-30):(10-15)&#x3D;3:1$，与 $300:100$ 吻合。</p>
+<hr>
+<h2 id="八、速算"><a href="#八、速算" class="headerlink" title="八、速算"></a>八、速算</h2><table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>做法</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>截位直除</td>
+<td>分子分母各留 3 位</td>
+<td>$\dfrac{8347}{2361}\approx\dfrac{8350}{2360}\approx3.54$</td>
+</tr>
+<tr>
+<td>特征数字</td>
+<td>百分数换分数</td>
+<td>$14.3%\approx\dfrac{1}{7}$、$11.1%\approx\dfrac{1}{9}$、$16.7%\approx\dfrac{1}{6}$</td>
+</tr>
+<tr>
+<td>化同</td>
+<td>分母凑近再比</td>
+<td>$\dfrac{8347}{2361}$ vs $\dfrac{8547}{2401}$：后者 3.560 更大</td>
+</tr>
+<tr>
+<td>拆分</td>
+<td>整数 + 小数</td>
+<td>$1234\times1.23\approx1234+284&#x3D;1518$</td>
+</tr>
+<tr>
+<td>尾数法</td>
+<td>加减只看末位</td>
+<td>末位 $7+1&#x3D;8$ 直接排选项</td>
+</tr>
+<tr>
+<td>首数法</td>
+<td>除法先定首位</td>
+<td>$\dfrac{8347}{2361}$ 首位 3</td>
+</tr>
+<tr>
+<td>放缩</td>
+<td>定上下界</td>
+<td>$2361\times3.5&#x3D;8263.5&lt;8347\Rightarrow$ 大于 3.5</td>
+</tr>
+</tbody></table>
+<p><strong>分数速记</strong></p>
+<table>
+<thead>
+<tr>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1&#x2F;6$</td>
+<td>16.7%</td>
+<td>$1&#x2F;7$</td>
+<td>14.3%</td>
+<td>$1&#x2F;8$</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>$1&#x2F;9$</td>
+<td>11.1%</td>
+<td>$1&#x2F;11$</td>
+<td>9.1%</td>
+<td>$1&#x2F;12$</td>
+<td>8.3%</td>
+</tr>
+<tr>
+<td>$1&#x2F;13$</td>
+<td>7.7%</td>
+<td>$1&#x2F;14$</td>
+<td>7.1%</td>
+<td>$1&#x2F;15$</td>
+<td>6.7%</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="附：问法-→-公式"><a href="#附：问法-→-公式" class="headerlink" title="附：问法 → 公式"></a>附：问法 → 公式</h2><table>
+<thead>
+<tr>
+<th>问法</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增长了百分之几</td>
+<td>$r&#x3D;\dfrac{A-B}{B}$</td>
+</tr>
+<tr>
+<td>增长了多少（带单位）</td>
+<td>$\Delta&#x3D;\dfrac{Ar}{1+r}$</td>
+</tr>
+<tr>
+<td>上年是多少</td>
+<td>$B&#x3D;\dfrac{A}{1+r}$</td>
+</tr>
+<tr>
+<td>占比 &#x2F; 比重</td>
+<td>$\dfrac{\text{部分}}{\text{整体}}$</td>
+</tr>
+<tr>
+<td>比重升降及幅度</td>
+<td>比较 $r_{\text{部}}$ 与 $r_{\text{整}}$，再算百分点</td>
+</tr>
+<tr>
+<td>平均每亩 &#x2F; 人均</td>
+<td>$\dfrac{\text{总量}}{\text{份数}}$</td>
+</tr>
+<tr>
+<td>平均数增长百分之几</td>
+<td>$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</td>
+</tr>
+<tr>
+<td>是几倍 &#x2F; 多几倍</td>
+<td>$\dfrac{A}{B}$ &#x2F; $\dfrac{A}{B}-1$</td>
+</tr>
+<tr>
+<td>年均增速</td>
+<td>$\sqrt[n]{\dfrac{A}{B}}-1$</td>
+</tr>
+<tr>
+<td>拉动几个百分点</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</td>
+</tr>
+<tr>
+<td>贡献率</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</td>
+</tr>
+</tbody></table>
+<h2 id="坑（六条）"><a href="#坑（六条）" class="headerlink" title="坑（六条）"></a>坑（六条）</h2><ol>
+<li><strong>百分点 vs %</strong>：比重&#x2F;占比&#x2F;拉动&#x2F;贡献率的<strong>变化</strong>用「百分点」；增速变化才用「%」。</li>
+<li><strong>是几倍 vs 多几倍</strong>：$2.5$ 倍 &#x3D; 多 $1.5$ 倍。</li>
+<li><strong>同比 vs 环比</strong>：同比对去年同期，环比对上一期。</li>
+<li><strong>累计 vs 单月</strong>：单月 $&#x3D;$ 本期累计 $-$ 上期累计。</li>
+<li><strong>单位</strong>：亿元&#x2F;万元、万人&#x2F;人，选项常在此设套，算完先看量级。</li>
+<li><strong>增长到 vs 增长了</strong>：增长到 $&#x3D;A$；增长了 $&#x3D;\Delta$。</li>
+</ol>
+<hr>
+<blockquote>
+<p>公式按通用考纲口径整理，例题数值均可自行验算；与某机构讲义表述不同时，以公式与真题为准。<br>检索来源：华图《常用速算方法》<a href="https://www.huatu.com/2025/0529/2817027.html">https://www.huatu.com/2025/0529/2817027.html</a>、中公《增长率其实不简单》<a href="http://m.offcn.com/gwy/2020/1103/69374.html">http://m.offcn.com/gwy/2020/1103/69374.html</a>、华图《增长贡献率》<a href="https://www.huatu.com/2021/1126/2335363.html">https://www.huatu.com/2021/1126/2335363.html</a>。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>前缀和数组算法</title>
+    <url>/notes/computer/algorithms/balanced-matrix-prefix-sum/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">题解 · 计算机 / 算法 · 2025-06-23</div>
+
+<h1 id="前缀和数组算法"><a href="#前缀和数组算法" class="headerlink" title="前缀和数组算法#"></a>前缀和数组算法#</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>小美的平衡矩阵<br>小美拿到了一个<br>n∗n的矩阵，其中每个元素是 0 或者 1。<br>小美认为一个矩形区域是完美的，当且仅当该区域内 0 的数量恰好等于 1 的数量。<br>现在，小美希望你回答有多少个i∗i的完美矩形区域。你需要回答1≤i≤n的所有答案。</p>
+<p>分析：<br>这里的元素是特殊的，只有0和1，所以n（0）&#x3D;n（1）实际上可以是计数n（1）&#x3D;n&#x2F;2。<br>即，要求矩阵内数字之和为矩阵大小的一半。<br>因此，需要多次求出小矩阵之和，即部分和–&gt;前缀和算法是求部分和的经典算法。</p>
+<p>特殊：<br>这里不是一维数组而是二维数组，不能直接进行做差求和，需要进行特殊处理。（算法的核心）</p>
+<h2 id="输入-出示例"><a href="#输入-出示例" class="headerlink" title="输入&#x2F;出示例"></a>输入&#x2F;出示例</h2><p>输入例子:<br>4<br>1010<br>0101<br>1100<br>0011<br>输出例子：<br>0<br>7<br>0<br>1</p>
+<h2 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">count</span><span class="params">(<span class="type">const</span> vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; prefix_sum, <span class="type">int</span> n, <span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> N = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> a_sq = a * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt;= n - a; x++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> y = <span class="number">0</span>; y &lt;= n - a; y++) &#123;</span><br><span class="line">            <span class="type">int</span> x_end = x + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> y_end = y + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> total_ones;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x_end][y<span class="number">-1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end] - prefix_sum[x_end][y<span class="number">-1</span>] + prefix_sum[x<span class="number">-1</span>][y<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (total_ones * <span class="number">2</span> == a_sq) &#123;</span><br><span class="line">                N++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> N;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">grid</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; grid[i];</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix_sum</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            prefix_sum[i][j] = (grid[i][j] == <span class="string">&#x27;1&#x27;</span>) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span> (j &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i][j<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) prefix_sum[i][j] -= prefix_sum[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> a = <span class="number">1</span>; a &lt;= n; a++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="built_in">count</span>(prefix_sum, n, a) &lt;&lt; endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>逻辑梳理：</p>
+<ol>
+<li>读入大矩阵，初始化前缀和数组prefix_sum</li>
+<li>遍历大矩阵，计算完美矩形区域的数量</li>
+<li>输出结果</li>
+</ol>
+<h3 id="核心算法"><a href="#核心算法" class="headerlink" title="核心算法"></a>核心算法</h3><ol>
+<li>初始化计算前缀和数组prefix_sum</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix_sum</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        prefix_sum[i][j] = (grid[i][j] == <span class="string">&#x27;1&#x27;</span>) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i<span class="number">-1</span>][j];</span><br><span class="line">        <span class="keyword">if</span> (j &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i][j<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) prefix_sum[i][j] -= prefix_sum[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键在于这3个if语句：</p>
+<ul>
+<li>prefix_sum[i][j] &#x3D; (grid[i][j] &#x3D;&#x3D; ‘1’) ? 1 : 0;<br>前缀和算法下，这里应当是置入原始数据，但是由于只有0，1两种数，可以直接使用三目运算符赋值0，1.（增强了代码的性能、可读性，但是放弃了拓展性、一般性）</li>
+</ul>
+<ol>
+<li><p>if (i &gt; 0) prefix_sum[i][j] +&#x3D; prefix_sum[i-1][j];<br>这里是边界情况，即第一行元素的前缀和，只需要和前一个前缀和相加</p>
+</li>
+<li><p>if (j &gt; 0) prefix_sum[i][j] +&#x3D; prefix_sum[i][j-1];<br>同理，这里是第一列元素的前缀和，只需要和上一个前缀和相加</p>
+</li>
+<li><p>if (i &gt; 0 &amp;&amp; j &gt; 0) prefix_sum[i][j] -&#x3D; prefix_sum[i-1][j-1];<br>这里是非边界情况，即非第一行非第一列元素的前缀和，这里也用到了前两个if语句的结果，是对加上了前一个前缀和和上一个前缀和之后的结果进行处理。<br>处理方式：由于既加了上一个前缀和又加了前一个前缀和，索引左上的前缀和重复了，所以需要减去左上角的前缀和。</p>
+</li>
+</ol>
+<p>形象化解释：（斜体为标记）<br>假设矩阵为：</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>1.if: sum[1][1]+&#x3D;sum[0][y];</p>
+<p>1 <em>0</em> 1 0</p>
+<p>0 <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>2.if: sum[1][1]+&#x3D;sum[1][0]+1;</p>
+<p>1 0 1 0</p>
+<p><em>0</em> <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>3.if: sum[x][y]-&#x3D;sum[x-1][y-1];</p>
+<p><em>1</em> 0 1 0</p>
+<p>0 <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>2.遍历大矩阵，计算完美矩形区域的数量</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">count</span><span class="params">(<span class="type">const</span> vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; prefix_sum, <span class="type">int</span> n, <span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> N = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> a_sq = a * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt;= n - a; x++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> y = <span class="number">0</span>; y &lt;= n - a; y++) &#123;</span><br><span class="line">            <span class="type">int</span> x_end = x + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> y_end = y + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> total_ones;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x_end][y<span class="number">-1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end] - prefix_sum[x_end][y<span class="number">-1</span>] + prefix_sum[x<span class="number">-1</span>][y<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (total_ones * <span class="number">2</span> == a_sq) &#123;</span><br><span class="line">                N++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，前两个if是边界情况，第三个if是一般情况，加减逻辑与初始化逻辑基本一致。（初始化时时加法，这里是减法）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>TCP 为什么必须三次握手</title>
+    <url>/notes/computer/network/tcp-three-way-handshake/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">概念卡 · 计算机 / 网络 · 2026-10-16</div>
+
+<h2 id="一句话结论"><a href="#一句话结论" class="headerlink" title="一句话结论"></a>一句话结论</h2><p>三次握手的本质不是”确认连接存在”，而是<strong>把两个方向上的收发能力各验证一遍</strong>，顺带交换双方的初始序列号（ISN）。</p>
+<h2 id="三次分别在做什么"><a href="#三次分别在做什么" class="headerlink" title="三次分别在做什么"></a>三次分别在做什么</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>报文</th>
+<th>此后被确认的能力</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>客户端 → 服务端：<code>SYN, seq=x</code></td>
+<td>服务端知道：客户端能发</td>
+</tr>
+<tr>
+<td>2</td>
+<td>服务端 → 客户端：<code>SYN+ACK, seq=y, ack=x+1</code></td>
+<td>客户端知道：服务端能收、也能发</td>
+</tr>
+<tr>
+<td>3</td>
+<td>客户端 → 服务端：<code>ACK, ack=y+1</code></td>
+<td>服务端知道：自己发的包客户端收到了</td>
+</tr>
+</tbody></table>
+<p>关键是第三次。只有那个 ACK 回来了，服务端才有把握说”我发出去的东西对方收得到”。</p>
+<h2 id="为什么必须验证双向"><a href="#为什么必须验证双向" class="headerlink" title="为什么必须验证双向"></a>为什么必须验证双向</h2><p>TCP 是全双工的，两个方向各自独立维护序列号与窗口。如果只握两次，服务端在自己发送链路不通的情况下也会开始发数据，结果就是白白重传。</p>
+<h2 id="常见追问"><a href="#常见追问" class="headerlink" title="常见追问"></a>常见追问</h2><ul>
+<li><strong>两次行不行？</strong> 连接能建起来，但服务端对自己的发送能力没有证据，不满足 TCP 对可靠性的要求。</li>
+<li><strong>为什么不是四次？</strong> 第二次把 <code>SYN</code> 和 <code>ACK</code> 合并了——服务端声明自己的 ISN 时，可以顺带确认对方的。</li>
+<li><strong>SYN 洪泛攻击</strong>：攻击者只发第一步、不完成第三步，把服务端的半连接队列占满。这正是”三次”这个设计的被攻击面。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>同一个会话挂在 QQ 和网页两端，会发生什么</title>
+    <url>/notes/computer/pitfalls/dsh-im-dual-client-desync/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">踩坑记录 · 计算机 / 踩坑 · 2026-10-17</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><p>三件事同时发生，看起来像三个 bug，其实是同一个：</p>
+<ol>
+<li><strong>选项框弹不出来</strong>：在网页端让我「选一个方案」，界面一直显示「思考中」，<br>等了七八分钟，最后只收到一句 <code>Error: [object Object]</code>。</li>
+<li><strong>文件只到一半</strong>：我写到临时目录的排查脚本，<strong>QQ 里自动收到了一份</strong>，<br>网页端却什么都没有。</li>
+<li><strong>消息变两份</strong>：同一句话在聊天里重复出现，或者网页这边刚发的内容「被顶掉了」。</li>
+</ol>
+<h2 id="现场（从日志读出来的时间线）"><a href="#现场（从日志读出来的时间线）" class="headerlink" title="现场（从日志读出来的时间线）"></a>现场（从日志读出来的时间线）</h2><table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>发生了什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>15:16:56</td>
+<td>我发出的选项提问被投递到 QQ（长度 438）→ 会话进入等待，<strong>网页端没有任何提示</strong></td>
+</tr>
+<tr>
+<td>15:24:08</td>
+<td>在网页端又发了一条消息 → 当前回合被中断（<code>aborted</code>）</td>
+</tr>
+<tr>
+<td>15:24:08.811</td>
+<td>同一秒，工具结果写进转录：<code>Error: [object Object]</code></td>
+</tr>
+<tr>
+<td>15:24:09</td>
+<td>新回合照常开始，交流继续</td>
+</tr>
+</tbody></table>
+<p>所以它<strong>不会永久卡死</strong>，但会白等一次、并且丢掉真正的失败原因。</p>
+<h2 id="根因：三层叠在一起"><a href="#根因：三层叠在一起" class="headerlink" title="根因：三层叠在一起"></a>根因：三层叠在一起</h2><h3 id="1-会话身份是「IM-会话」，提问通道被机器人接管"><a href="#1-会话身份是「IM-会话」，提问通道被机器人接管" class="headerlink" title="1. 会话身份是「IM 会话」，提问通道被机器人接管"></a>1. 会话身份是「IM 会话」，提问通道被机器人接管</h3><p>这个会话的 ID 形如 <code>im:qq_...</code>，从创建那一刻起，<br>IM 插件（<code>@michengai/dsh-im-connect</code>）就在启动日志里写明了<br>「已接管 userQuestions service 的 IM 会话」。</p>
+<p>后果：<strong>提问只会被投递到 QQ</strong>，网页界面永远不会弹出选项控件；<br>而提问工具的旧模式<strong>没有超时</strong>——于是网页这边等用户、用户那边在等网页，双方互等。</p>
+<h3 id="2-运行中从另一端发消息-排队-顶掉-中断"><a href="#2-运行中从另一端发消息-排队-顶掉-中断" class="headerlink" title="2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断"></a>2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断</h3><p>回合运行期间，另一端发来的消息不会「插进去」：</p>
+<ul>
+<li>默认当作排队消息，等当前这轮结束再处理；</li>
+<li>网页端再发一条，会把前一条<strong>顶掉</strong>（<code>splice target=next-step</code>），<br>并<strong>中断当前步骤</strong>。</li>
+</ul>
+<p>中断信号在插件里是<strong>裸对象</strong>直接抛出的（<code>signal.reason</code>，一个普通对象，<br>既不是 <code>Error</code>，也没有 <code>message</code> 字段）。框架的错误渲染只认 <code>Error.message</code>，<br>其余一律 <code>String(obj)</code> → 于是屏幕上只剩 <code>[object Object]</code>，真实原因被吃掉。</p>
+<p>日志里还反复出现「助手消息为空」「忽略重复助手消息」，<br>说明网关侧另有一轮重复注入的噪音——这就是消息变两份的来源。</p>
+<h3 id="3-文件推送是单通道行为"><a href="#3-文件推送是单通道行为" class="headerlink" title="3. 文件推送是单通道行为"></a>3. 文件推送是单通道行为</h3><p>插件在<strong>回合结束时</strong>，会把 <code>write</code> &#x2F; <code>edit</code> 写出的文件自动推送到 IM 聊天，<br>而且<strong>不过滤路径与类型</strong>——临时目录里的草稿脚本照样推。<br>网页端只在显式「呈现」时出附件卡片，不会自动同步。</p>
+<h2 id="处置与规避"><a href="#处置与规避" class="headerlink" title="处置与规避"></a>处置与规避</h2><ul>
+<li><strong>最省事的规矩：同一个会话不要同时挂在两个客户端上。</strong><br>这不是「多端同步」，而是<strong>竞态</strong>——谁在什么时候拥有控制权，插件没有统一仲裁。</li>
+<li>电脑上干活时就把 QQ 那条会话放一边；要用 QQ 就只用 QQ。</li>
+<li>临时脚本改用命令行内联写入，别用会触发文件推送的写文件方式。</li>
+<li>已经卡住了：在 QQ 里直接回文字或数字作答（<strong>提问挂起期间，该会话任何不以 <code>/</code> 开头的文字都会被当成答案</strong>，<br>不会变成新任务），或者发 <code>/stop</code> 跳出。</li>
+</ul>
+<h2 id="QQ-侧的手动闸门（功能一直有）"><a href="#QQ-侧的手动闸门（功能一直有）" class="headerlink" title="QQ 侧的手动闸门（功能一直有）"></a>QQ 侧的手动闸门（功能一直有）</h2><p>在 QQ 私聊里直接发这些命令即可，<strong>不需要改任何配置</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/stop</code></td>
+<td><strong>真正中断当前运行</strong>，排队消息保留，停下后直接发消息即可续聊</td>
+</tr>
+<tr>
+<td><code>/steer 补充要求</code></td>
+<td><strong>运行中插入补充指令</strong>，边跑边改需求，不打断本轮</td>
+</tr>
+<tr>
+<td><code>/status</code></td>
+<td>查看运行中 &#x2F; 空闲（会附带一个「停止任务」按钮）</td>
+</tr>
+<tr>
+<td><code>/queue</code></td>
+<td>查看排队消息；可 <code>remove</code> &#x2F; <code>edit</code> &#x2F; <code>steer &lt;消息ID&gt;</code>（把排队消息转成补充指令）</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>全部命令</td>
+</tr>
+</tbody></table>
+<p>其余常用：<code>/new</code>（<code>/clear</code>）新开会话、<code>/sessions</code> 接续旧会话、<code>/history</code> 最近记录、<br><code>/model</code> <code>/reasoning</code> <code>/presets</code> 查看与切换模型、推理等级、Agent 预设、<br><code>/fork</code> 分叉、<code>/rename</code> 改名、<code>/delivery</code> 交付记录、<code>/unbind</code> <code>/mute</code> 解除绑定与静音。</p>
+<h2 id="教训"><a href="#教训" class="headerlink" title="教训"></a>教训</h2><ol>
+<li><strong>「多端在线」不等于「多端同步」</strong>：一个会话同时被两个客户端操作时，<br>消息去哪、谁有控制权、失败算谁的，都需要明确的仲裁规则；没有规则就是竞态。</li>
+<li><strong>别只信界面上的错误文本</strong>：<code>String(非 Error 对象)</code> 会把真因压成 <code>[object Object]</code>。<br>遇到这种没有信息量的报错，要去翻<strong>原始转录与网关日志</strong>，那里才有完整的中断原因。</li>
+<li><strong>自动推送类的功能要看它推什么、推给谁</strong>：不过滤路径与类型的文件推送，<br>会把临时草稿也送到聊天窗口里。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Git 走代理与 GitHub 推送速查</title>
+    <url>/notes/computer/tools/git-proxy-cheatsheet/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 计算机 / 工具 · 2026-10-16</div>
+
+<h2 id="核心事实"><a href="#核心事实" class="headerlink" title="核心事实"></a>核心事实</h2><p><strong>git 命令行不读取操作系统的系统代理设置。</strong></p>
+<p>所以”浏览器能打开 GitHub，<code>git push</code> 却超时”是完全正常的现象——这两者走的是不同的通道。git 只认两个来源：</p>
+<ol>
+<li>git 自己的配置：<code>http.proxy</code> &#x2F; <code>https.proxy</code></li>
+<li>环境变量：<code>http_proxy</code> &#x2F; <code>https_proxy</code> &#x2F; <code>all_proxy</code></li>
+</ol>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<thead>
+<tr>
+<th>目的</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只给 github.com 配代理</td>
+<td><code>git config --global http.https://github.com/.proxy http://127.0.0.1:7892</code></td>
+</tr>
+<tr>
+<td>取消该配置</td>
+<td><code>git config --global --unset http.https://github.com/.proxy</code></td>
+</tr>
+<tr>
+<td>查看现有代理配置</td>
+<td><code>git config --global --get-regexp &quot;http\..*proxy&quot;</code></td>
+</tr>
+<tr>
+<td>仅本次生效</td>
+<td><code>git -c http.proxy=... &lt;子命令&gt;</code></td>
+</tr>
+<tr>
+<td>列出远端分支</td>
+<td><code>git ls-remote --heads origin</code></td>
+</tr>
+<tr>
+<td>查看当前代理环境变量</td>
+<td><code>env | grep -i proxy</code></td>
+</tr>
+</tbody></table>
+<h2 id="排查顺序"><a href="#排查顺序" class="headerlink" title="排查顺序"></a>排查顺序</h2><ol>
+<li><code>git config --global --get http.proxy</code>——输出为空，说明 git 在直连</li>
+<li>找本地代理端口：<code>netstat -ano | grep LISTENING | grep 127.0.0.1</code></li>
+<li>逐个验证端口：<code>curl -x http://127.0.0.1:端口 https://github.com</code>，返回 200 的那个就是</li>
+</ol>
+<h2 id="三个提醒"><a href="#三个提醒" class="headerlink" title="三个提醒"></a>三个提醒</h2><ul>
+<li>用 <code>http.https://github.com/.proxy</code> 而不是全局 <code>http.proxy</code>，可以把影响限制在 GitHub 一个域名上，不干扰其他仓库。</li>
+<li>VPN 关闭时这个配置会让 github.com <strong>完全连不上</strong>（不是变慢），需要临时 unset。</li>
+<li><code>hexo deploy</code> 内部是 spawn 一个 git 进程，<strong>没法用 <code>-c</code> 传参</strong>，只能靠全局配置或环境变量。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>VPN 明明开着，git push 却不动</title>
+    <url>/notes/computer/tools/github-push-behind-proxy/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">踩坑记录 · 计算机 / 工具 · 2026-10-16</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><ul>
+<li>VPN 开着，浏览器能正常打开 GitHub 网页</li>
+<li>终端里 <code>git push</code> 报 <code>Empty reply from server</code>，或者干脆连接超时</li>
+<li>隔一段时间重试，偶尔又能推成功一次</li>
+</ul>
+<h2 id="第一判断（只说对了一半）"><a href="#第一判断（只说对了一半）" class="headerlink" title="第一判断（只说对了一半）"></a>第一判断（只说对了一半）</h2><p>一开始怀疑是”GitHub 被间歇性封锁”。网络确实不稳——但这<strong>不是主因</strong>。真正让 git 完全推不动的原因在本地。</p>
+<h2 id="关键验证"><a href="#关键验证" class="headerlink" title="关键验证"></a>关键验证</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global --get http.proxy</span><br><span class="line">（输出为空）</span><br></pre></td></tr></table></figure>
+
+<p>空的。也就是说 <strong>git 从来没有走代理</strong>，一直在直连 github.com。</p>
+<p>原因：VPN 是<strong>系统代理模式</strong>——往 Windows 的 Internet 设置里写一个代理地址。浏览器会遵循这个设置，但<strong>终端程序不会自动遵循</strong>。</p>
+<h2 id="定位代理端口"><a href="#定位代理端口" class="headerlink" title="定位代理端口"></a>定位代理端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ netstat -ano | grep LISTENING | grep 127.0.0.1</span><br><span class="line">$ curl -x http://127.0.0.1:7892 https://github.com</span><br><span class="line">200</span><br></pre></td></tr></table></figure>
+
+<p>把所有监听的本地端口逐个当代理试一遍，只有一个返回 200，那就是代理端口。</p>
+<h2 id="结论与修法"><a href="#结论与修法" class="headerlink" title="结论与修法"></a>结论与修法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com/.proxy http://127.0.0.1:7892</span><br></pre></td></tr></table></figure>
+
+<p>配好之后 <code>git push</code> 与 <code>hexo deploy</code> 都能直接用，不用每次导环境变量。</p>
+<h2 id="还没踩完的坑"><a href="#还没踩完的坑" class="headerlink" title="还没踩完的坑"></a>还没踩完的坑</h2><ol>
+<li>代理端口跟着 VPN 客户端走，换版本或改设置都可能变——变了就重新探测一遍。</li>
+<li>VPN 关掉时，这个配置会让 github.com <strong>完全连不上</strong>，需要临时 unset。</li>
+<li>如果命令是在某个沙箱或容器里跑的，里面可能注入了<strong>另一套代理环境变量</strong>，它会干扰排查。先 <code>env | grep -i proxy</code> 看一眼再下结论。</li>
+</ol>
+]]></content>
+  </entry>
+  </search>
