@@ -175,12 +175,16 @@ function main() {
     .filter((rel) => (read(path.join(PUBLIC, rel)) || '').includes('MathJax'));
   check('不含公式的页面不加载 MathJax', mathFree.length === 0, mathFree.join(', ') || '（无）');
 
-  const firstMathHtml = mathNotes.length
-    ? (read(path.join(PUBLIC, routePath(mathNotes[0].url))) || '')
+  // 取一篇真正含 \frac 的笔记做探针：只抓「第一篇含公式的笔记」会随新增笔记而误判
+  const mathProbe = mathNotes.find((n) => String(n.body || '').includes('\\frac')) || mathNotes[0];
+  const mathProbeHtml = mathProbe
+    ? (read(path.join(PUBLIC, routePath(mathProbe.url))) || '')
     : '';
+  const mathProbeBody = String((mathProbe && mathProbe.body) || '');
   check('公式分隔符与 LaTeX 命令未被 markdown 吃掉',
-    firstMathHtml.includes('$') && firstMathHtml.includes('\\frac'),
-    mathNotes.length ? mathNotes[0].title : '没有含公式的笔记');
+    mathProbeHtml.includes('$')
+      && (!mathProbeBody.includes('\\frac') || mathProbeHtml.includes('\\frac')),
+    mathProbe ? mathProbe.title : '没有含公式的笔记');
 
   // 自托管 MathJax：国内浏览器打不开 jsdelivr，公式会退化成 $...$ 原文
   const localMathjax = path.join(PUBLIC, 'js', 'mathjax', 'tex-svg.js');
@@ -188,9 +192,9 @@ function main() {
   check('MathJax 已自托管且文件完整（>1.5 MB）', mathjaxBytes > 1.5 * 1024 * 1024,
     mathjaxBytes ? (mathjaxBytes / 1048576).toFixed(2) + ' MB' : '缺失 public/js/mathjax/tex-svg.js');
   check('公式页引用本地 MathJax，不依赖 CDN',
-    firstMathHtml.includes('/js/mathjax/tex-svg.js')
-      && !firstMathHtml.includes('cdn.jsdelivr.net/npm/mathjax'),
-    firstMathHtml.includes('/js/mathjax/tex-svg.js') ? '同源路径' : '仍指向 CDN');
+    mathProbeHtml.includes('/js/mathjax/tex-svg.js')
+      && !mathProbeHtml.includes('cdn.jsdelivr.net/npm/mathjax'),
+    mathProbeHtml.includes('/js/mathjax/tex-svg.js') ? '同源路径' : '仍指向 CDN');
 
   /* ---------- 汇总 ---------- */
   const failed = results.filter((r) => !r.ok);
