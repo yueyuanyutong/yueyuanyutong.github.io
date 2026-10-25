@@ -361,3 +361,23 @@
 .card-info .site-data {
   display: none;
 }
+
+/* ---------- 「公式排版中…」提示 ----------
+   MathJax 那 2 MB 脚本下完才能真正排版，这段时间正文里是 $...$ 原文。
+   scripts/mathjax-preload.js 在公式页注入这个提示，排版完成即移除（最多挂 20 秒）。 */
+.kb-math-tip {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--font-color);
+  background: var(--card-bg);
+  border: 1px solid rgba(128, 128, 128, 0.28);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
