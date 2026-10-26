@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>资料分析 · 分数表 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-28   见到百分数先来这里找分数。找到就直接乘分数，找不到再回骨架卡套线性修正。  0. 怎么用（三步） 看 $r$，在下表找最接近的分数 完全相等 → 直接乘：基期 $B&#x3D;A\times\dfrac{n}{n+p}$，增量 $\Delta&#x3D;A\div(n+p)$ 不等 → 记下差多少（$e$），回 骨架卡 做一次线性修正  表里 $p&#x2F;n$">
+<meta property="og:type" content="website">
+<meta property="og:title" content="资料分析 · 分数表">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/fraction-table/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-28   见到百分数先来这里找分数。找到就直接乘分数，找不到再回骨架卡套线性修正。  0. 怎么用（三步） 看 $r$，在下表找最接近的分数 完全相等 → 直接乘：基期 $B&#x3D;A\times\dfrac{n}{n+p}$，增量 $\Delta&#x3D;A\div(n+p)$ 不等 → 记下差多少（$e$），回 骨架卡 做一次线性修正  表里 $p&#x2F;n$">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.544Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/fraction-table/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '资料分析 · 分数表',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"><link rel="preload" as="script" href="/js/mathjax/tex-svg.js" fetchpriority="high"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">资料分析 · 分数表</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">资料分析 · 分数表</div><div class="container" id="article-container"><div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-28</div>
+
+<blockquote>
+<p>见到百分数先来这里找分数。找到就直接乘分数，找不到再回骨架卡套线性修正。</p>
+</blockquote>
+<h2 id="0-怎么用（三步）"><a href="#0-怎么用（三步）" class="headerlink" title="0. 怎么用（三步）"></a>0. 怎么用（三步）</h2><ol>
+<li>看 $r$，在下表找最接近的分数</li>
+<li>完全相等 → 直接乘：基期 $B=A\times\dfrac{n}{n+p}$，增量 $\Delta=A\div(n+p)$</li>
+<li>不等 → 记下差多少（$e$），回 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a> 做一次线性修正</li>
+</ol>
+<p>表里 $p/n$ 表示「$r=p/n$」，$n$ 是分母、$p$ 是分子。$1/n$ 那几行最常考，记住它们就够应付八成题。</p>
+<h2 id="1-主表（按-$r$-升序）"><a href="#1-主表（按-$r$-升序）" class="headerlink" title="1. 主表（按 $r$ 升序）"></a>1. 主表（按 $r$ 升序）</h2><table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>分数</th>
+<th>基期 $B$</th>
+<th>增量 $\Delta$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$4.00\%$</td>
+<td>$\dfrac{1}{25}$</td>
+<td>$A\times\dfrac{25}{26}$</td>
+<td>$A\div 26$</td>
+</tr>
+<tr>
+<td>$5.00\%$</td>
+<td>$\dfrac{1}{20}$</td>
+<td>$A\times\dfrac{20}{21}$</td>
+<td>$A\div 21$</td>
+</tr>
+<tr>
+<td>$5.26\%$</td>
+<td>$\dfrac{1}{19}$</td>
+<td>$A\times\dfrac{19}{20}$</td>
+<td>$A\div 20$</td>
+</tr>
+<tr>
+<td>$5.56\%$</td>
+<td>$\dfrac{1}{18}$</td>
+<td>$A\times\dfrac{18}{19}$</td>
+<td>$A\div 19$</td>
+</tr>
+<tr>
+<td>$5.88\%$</td>
+<td>$\dfrac{1}{17}$</td>
+<td>$A\times\dfrac{17}{18}$</td>
+<td>$A\div 18$</td>
+</tr>
+<tr>
+<td>$6.25\%$</td>
+<td>$\dfrac{1}{16}$</td>
+<td>$A\times\dfrac{16}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$6.67\%$</td>
+<td>$\dfrac{1}{15}$</td>
+<td>$A\times\dfrac{15}{16}$</td>
+<td>$A\div 16$</td>
+</tr>
+<tr>
+<td>$7.14\%$</td>
+<td>$\dfrac{1}{14}$</td>
+<td>$A\times\dfrac{14}{15}$</td>
+<td>$A\div 15$</td>
+</tr>
+<tr>
+<td>$7.69\%$</td>
+<td>$\dfrac{1}{13}$</td>
+<td>$A\times\dfrac{13}{14}$</td>
+<td>$A\div 14$</td>
+</tr>
+<tr>
+<td>$8.33\%$</td>
+<td>$\dfrac{1}{12}$</td>
+<td>$A\times\dfrac{12}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$9.09\%$</td>
+<td>$\dfrac{1}{11}$</td>
+<td>$A\times\dfrac{11}{12}$</td>
+<td>$A\div 12$</td>
+</tr>
+<tr>
+<td>$10.00\%$</td>
+<td>$\dfrac{1}{10}$</td>
+<td>$A\times\dfrac{10}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$11.11\%$</td>
+<td>$\dfrac{1}{9}$</td>
+<td>$A\times\dfrac{9}{10}$</td>
+<td>$A\div 10$</td>
+</tr>
+<tr>
+<td>$12.50\%$</td>
+<td>$\dfrac{1}{8}$</td>
+<td>$A\times\dfrac{8}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$14.29\%$</td>
+<td>$\dfrac{1}{7}$</td>
+<td>$A\times\dfrac{7}{8}$</td>
+<td>$A\div 8$</td>
+</tr>
+<tr>
+<td>$16.67\%$</td>
+<td>$\dfrac{1}{6}$</td>
+<td>$A\times\dfrac{6}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$20.00\%$</td>
+<td>$\dfrac{1}{5}$</td>
+<td>$A\times\dfrac{5}{6}$</td>
+<td>$A\div 6$</td>
+</tr>
+<tr>
+<td>$22.22\%$</td>
+<td>$\dfrac{2}{9}$</td>
+<td>$A\times\dfrac{9}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$25.00\%$</td>
+<td>$\dfrac{1}{4}$</td>
+<td>$A\times\dfrac{4}{5}$</td>
+<td>$A\div 5$</td>
+</tr>
+<tr>
+<td>$28.57\%$</td>
+<td>$\dfrac{2}{7}$</td>
+<td>$A\times\dfrac{7}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$30.00\%$</td>
+<td>$\dfrac{3}{10}$</td>
+<td>$A\times\dfrac{10}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$33.33\%$</td>
+<td>$\dfrac{1}{3}$</td>
+<td>$A\times\dfrac{3}{4}$</td>
+<td>$A\div 4$</td>
+</tr>
+<tr>
+<td>$37.50\%$</td>
+<td>$\dfrac{3}{8}$</td>
+<td>$A\times\dfrac{8}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$40.00\%$</td>
+<td>$\dfrac{2}{5}$</td>
+<td>$A\times\dfrac{5}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$42.86\%$</td>
+<td>$\dfrac{3}{7}$</td>
+<td>$A\times\dfrac{7}{10}$</td>
+<td>$A\div 10$</td>
+</tr>
+<tr>
+<td>$44.44\%$</td>
+<td>$\dfrac{4}{9}$</td>
+<td>$A\times\dfrac{9}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$50.00\%$</td>
+<td>$\dfrac{1}{2}$</td>
+<td>$A\times\dfrac{2}{3}$</td>
+<td>$A\div 3$</td>
+</tr>
+<tr>
+<td>$55.56\%$</td>
+<td>$\dfrac{5}{9}$</td>
+<td>$A\times\dfrac{9}{14}$</td>
+<td>$A\div 14$</td>
+</tr>
+<tr>
+<td>$57.14\%$</td>
+<td>$\dfrac{4}{7}$</td>
+<td>$A\times\dfrac{7}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$60.00\%$</td>
+<td>$\dfrac{3}{5}$</td>
+<td>$A\times\dfrac{5}{8}$</td>
+<td>$A\div 8$</td>
+</tr>
+<tr>
+<td>$62.50\%$</td>
+<td>$\dfrac{5}{8}$</td>
+<td>$A\times\dfrac{8}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$66.67\%$</td>
+<td>$\dfrac{2}{3}$</td>
+<td>$A\times\dfrac{3}{5}$</td>
+<td>$A\div 5$</td>
+</tr>
+<tr>
+<td>$70.00\%$</td>
+<td>$\dfrac{7}{10}$</td>
+<td>$A\times\dfrac{10}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$75.00\%$</td>
+<td>$\dfrac{3}{4}$</td>
+<td>$A\times\dfrac{4}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$80.00\%$</td>
+<td>$\dfrac{4}{5}$</td>
+<td>$A\times\dfrac{5}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$83.33\%$</td>
+<td>$\dfrac{5}{6}$</td>
+<td>$A\times\dfrac{6}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$85.71\%$</td>
+<td>$\dfrac{6}{7}$</td>
+<td>$A\times\dfrac{7}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$87.50\%$</td>
+<td>$\dfrac{7}{8}$</td>
+<td>$A\times\dfrac{8}{15}$</td>
+<td>$A\div 15$</td>
+</tr>
+<tr>
+<td>$88.89\%$</td>
+<td>$\dfrac{8}{9}$</td>
+<td>$A\times\dfrac{9}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$90.00\%$</td>
+<td>$\dfrac{9}{10}$</td>
+<td>$A\times\dfrac{10}{19}$</td>
+<td>$A\div 19$</td>
+</tr>
+</tbody></table>
+<h2 id="2-记忆锚点（先记这几组，覆盖最高频）"><a href="#2-记忆锚点（先记这几组，覆盖最高频）" class="headerlink" title="2. 记忆锚点（先记这几组，覆盖最高频）"></a>2. 记忆锚点（先记这几组，覆盖最高频）</h2><p><strong>五分之一族</strong>（$1/5,1/6,1/4,1/3,1/2$）：$20\%$、$16.7\%$、$25\%$、$33.3\%$、$50\%$。这五个先背死，考场上一半的增长率落在附近。</p>
+<p><strong>八分族</strong>：$\dfrac18=12.5\%$、$\dfrac38=37.5\%$、$\dfrac58=62.5\%$、$\dfrac78=87.5\%$。都是 $12.5$ 的整数倍，$12.5\to37.5\to62.5\to87.5$ 一路加，不用另记。</p>
+<p><strong>九分与十一分</strong>：$\dfrac19=11.1\%$、$\dfrac29=22.2\%$、$\dfrac{1}{11}=9.09\%$。循环小数，同分母的分子就是「$1.11$ 的整数倍」。</p>
+<p><strong>小尾巴</strong>（$1/12$ 到 $1/20$）：$8.3\%$、$7.7\%$、$7.1\%$、$6.7\%$、$6.3\%$、$5.9\%$、$5.6\%$、$5.3\%$、$5.0\%$。分母每大 1，百分数掉一点，按顺序记不按数值记。</p>
+<p><strong>两个常见非单位分数</strong>：$\dfrac23=66.7\%$、$\dfrac34=75\%$、$\dfrac45=80\%$。题目里给「增长 66.7%」时，$n=3$、$p=2$，增量分母是 $3+2=5$。</p>
+<h2 id="3-找不到时怎么办"><a href="#3-找不到时怎么办" class="headerlink" title="3. 找不到时怎么办"></a>3. 找不到时怎么办</h2><ul>
+<li>差一点 → 用骨架卡的线性修正，$e$ 越小越准，$e<2$ 个百分点基本不亏精度</li>
+<li>差很多 → 别硬凑分数，直接截位直除，分母截几位看选项</li>
+<li>永远不要为了凑分数把 $r$ 改掉好几个百分点，$r$ 越小，这种改动越致命</li>
+</ul>
+<h2 id="4-下降别用错分母"><a href="#4-下降别用错分母" class="headerlink" title="4. 下降别用错分母"></a>4. 下降别用错分母</h2><p>表里是<strong>增长</strong>的口径。若 $r$ 是下降率（现期 $A$、降幅 $d=1/n$）：</p>
+<p>$$B=\frac{A}{1-d}=A\times\frac{n}{n-1}$$</p>
+<p>分母是 $n-1$，不是 $n+1$。$\dfrac15$ 的下降对应 $A\times\dfrac54$，$\dfrac18$ 对应 $A\times\dfrac87$，别顺手抄成上面的系数。</p>
+<h2 id="5-与骨架卡的关系"><a href="#5-与骨架卡的关系" class="headerlink" title="5. 与骨架卡的关系"></a>5. 与骨架卡的关系</h2><p>这张表只解决「$r$ 恰好等于某个分数」。<strong>不恰好时的修正、选档、方向判断，全在 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a>。</strong> 表是查字用的，卡是拿主意用的。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/js/mathjax/tex-svg.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : document.addEventListener('DOMContentLoaded', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script>
+  (function () {
+    var box = document.getElementById('article-container');
+    if (!box || box.textContent.indexOf('</html>) < 0) return;
+    var tip = document.createElement('div');
+    tip.className = 'kb-math-tip';
+    tip.textContent = '公式排版中…';
+    document.body.appendChild(tip);
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      if (tip.parentNode) tip.parentNode.removeChild(tip);
+    }
+    function wait() {
+      var mj = window.MathJax;
+      if (mj && mj.startup && mj.startup.promise) {
+        mj.startup.promise.then(finish, finish);
+      } else if (mj && mj.typesetPromise) {
+        mj.typesetPromise().then(finish, finish);
+      } else {
+        setTimeout(wait, 150);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wait);
+    } else {
+      wait();
+    }
+    setTimeout(finish, 20000);
+  })();
+</script></body></html>

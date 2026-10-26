@@ -1,0 +1,591 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>资料分析速算 · 骨架卡 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-26  资料分析速算 · 骨架卡0. 这张卡怎么用 先看列式落到哪一格 —— 不是先看题型。 在这一格里挑档位：粗档（近似）→ 中档（修正）→ 精档（直除）。 无论哪一档，算完必须标方向（偏大还是偏小）。  题型只在两处出现：帮你回忆「这题大概会问什么」，以及提供该题型特有的坑。手法本身不重复。 配套两页：做题前（读材料、勾关键词、列式）、分数表">
+<meta property="og:type" content="website">
+<meta property="og:title" content="资料分析速算 · 骨架卡">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/shortcuts-skeleton/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-26  资料分析速算 · 骨架卡0. 这张卡怎么用 先看列式落到哪一格 —— 不是先看题型。 在这一格里挑档位：粗档（近似）→ 中档（修正）→ 精档（直除）。 无论哪一档，算完必须标方向（偏大还是偏小）。  题型只在两处出现：帮你回忆「这题大概会问什么」，以及提供该题型特有的坑。手法本身不重复。 配套两页：做题前（读材料、勾关键词、列式）、分数表">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.544Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/shortcuts-skeleton/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '资料分析速算 · 骨架卡',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"><link rel="preload" as="script" href="/js/mathjax/tex-svg.js" fetchpriority="high"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">资料分析速算 · 骨架卡</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">资料分析速算 · 骨架卡</div><div class="container" id="article-container"><div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-26</div>
+
+<h1 id="资料分析速算-·-骨架卡"><a href="#资料分析速算-·-骨架卡" class="headerlink" title="资料分析速算 · 骨架卡"></a>资料分析速算 · 骨架卡</h1><h2 id="0-这张卡怎么用"><a href="#0-这张卡怎么用" class="headerlink" title="0. 这张卡怎么用"></a>0. 这张卡怎么用</h2><ol>
+<li><strong>先看列式落到哪一格</strong> —— 不是先看题型。</li>
+<li>在这一格里挑档位：粗档（近似）→ 中档（修正）→ 精档（直除）。</li>
+<li>无论哪一档，<strong>算完必须标方向</strong>（偏大还是偏小）。</li>
+</ol>
+<p>题型只在两处出现：帮你回忆「这题大概会问什么」，以及提供该题型特有的坑。手法本身不重复。</p>
+<p>配套两页：<a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题前</a>（读材料、勾关键词、列式）、<a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>（$r$ 查到分数，直接乘）。</p>
+<h2 id="1-五类骨架"><a href="#1-五类骨架" class="headerlink" title="1. 五类骨架"></a>1. 五类骨架</h2><table>
+<thead>
+<tr>
+<th>骨架</th>
+<th>典型题型</th>
+<th>式子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>① 除以 $1\pm r$</td>
+<td>基期量、隔年基期、基期平均数、基期倍数</td>
+<td>$A/(1+r)$</td>
+</tr>
+<tr>
+<td>② 除以 $1\pm r$ 再乘 $r$</td>
+<td>增长量、增长贡献量、拉动增长</td>
+<td>$A\,r/(1+r)$</td>
+</tr>
+<tr>
+<td>③ 两个数之比</td>
+<td>比重、倍数、平均数、增速是否超过某值</td>
+<td>$A/B$</td>
+</tr>
+<tr>
+<td>④ 乘 $1\pm r$</td>
+<td>求增长后（现期）、求翻番后</td>
+<td>$A(1+r)$</td>
+</tr>
+<tr>
+<td>⑤ 比值再乘比值</td>
+<td>两期比重、两期比重差、平均数增长率</td>
+<td>$\dfrac{A}{B}\cdot\dfrac{1+r_2}{1+r_1}$</td>
+</tr>
+</tbody></table>
+<p><strong>⑤ 的前半截就是 ③，①②③④ 覆盖了绝大多数题。</strong> 遇到复合式子先拆成这五格，再决定用哪档。</p>
+<h2 id="2-骨架-①-$A/(1+r)$"><a href="#2-骨架-①-$A/(1+r)$" class="headerlink" title="2. 骨架 ① $A/(1+r)$"></a>2. 骨架 ① $A/(1+r)$</h2><table>
+<thead>
+<tr>
+<th>档位</th>
+<th>算式</th>
+<th>误差</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶</td>
+<td>$A(1-r)$</td>
+<td>$r^2$</td>
+<td>恒偏小</td>
+</tr>
+<tr>
+<td>二阶</td>
+<td>$A(1-r+r^2)$</td>
+<td>$r^3$</td>
+<td>$r>0$ 偏大</td>
+</tr>
+<tr>
+<td>百化分</td>
+<td>$r=1/n$ 时 $B=A\cdot\frac{n}{n+1}$</td>
+<td>0</td>
+<td>精确</td>
+</tr>
+<tr>
+<td>直除</td>
+<td>截分子、不截分母</td>
+<td>截 2 位 1<del>2%，最坏 4</del>5%；截 3 位约 $0.5\%$</td>
+<td>看截法</td>
+</tr>
+</tbody></table>
+<p>$r$ 为下降时写 $A/(1-d)$：一阶 $A(1+d)$、二阶 $A(1+d+d^2)$，两档<strong>都偏小</strong>，没有上界，双界法失效。</p>
+<p><strong>例（增长，$A=1250$、$r=8.4\%$，选项 1145 &#x2F; 1155 &#x2F; 1165 &#x2F; 1175）</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>结果</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶 $A(1-r)$</td>
+<td>$1145.00$</td>
+<td>正好落在第一个选项上 —— 这是出题人埋的坑</td>
+</tr>
+<tr>
+<td>二阶 $A(1-r+r^2)$</td>
+<td>$1153.82$</td>
+<td>真值 $1153.14$，选 1155</td>
+</tr>
+</tbody></table>
+<p><strong>例（下降，$A=932$、$d=7.2\%$）</strong>：一阶 $A(1+d)=999.10$（偏小 5.2）、二阶 $A(1+d+d^2)=1003.94$、真值 $1004.31$。二阶够用，一阶差了半个选项。</p>
+<h2 id="3-骨架-②-$A\,r/(1+r)$"><a href="#3-骨架-②-$A\,r/(1+r)$" class="headerlink" title="3. 骨架 ② $A\,r/(1+r)$"></a>3. 骨架 ② $A\,r/(1+r)$</h2><p>这是 ① 的孪生兄弟：<strong>$\Delta=A-\text{骨架①}$</strong>，一次除法同时得基期和增量，不要分两次算。</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>算式</th>
+<th>误差（相对）</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶</td>
+<td>$A\,r$</td>
+<td>$r$</td>
+<td>恒偏大</td>
+</tr>
+<tr>
+<td>二阶</td>
+<td>$A\,r(1-r)$</td>
+<td>$r^2$</td>
+<td>恒偏小</td>
+</tr>
+<tr>
+<td>百化分</td>
+<td>$r=1/n$ 时 $\Delta=A/(n+1)$</td>
+<td>0</td>
+<td>精确</td>
+</tr>
+<tr>
+<td>直除</td>
+<td>$A r\div(1+r)$</td>
+<td>同 ①</td>
+<td>看截法</td>
+</tr>
+</tbody></table>
+<p>三阶 $A\,r(1-r+r^2)$ 误差 $r^3$、偏大，一般用不上，但需要时照写。</p>
+<p><strong>例（给现期，$A=1786$、$r=13\%$，真值 $205.47$）</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>结果</th>
+<th>偏差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶 $A\,r$</td>
+<td>$232.18$</td>
+<td>偏大 $13\%$，选项贴边时直接废</td>
+</tr>
+<tr>
+<td>二阶 $A\,r(1-r)$</td>
+<td>$202.00$</td>
+<td>偏小 $1.7\%$，选项中距够大就选它</td>
+</tr>
+</tbody></table>
+<p><strong>例（给基期，$B=1847$、$r=16.7\%\approx 1/6$）</strong>：$\Delta=B/n=1847/6=307.8$，与精确 16.7% 的 308.5 只差 0.2%。<strong>给基期时 $r$ 就是乘数，不需要再除以 $1+r$。</strong></p>
+<h2 id="4-骨架-③-$A/B$"><a href="#4-骨架-③-$A/B$" class="headerlink" title="4. 骨架 ③ $A/B$"></a>4. 骨架 ③ $A/B$</h2><p><strong>这一格的误差来自除法本身，不来自「题型」。</strong> 手法按精度从粗到细：</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>手法</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>判定</td>
+<td>交叉相乘：判 $A/B>k$ 两边同乘正数</td>
+<td>只问超没超，零误差</td>
+</tr>
+<tr>
+<td>粗</td>
+<td>截位直除，分母留 2 位</td>
+<td>首位不同</td>
+</tr>
+<tr>
+<td>中</td>
+<td>截位直除，分母留 3 位</td>
+<td>第二位不同</td>
+</tr>
+<tr>
+<td>细</td>
+<td>差分法（两分数接近）、化同（分母凑同）</td>
+<td>比较大小、选项贴边</td>
+</tr>
+<tr>
+<td>精</td>
+<td>分母留 4 位</td>
+<td>前三位都要分</td>
+</tr>
+</tbody></table>
+<p>判「增长率超过 $a\%$」：$100\Delta>aB$。判「比重超过 $p\%$」：$100\times\text{部分}>\ p\times\text{整体}$。形式一样，分母含义不同 —— 这是本格最大的坑。</p>
+<p><strong>例（判定，零误差）</strong>：$43/387$ 是否超过 $12\%$？交叉乘 $100\times 43=4300<12\times 387=4644$，未超（实际 $11.11\%$）。<br><strong>例（判定）</strong>：某量从 $1010$ 涨到 $1120$，是否超过 $10\%$？判 $100A>110B$：$112000>111100$，超了（实际 $10.89\%$）。两个数都不必真除。</p>
+<h3 id="4-1-精档细则：分母截几位"><a href="#4-1-精档细则：分母截几位" class="headerlink" title="4.1 精档细则：分母截几位"></a>4.1 精档细则：分母截几位</h3><p>判断依据是<strong>选项本身</strong>，不是感觉。</p>
+<table>
+<thead>
+<tr>
+<th>选项情况</th>
+<th>精度</th>
+<th>分母截几位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首位就不同</td>
+<td>低精度</td>
+<td>2 位</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 <strong>&lt;</strong> 首位数字</td>
+<td>高精度</td>
+<td>3 位</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 <strong>≥</strong> 首位数字</td>
+<td>低精度</td>
+<td>2 位</td>
+</tr>
+</tbody></table>
+<p><strong>例</strong> $563$ 与 $524$：首位都是 5，第二位 $6-2=4<5$，算高精度，分母截 3 位。两者实际间距 $6.9\%$，按高精度处理偏保守，但保守只多花一秒，不丢分。</p>
+<p><strong>多步运算的两条规矩</strong>：</p>
+<ol>
+<li><strong>中间结果照常四舍五入</strong>（一般留 3~4 位有效数字），不要在中途就把分母截掉</li>
+<li><strong>截位只发生在最后一步的除数上</strong></li>
+</ol>
+<p>方向不用背表：<strong>分母截大 → 商偏小；分母截小 → 商偏大。</strong></p>
+<p>实测误差：</p>
+<table>
+<thead>
+<tr>
+<th>分母</th>
+<th>截 2 位</th>
+<th>误差</th>
+<th>截 3 位</th>
+<th>误差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1.084$</td>
+<td>$1.1$</td>
+<td>$+1.48\%$</td>
+<td>$1.08$</td>
+<td>$-0.37\%$</td>
+</tr>
+<tr>
+<td>$2.153$</td>
+<td>$2.2$</td>
+<td>$+2.18\%$</td>
+<td>$2.15$</td>
+<td>$-0.14\%$</td>
+</tr>
+<tr>
+<td>$1.0475$</td>
+<td>$1.0$</td>
+<td>$-4.53\%$</td>
+<td>$1.05$</td>
+<td>$+0.24\%$</td>
+</tr>
+<tr>
+<td>$3.876$</td>
+<td>$3.9$</td>
+<td>$+0.62\%$</td>
+<td>$3.88$</td>
+<td>$+0.10\%$</td>
+</tr>
+<tr>
+<td>$1.386$</td>
+<td>$1.4$</td>
+<td>$+1.01\%$</td>
+<td>$1.39$</td>
+<td>$+0.29\%$</td>
+</tr>
+</tbody></table>
+<p>结论：<strong>截 2 位常见 1%<del>2%，最坏 4%</del>5%；截 3 位基本在 0.5% 以内。</strong></p>
+<h2 id="5-骨架-④-$A(1+r)$"><a href="#5-骨架-④-$A(1+r)$" class="headerlink" title="5. 骨架 ④ $A(1+r)$"></a>5. 骨架 ④ $A(1+r)$</h2><p>纯乘法，没有固有误差，只有拆分时的取整误差。两招：$A+A r$（拆成加法）或百化分（$r=1/n$ 时变成 $A+A/n$）。乘法的放缩方向好判：$r$ 取大则结果偏大。</p>
+<p><strong>例</strong>：$1240\times 1.125=1240+1240/8=1240+155=1395$。<br><strong>例</strong>：$1786\times 1.23=1786+1786\times 0.23=1786+410.8=2196.8$。</p>
+<h2 id="6-骨架-⑤-比值再乘比值"><a href="#6-骨架-⑤-比值再乘比值" class="headerlink" title="6. 骨架 ⑤ 比值再乘比值"></a>6. 骨架 ⑤ 比值再乘比值</h2><p>两期比重差：</p>
+<p>$$\text{比重差}=\frac{\text{部分}}{\text{整体}}\cdot\frac{r_{\text{部分}}-r_{\text{整体}}}{1+r_{\text{部分}}}$$</p>
+<p>方向只看 $r_{\text{部分}}-r_{\text{整体}}$ 的符号，与数值大小无关 —— 这是本格最快的一刀，很多题根本不用算完。</p>
+<p><strong>例</strong>：部分 $480$（$+12\%$）、整体 $2000$（$+8\%$）。现期比重 $24.00\%$，基期比重 $23.14\%$，差 $0.86$ 个百分点。公式一刀：$0.24\times\dfrac{4\%}{112\%}=0.857$ 个百分点。</p>
+<p>基期比重、基期倍数走 ① 的修正思路，但修正因子要乘在比值外面，不是乘在分子分母上，容易错位。同例：基期比重 $=0.24\times\dfrac{1.08}{1.12}=23.14\%$。</p>
+<h2 id="7-选档：看选项「第几位不同」，不算百分比"><a href="#7-选档：看选项「第几位不同」，不算百分比" class="headerlink" title="7. 选档：看选项「第几位不同」，不算百分比"></a>7. 选档：看选项「第几位不同」，不算百分比</h2><p>考场只做两次目测：<strong>选项差在第几位</strong>、<strong>r 是几档</strong>。不用算间距，更不用开根号。</p>
+<table>
+<thead>
+<tr>
+<th>选项形态（目测）</th>
+<th>相对间距约</th>
+<th>① 一阶</th>
+<th>① 二阶</th>
+<th>② 二阶</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首位就不同</td>
+<td>$10\%$ 以上</td>
+<td>$r<20\%$ 随便用</td>
+<td>够用</td>
+<td>$r<20\%$</td>
+</tr>
+<tr>
+<td>第二位不同</td>
+<td>$1\%\sim2.5\%$</td>
+<td>$r<10\%$</td>
+<td>$r<20\%$</td>
+<td>$r<7\%$，再大上百化分</td>
+</tr>
+<tr>
+<td>第二位相同、第三位才分</td>
+<td>$1\%$ 以下</td>
+<td>别用</td>
+<td>$r<10\%$ 勉强</td>
+<td>别用</td>
+</tr>
+</tbody></table>
+<p>骨架 ④ 是纯乘法、③ 是判定，都不受这张表限制。</p>
+<p><strong>背后道理（只用来解释，考场别算）</strong>：允许误差 $\varepsilon\approx$ 间距的一半；① 的一阶误差是 $r^2$、二阶 $r^3$；② 的一阶误差就是 $r$ 本身、二阶 $r^2$。所以 ② 对精度最敏感 —— 这就是增长量题宁可上百化分的原因。</p>
+<p>顺带说一句：原先记的「$r<10\%$ 一阶、$10\%\sim20\%$ 二阶」正好就是「第二位不同」那一行，不是拍脑袋来的。</p>
+<h2 id="8-百化分-线性修正"><a href="#8-百化分-线性修正" class="headerlink" title="8. 百化分 + 线性修正"></a>8. 百化分 + 线性修正</h2><p>适用：$r$ 不在分数表上，但离某个 $1/n$ 很近（如 $31.4\%$ 离 $\dfrac13$ 只差 $1.9\%$）。选项差到第三位就别用，直接直除。</p>
+<p><strong>三步</strong></p>
+<ol>
+<li>就近取 $\hat r=\dfrac1n$，一次算出两个数：$\hat\Delta=A\div(n+1)$、$\hat B=A\times\dfrac{n}{n+1}$。</li>
+<li>$e=\lvert r-\hat r\rvert$；$r$ 比 $\hat r$ 大就<strong>加</strong>，小就<strong>减</strong>，基期方向相反。</li>
+<li>修正量 $=\dfrac{\hat B\,e}{1+\hat r}$。同一个数：增量加它，基期减它。</li>
+</ol>
+<p><strong>例</strong>：$A=3486$、$r=31.4\%$（真值 $\Delta=833.0$、$B=2653.0$）。取 $\hat r=\dfrac13$：$\hat\Delta=871.5$、$\hat B=2614.5$、$e=1.93\%$，修正量 $2614.5\times1.93\%\div\dfrac43=37.9$。因 $r<\hat r$，增量 $871.5-37.9=833.6$ ✓，基期 $2614.5+37.9=2652.4$ ✓。</p>
+<p><strong>坑</strong>：修正量只乘 $\hat B\,e$、不除 $(1+\hat r)$ 会修过头 —— 上例得 $821.0$，差 $12$，够选错相邻选项。</p>
+<h2 id="9-三条铁律"><a href="#9-三条铁律" class="headerlink" title="9. 三条铁律"></a>9. 三条铁律</h2><ol>
+<li><strong>能乘不除</strong>：判大小先交叉相乘，别真的除。</li>
+<li><strong>一次除法两用</strong>：$A/(1+r)$ 算出来，$A$ 减它就是增量。</li>
+<li><strong>精算最后上</strong>：粗档能定就停，别一路算到第四位。</li>
+</ol>
+<h2 id="10-分数去哪儿查"><a href="#10-分数去哪儿查" class="headerlink" title="10. 分数去哪儿查"></a>10. 分数去哪儿查</h2><p>完整分数表单独一页：<a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>。那张按 $r$ 升序排，直接读出 $B$ 的系数和 $\Delta$ 的除数，还带记忆锚点。</p>
+<p>这里只留三行必须脱口而出的：</p>
+<ul>
+<li>$r=1/n$ 时 $\Delta=A\div(n+1)$、$B=A\times\dfrac{n}{n+1}$</li>
+<li>下降 $d=1/n$ 时 $B=A\times\dfrac{n}{n-1}$（分母是 $n-1$）</li>
+<li>$\dfrac18=12.5\%$、$\dfrac17=14.3\%$、$\dfrac16=16.7\%$、$\dfrac19=11.1\%$</li>
+</ul>
+<h2 id="11-与其他页的关系"><a href="#11-与其他页的关系" class="headerlink" title="11. 与其他页的关系"></a>11. 与其他页的关系</h2><table>
+<thead>
+<tr>
+<th>页</th>
+<th>管什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题前</a></td>
+<td>读材料、勾关键词、列完整式子</td>
+</tr>
+<tr>
+<td>本卡</td>
+<td>列式落到哪一格、用哪档、误差与方向</td>
+</tr>
+<tr>
+<td><a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a></td>
+<td>$r$ 查到分数，直接乘</td>
+</tr>
+</tbody></table>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/js/mathjax/tex-svg.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : document.addEventListener('DOMContentLoaded', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script>
+  (function () {
+    var box = document.getElementById('article-container');
+    if (!box || box.textContent.indexOf('</html>) < 0) return;
+    var tip = document.createElement('div');
+    tip.className = 'kb-math-tip';
+    tip.textContent = '公式排版中…';
+    document.body.appendChild(tip);
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      if (tip.parentNode) tip.parentNode.removeChild(tip);
+    }
+    function wait() {
+      var mj = window.MathJax;
+      if (mj && mj.startup && mj.startup.promise) {
+        mj.startup.promise.then(finish, finish);
+      } else if (mj && mj.typesetPromise) {
+        mj.typesetPromise().then(finish, finish);
+      } else {
+        setTimeout(wait, 150);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wait);
+    } else {
+      wait();
+    }
+    setTimeout(finish, 20000);
+  })();
+</script></body></html>

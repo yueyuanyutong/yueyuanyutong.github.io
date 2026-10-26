@@ -1,0 +1,2049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>关于笔者</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<h2 id="你好，我是-YueYuan"><a href="#你好，我是-YueYuan" class="headerlink" title="你好，我是 YueYuan"></a>你好，我是 YueYuan</h2><blockquote>
+<p>欲揽星河摘星辰，先铸千蹬上九天</p>
+</blockquote>
+<p>这里是我的个人博客，用来记录学习过程中的思考与沉淀。</p>
+<p>目前主要关注的方向：</p>
+<ul>
+<li><strong>算法与数据结构</strong> —— 刷题笔记、解题思路整理</li>
+<li><strong>编程学习笔记</strong> —— 踩过的坑与验证过的结论</li>
+</ul>
+<h2 id="关于这个站点"><a href="#关于这个站点" class="headerlink" title="关于这个站点"></a>关于这个站点</h2><p>本站基于 <a href="https://hexo.io/">Hexo</a> 构建，使用 <a href="https://butterfly.js.org/">Butterfly</a> 主题，托管在 GitHub Pages 上。</p>
+<h2 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h2><ul>
+<li>GitHub：<a href="https://github.com/yueyuanyutong">yueyuanyutong</a></li>
+</ul>
+<p>欢迎交流，也欢迎交换友链（见<a href="/links/">友链页</a>）。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>友链</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[<h2 id="交换友链"><a href="#交换友链" class="headerlink" title="交换友链"></a>交换友链</h2><p>欢迎志同道合的朋友交换友链。请先在贵站添加本站链接，然后通过 <a href="https://github.com/yueyuanyutong">GitHub</a> 或邮件告诉我以下信息：</p>
+<ul>
+<li>站点名称</li>
+<li>站点地址</li>
+<li>站点描述（一句话）</li>
+<li>头像图片地址</li>
+</ul>
+<p>我会尽快添加，感谢支持。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析 · 基期量速算</title>
+    <url>/notes/civil-service/data-analysis/base-period-shortcuts/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-25</div>
+
+<blockquote>
+<p>原策略三条主干保留，补的是方向、幅度和失效边界。<br>做题顺序与截位精度分级见 <a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题流程</a>。</p>
+</blockquote>
+<h2 id="0-一眼决策"><a href="#0-一眼决策" class="headerlink" title="0. 一眼决策"></a>0. 一眼决策</h2><p>固定顺序，从上往下，能用上面的就不往下走。</p>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>用什么</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$r$ 命中特征分数（$\dfrac18$、$\dfrac16$、$\dfrac15$、$\dfrac14$…）</td>
+<td>乘 $\dfrac{n}{n+1}$</td>
+<td>精确，优先级最高</td>
+</tr>
+<tr>
+<td>$r$ 不大、选项够松</td>
+<td>一阶 $A(1-r)$</td>
+<td>乘法，偏小 $r^{2}$</td>
+</tr>
+<tr>
+<td>$r$ 稍大或选项更紧，仍在阈值内</td>
+<td>二阶 $A(1-r+r^{2})$</td>
+<td>多一步乘法，换一位精度，偏大 $r^{3}$</td>
+</tr>
+<tr>
+<td>区间 $[A(1-r),A(1-r+r^{2})]$ 里只落进一个选项</td>
+<td>双界夹逼</td>
+<td>连除都省</td>
+</tr>
+<tr>
+<td>上面都不合适</td>
+<td>截位直除</td>
+<td><strong>兜底，也最常用</strong></td>
+</tr>
+</tbody></table>
+<p>中间几档都是乘法，走不通就直除。别为了「用乘法」硬凑档位——直除是最后一道门，实战里反而用得最多，因为不是每道题都凑得上分数或档位。</p>
+<h2 id="1-记号与基准式"><a href="#1-记号与基准式" class="headerlink" title="1. 记号与基准式"></a>1. 记号与基准式</h2><p>$$B=\frac{A}{1+r}\qquad A=B(1+r)\qquad \Delta=A-B=\frac{Ar}{1+r}$$</p>
+<p>$A$ 现期量，$B$ 基期量，$r$ 增长率（<strong>下降取负</strong>，如下降 $7.2\%$ 则 $r=-7.2\%$），$\Delta$ 增长量。全部近似式对 $r$ 带符号代入，增减不分两套。</p>
+<h2 id="2-主干三条"><a href="#2-主干三条" class="headerlink" title="2. 主干三条"></a>2. 主干三条</h2><h3 id="2-1-$r$-小：一阶化除为乘-$B\approx A(1-r)$"><a href="#2-1-$r$-小：一阶化除为乘-$B\approx A(1-r)$" class="headerlink" title="2.1 $r$ 小：一阶化除为乘 $B\approx A(1-r)$"></a>2.1 $r$ 小：一阶化除为乘 $B\approx A(1-r)$</h3><p>题给增长率不大、选项又松时，把除法换成一次减法：</p>
+<p>$$B=\frac{A}{1+r}\approx A(1-r)$$</p>
+<p>$$B=A(1-r)=B(1-r^{2})\quad\Rightarrow\quad\text{恒偏小 }r^{2}$$</p>
+<p><strong>方向是固定的：永远偏小。</strong> 算出来的数一定比真值小，往选项右边找一格。这一条比精度重要——$10\%$ 的偏差只要方向对，照样选得中。</p>
+<p><strong>例</strong> $A=660$、$r=10\%$：$B\approx660\times0.9=594$，真值 $600$，偏小 $1\%$（$=r^{2}$）。间距 $\ge2\%$ 时 $594$ 和 $600$ 都在邻域，选 $600$；间距再紧就上二阶。</p>
+<h3 id="2-2-$r$-中等：二阶-$B\approx A(1-r+r^{2})$"><a href="#2-2-$r$-中等：二阶-$B\approx A(1-r+r^{2})$" class="headerlink" title="2.2 $r$ 中等：二阶 $B\approx A(1-r+r^{2})$"></a>2.2 $r$ 中等：二阶 $B\approx A(1-r+r^{2})$</h3><p>一阶偏小的那 $r^{2}$，补回来就是二阶：</p>
+<p>$$B_{2}=A(1-r+r^{2})=B(1+r^{3})\quad\Rightarrow\quad r>0\text{ 偏大 }r^{3},\quad r<0\text{ 偏小 }|r|^{3}$$</p>
+<p><strong>符号位置</strong>：是 $1-r+r^{2}$，不是 $1+r+r^{2}$。写错一个位置，误差就跳到 $2r+r^{2}$ 那个量级，整题作废。</p>
+<p>考场上更好记、也更准一档的写法：<strong>一阶算完再乘 $(1+r^{2})$</strong></p>
+<p>$$A(1-r)(1+r^{2})=A(1-r+r^{2}-r^{3})\quad\Rightarrow\quad\text{误差只剩 }r^{4}$$</p>
+<p>只差一个 $-r^{3}$ 项，但不用背符号。</p>
+<p><strong>例</strong> $A=1250$、$r=8.4\%$：一阶 $1145.00$（偏小 $0.71\%$），二阶 $1250\times(1-0.084+0.007056)=1153.82$，真值 $1153.14$（偏大 $0.06\%$）。<br>选项 $1145/1155/1165/1175$（间距 $0.87\%$）时，一阶 $1145.00$ 正好撞在选项 $1145$ 上——最容易顺手写错。知道它恒偏小，真值在右边，至少也得往右翻一格；二阶 $1153.8$ 已经在 $1155$ 的邻域，翻都不用翻。</p>
+<p><strong>例</strong> $A=847$、$r=12.5\%$：一阶 $741.1$（偏小 $1.56\%$），二阶 $754.4$（偏大 $0.19\%$），真值 $752.9$。但 $12.5\%=\dfrac18$，特征分数 $847\times\dfrac89=752.9$ 一步到位，二阶反而是绕路。</p>
+<h3 id="2-3-兜底：截位直除"><a href="#2-3-兜底：截位直除" class="headerlink" title="2.3 兜底：截位直除"></a>2.3 兜底：截位直除</h3><p>前两档都不够时直接除。<strong>分母要截，截几位由选项定。</strong></p>
+<p>$$1786\div1.23=1452.0$$</p>
+<table>
+<thead>
+<tr>
+<th>选项情况</th>
+<th>分母截几位</th>
+<th>商误差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首位就不同</td>
+<td>2 位</td>
+<td>常见 $1\%\sim2\%$，最坏 $4\%\sim5\%$</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 $<$ 首位数字</td>
+<td>3 位</td>
+<td>$0.5\%$ 以内</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 $\ge$ 首位数字</td>
+<td>2 位</td>
+<td>同第一行</td>
+</tr>
+</tbody></table>
+<p><strong>例</strong> 选项 $563$ 与 $524$：首位都是 5，第二位差 $6-2=4<5$，算高精度，分母截 3 位。</p>
+<p><strong>多步运算</strong>：中间结果照常四舍五入留 3~4 位，不要中途就把分母截掉；<strong>截位只发生在最后一步的除数上</strong>，最后一步才截位直除。</p>
+<p><strong>方向</strong>：分母截大 → 商偏小；分母截小 → 商偏大。四舍五入往哪边去，结果就往反方向偏。</p>
+<p><strong>例</strong> $A=1786$、$r=23\%$：一阶误差 $5.3\%$、二阶 $1.2\%$ 都不够。分母 $1.23$ 已是 3 位，原样除得 $1452.0$（$1.23\times1452=1785.96$ 反算）。若选项首位就不同（低精度），分母可截成 $1.2$，$1786\div1.2=1488$，偏大 $2.5\%$，仍在选项内。</p>
+<h2 id="3-失效边界：$r$-到多少就不能用了"><a href="#3-失效边界：$r$-到多少就不能用了" class="headerlink" title="3. 失效边界：$r$ 到多少就不能用了"></a>3. 失效边界：$r$ 到多少就不能用了</h2><p>原策略给的是固定的「$r<10\%$ 一阶、$r<20\%$ 二阶」。固定阈值的毛病是：同一道题换个选项，能用的档位就变了——$r=8.4\%$ 配宽选项一阶就够，配 $0.9\%$ 的选项一阶必翻车。</p>
+<p>正确的判据是<strong>选项间距</strong>。选项相对间距 $g$、允许误差 $\varepsilon=g/2$：</p>
+<p>$$\text{一阶可用}\iff r^{2}\le\varepsilon\iff r\le\sqrt{\varepsilon}$$</p>
+<p>$$\text{二阶可用}\iff r^{3}\le\varepsilon\iff r\le\sqrt[3]{\varepsilon}$$</p>
+<table>
+<thead>
+<tr>
+<th>选项间距 $g$</th>
+<th>$\varepsilon$</th>
+<th>一阶上限 $r\le\sqrt{\varepsilon}$</th>
+<th>二阶上限 $r\le\sqrt[3]{\varepsilon}$</th>
+<th>首选</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\ge10\%$（首位不同）</td>
+<td>$5\%$</td>
+<td>$22\%$</td>
+<td>$37\%$</td>
+<td>一阶</td>
+</tr>
+<tr>
+<td>$5\%$</td>
+<td>$2.5\%$</td>
+<td>$16\%$</td>
+<td>$29\%$</td>
+<td>二阶</td>
+</tr>
+<tr>
+<td>$2\%$</td>
+<td>$1\%$</td>
+<td>$10\%$</td>
+<td>$21.5\%$</td>
+<td>二阶</td>
+</tr>
+<tr>
+<td>$1\%$</td>
+<td>$0.5\%$</td>
+<td>$7\%$</td>
+<td>$17\%$</td>
+<td>直除更稳</td>
+</tr>
+<tr>
+<td>$<1\%$</td>
+<td>$<0.5\%$</td>
+<td>$5\%$</td>
+<td>$13.6\%$</td>
+<td>直除 &#x2F; 代入</td>
+</tr>
+</tbody></table>
+<p>读法：$r=15\%$、选项间距 $5\%$，一阶（上限 $16\%$）刚好卡边，二阶（上限 $29\%$）富余，选二阶。$r=15\%$、间距 $1\%$ 时，一阶二阶都失效，直除。</p>
+<p><strong>方向永远知道，这是这套方法的底气。</strong> 阈值表只提醒「翻的时候会不会越过相邻选项」，不是「准不准」的判据。估算值偏小就往大的方向翻、偏大就往小的方向翻，放缩本身不丢分，丢分的是不知道往哪边偏。</p>
+<h2 id="4-补充分支"><a href="#4-补充分支" class="headerlink" title="4. 补充分支"></a>4. 补充分支</h2><h3 id="4-1-特征分数（优先级最高）"><a href="#4-1-特征分数（优先级最高）" class="headerlink" title="4.1 特征分数（优先级最高）"></a>4.1 特征分数（优先级最高）</h3><p>$r=\dfrac1n\Rightarrow B=A\cdot\dfrac{n}{n+1}$，<strong>精确，不用任何近似</strong>。命中就是白捡，压过前两档。</p>
+<table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>乘数</th>
+<th>$r$</th>
+<th>乘数</th>
+<th>$r$</th>
+<th>乘数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$50\%$</td>
+<td>$\dfrac23=0.667$</td>
+<td>$16.7\%$</td>
+<td>$\dfrac67=0.857$</td>
+<td>$10\%$</td>
+<td>$\dfrac{10}{11}=0.909$</td>
+</tr>
+<tr>
+<td>$33.3\%$</td>
+<td>$\dfrac34=0.75$</td>
+<td>$14.3\%$</td>
+<td>$\dfrac78=0.875$</td>
+<td>$8.3\%$</td>
+<td>$\dfrac{12}{13}=0.923$</td>
+</tr>
+<tr>
+<td>$25\%$</td>
+<td>$\dfrac45=0.80$</td>
+<td>$12.5\%$</td>
+<td>$\dfrac89=0.889$</td>
+<td>$7.7\%$</td>
+<td>$\dfrac{13}{14}=0.929$</td>
+</tr>
+<tr>
+<td>$20\%$</td>
+<td>$\dfrac56=0.833$</td>
+<td>$11.1\%$</td>
+<td>$\dfrac9{10}=0.90$</td>
+<td>$7.1\%$</td>
+<td>$\dfrac{14}{15}=0.933$</td>
+</tr>
+</tbody></table>
+<p>另 $9.1\%\to\dfrac{11}{12}=0.917$。</p>
+<p>超过 $40\%$ 的常用值：$40\%\to\dfrac57$、$60\%\to\dfrac58$、$66.7\%\to\dfrac35$、$75\%\to\dfrac47$、$80\%\to\dfrac59$、$100\%\to\dfrac12$、$150\%\to\dfrac25$、$200\%\to\dfrac13$、$300\%\to\dfrac14$。</p>
+<p><strong>下降同理</strong>（$r=-d$，$d=\dfrac1n\Rightarrow B=A\cdot\dfrac{n}{n-1}$，恒 $>A$）：</p>
+<table>
+<thead>
+<tr>
+<th>$d$</th>
+<th>乘数</th>
+<th>$d$</th>
+<th>乘数</th>
+<th>$d$</th>
+<th>乘数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$50\%$</td>
+<td>$2$</td>
+<td>$14.3\%$</td>
+<td>$\dfrac76=1.167$</td>
+<td>$9.1\%$</td>
+<td>$\dfrac{11}{10}=1.100$</td>
+</tr>
+<tr>
+<td>$33.3\%$</td>
+<td>$\dfrac32=1.5$</td>
+<td>$12.5\%$</td>
+<td>$\dfrac87=1.143$</td>
+<td>$8.3\%$</td>
+<td>$\dfrac{12}{11}=1.091$</td>
+</tr>
+<tr>
+<td>$25\%$</td>
+<td>$\dfrac43=1.333$</td>
+<td>$11.1\%$</td>
+<td>$\dfrac98=1.125$</td>
+<td>$7.7\%$</td>
+<td>$\dfrac{13}{12}=1.083$</td>
+</tr>
+<tr>
+<td>$20\%$</td>
+<td>$\dfrac54=1.25$</td>
+<td>$10\%$</td>
+<td>$\dfrac{10}{9}=1.111$</td>
+<td>$7.1\%$</td>
+<td>$\dfrac{14}{13}=1.077$</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>凑分数完全可以，只要说得出方向：用比 $r$ <strong>小</strong>的 $\dfrac1n$（如 $13\%$ 按 $12.5\%$），分母变小、结果<strong>偏大</strong>；用比 $r$ 大的则偏小。$13\%$ 按 $\dfrac89$ 硬套只偏 $0.44\%$，宽选项照样能用。<strong>基期对 $r$ 不敏感</strong>，这是它比增长量好算的地方——同一道题换成求增长量，$13\%$ 按 $\dfrac18$ 就偏了 $3.5\%$。</p>
+</blockquote>
+<h3 id="4-2-下降分支"><a href="#4-2-下降分支" class="headerlink" title="4.2 下降分支"></a>4.2 下降分支</h3><p>$B=\dfrac{A}{1-d}$，$d$ 为降幅，公式整体变号：</p>
+<p>$$B\approx A(1+d)\qquad\text{误差 }d^{2}\text{，偏小}$$</p>
+<p>$$B\approx A(1+d+d^{2})\qquad\text{误差 }d^{3}\text{，偏小}$$</p>
+<p><strong>两个近似都偏小</strong>（增长时是一阶偏小、二阶偏大），所以下降题不能用双界夹逼，但同档误差量级一样，阈值照用。</p>
+<p><strong>例</strong> $A=932$、下降 $7.2\%$：一阶 $999.10$（偏小 $0.52\%$），二阶 $932\times1.077184=1003.94$，真值 $1004.31$（偏小 $0.04\%$）。</p>
+<h3 id="4-3-双界法（只对增长有效）"><a href="#4-3-双界法（只对增长有效）" class="headerlink" title="4.3 双界法（只对增长有效）"></a>4.3 双界法（只对增长有效）</h3><p>$r>0$ 时真值必在 $[\,A(1-r),\;A(1-r+r^{2})\,]$ 之间，两个界都是乘法。若<strong>只有一个选项落在区间内</strong>，答案直接确定，连除都不用。</p>
+<blockquote>
+<p>上界只能用 $A(1-r+r^{2})$（偏大那个）。$A(1-r)(1+r^{2})$ 偏小，当上界会把真值排除在区间外。</p>
+</blockquote>
+<p><strong>例</strong> $A=1786$、$r=8\%$：下界 $1786\times0.92=1643.1$，上界 $1786\times0.9264=1654.6$。选项 $1610/1650/1690/1730$ 中只有 $1650$ 落区间，收工（真值 $1653.7$）。</p>
+<p>代入是同一件事的反向：拿选项乘 $(1+r)$ 与 $A$ 比，先粗估量级，通常验 1~2 个就够，乘法比除法不易错。</p>
+<h2 id="5-例题（按选项松紧分档）"><a href="#5-例题（按选项松紧分档）" class="headerlink" title="5. 例题（按选项松紧分档）"></a>5. 例题（按选项松紧分档）</h2><p><strong>档次一，间距 $10\%$</strong>：$A=660$、$r=10\%$ → 一阶 $594$（真值 $600$）。</p>
+<p><strong>档次二，间距 $2\%\sim5\%$</strong>：$A=847$、$r=12.5\%$ → 一阶 $741.1$（偏小 $1.56\%$）、二阶 $754.4$（偏大 $0.19\%$）、真值 $752.9$；但特征分数 $\dfrac89$ 直接给 $752.9$。</p>
+<p><strong>档次三，间距 $<1\%$</strong>：$A=1250$、$r=8.4\%$ → 二阶 $1153.82$（真值 $1153.14$）。间距 $0.87\%$ 时一阶 $1145.00$ 与选项 $1145$ 重合，必须靠方向判断往右翻。</p>
+<p><strong>档次四，$r$ 超限</strong>：$A=1786$、$r=23\%$ → 直除 $1452.0$。</p>
+<p><strong>下降</strong>：$A=932$、$d=7.2\%$ → 一阶 $999.10$、二阶 $1003.94$、真值 $1004.31$。</p>
+<p><strong>双界</strong>：$A=1786$、$r=8\%$ → 区间 $[1643.1,\ 1654.6]$，只 $1650$ 落入。</p>
+<h2 id="6-适用范围"><a href="#6-适用范围" class="headerlink" title="6. 适用范围"></a>6. 适用范围</h2><p>这套表只管纯基期量。以下问法要另立分支，别硬套：</p>
+<table>
+<thead>
+<tr>
+<th>问法</th>
+<th>式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>隔年 &#x2F; 隔期基期</td>
+<td>$B=\dfrac{A}{1+r_{\text{隔}}}$，$r_{\text{隔}}=r_{1}+r_{2}+r_{1}r_{2}$</td>
+<td><strong>先合成再判档</strong>，$10\%+20\%\to32\%$，合成后常直接跨过 $20\%$</td>
+</tr>
+<tr>
+<td>基期比重</td>
+<td>$\text{现期比重}\times\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</td>
+<td>分子分母各有一个 $1+r$，不能套单 $1+r$ 的阈值</td>
+</tr>
+<tr>
+<td>基期平均数</td>
+<td>$\text{现期平均数}\times\dfrac{1+r_{\text{份}}}{1+r_{\text{总}}}$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>已知 $\Delta$ 求 $B$</td>
+<td>$B=\dfrac{\Delta}{r}$</td>
+<td>无 $1+r$ 项，纯除法</td>
+</tr>
+<tr>
+<td>求增长量</td>
+<td>$\Delta=\dfrac{Ar}{1+r}$</td>
+<td>可先得 $B$ 再 $A-B$，或直接看<a href="/notes/civil-service/data-analysis/growth-amount-shortcuts/">增长量速算</a></td>
+</tr>
+</tbody></table>
+<h2 id="7-坑"><a href="#7-坑" class="headerlink" title="7. 坑"></a>7. 坑</h2><ol>
+<li><strong>二阶符号</strong>：是 $1-r+r^{2}$，不是 $1+r+r^{2}$。</li>
+<li><strong>一阶不是万能的</strong>：$r=8.4\%$ 配 $0.9\%$ 的选项，一阶就翻车。</li>
+<li><strong>截位只放最后一步</strong>：分母该截，按选项定 2 位还是 3 位；中途就截会让误差叠加，截完记得标偏大偏小。</li>
+<li><strong>特征分数只认准值</strong>：$12.5\%=\dfrac18$ 可用；$13\%$ 要说得清方向才可用。</li>
+<li><strong>下降忘了变号</strong>：$B=A/(1-d)$ 比 $A$ 大，别减成 $A(1-d)$。</li>
+<li><strong>隔年要先合成</strong>：两个数先 $r_{1}+r_{2}+r_{1}r_{2}$，再判档。</li>
+<li><strong>量级与单位</strong>：亿元&#x2F;万元、万人&#x2F;人，算完先看数级再对选项。</li>
+<li><strong>增长到 vs 增长了</strong>：增长到是 $A$，增长了是 $\Delta$，问基期才是 $A/(1+r)$。</li>
+<li><strong>固定阈值信不得</strong>：$r=10\%$ 到底是「一阶区」还是「二阶区」，由选项决定，不由 $r$ 决定。</li>
+</ol>
+<h2 id="8-后续补充"><a href="#8-后续补充" class="headerlink" title="8. 后续补充"></a>8. 后续补充</h2><ul>
+<li>基期比重、基期平均数、基期倍数各自的误差界与阈值（分母是两个 $1+r$ 之比，框架可复用，阈值要重算）</li>
+<li>隔年基期的合成档位表</li>
+<li>常数除法速记表（$1\div(1+r)$，$r=1\%\sim20\%$，留待与「拆分」合并成一章）</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析公式速查（含例题）</title>
+    <url>/notes/civil-service/data-analysis/data-analysis-formulas/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-17</div>
+
+<h2 id="0-公式罗列（速记版）"><a href="#0-公式罗列（速记版）" class="headerlink" title="0. 公式罗列（速记版）"></a>0. 公式罗列（速记版）</h2><blockquote>
+<p>先抄这一节；下面各节是它的展开与例题。</p>
+</blockquote>
+<p><strong>基本关系</strong></p>
+<ul>
+<li>$A=B(1+r)$</li>
+<li>$\Delta=A-B=Br=\dfrac{Ar}{1+r}$</li>
+<li>$B=\dfrac{A}{1+r}=\dfrac{\Delta}{r}$</li>
+<li>$r=\dfrac{A-B}{B}=\dfrac{\Delta}{B}$</li>
+</ul>
+<p><strong>增长</strong></p>
+<ul>
+<li>隔年增长率：$r_{\text{隔}}=r_1+r_2+r_1r_2$</li>
+<li>隔年基期：$B=\dfrac{A}{1+r_{\text{隔}}}$</li>
+<li>年均增长量：$\dfrac{A-B}{n}$</li>
+<li>年均增长率：$\bar r=\sqrt[n]{\dfrac{A}{B}}-1$</li>
+<li>增长量比较：$A_1\approx A_2$ 看 $r$；$r_1\approx r_2$ 看 $A$</li>
+</ul>
+<p><strong>比重</strong></p>
+<ul>
+<li>比重：$\dfrac{\text{部分}}{\text{整体}}\times100\%$</li>
+<li>基期比重：$\dfrac{A_{\text{部}}}{1+r_{\text{部}}}\div\dfrac{A_{\text{整}}}{1+r_{\text{整}}}=\text{现期比重}\times\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>比重变化（百分点）：$\text{现期比重}\times\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>升降判断：$r_{\text{部}}\gtrless r_{\text{整}}\Rightarrow$ 比重上升&#x2F;下降</li>
+</ul>
+<p><strong>平均数</strong></p>
+<ul>
+<li>平均数：$\dfrac{\text{总量}}{\text{份数}}$</li>
+<li>平均数增长率：$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</li>
+<li>基期平均数：$\text{现期平均数}\times\dfrac{1+r_{\text{份}}}{1+r_{\text{总}}}$</li>
+<li>平均数增长量：$\text{现期平均数}-\text{基期平均数}$</li>
+</ul>
+<p><strong>倍数与比值</strong></p>
+<ul>
+<li>是几倍：$\dfrac{A}{B}$</li>
+<li>多几倍：$\dfrac{A}{B}-1$</li>
+<li>基期倍数：$\dfrac{A_1/(1+r_1)}{A_2/(1+r_2)}$</li>
+</ul>
+<p><strong>指数 · 拉动 · 贡献率</strong></p>
+<ul>
+<li>指数：$\dfrac{\text{现期值}}{\text{基期值}}\times100$</li>
+<li>拉动增长率：$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</li>
+<li>贡献率：$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</li>
+</ul>
+<p><strong>混合增长率</strong></p>
+<ul>
+<li>区间：$\min(r_1,r_2)<r<\max(r_1,r_2)$，且 $r$ 偏向 $B$ 大的一侧</li>
+<li>十字交叉：$(r-r_2):(r_1-r)=B_1:B_2$</li>
+</ul>
+<hr>
+<h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><table>
+<thead>
+<tr>
+<th>记号</th>
+<th>含义</th>
+<th>记号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$A$</td>
+<td>现期量</td>
+<td>$B$</td>
+<td>基期量</td>
+</tr>
+<tr>
+<td>$\Delta$</td>
+<td>增长量</td>
+<td>$r$</td>
+<td>增长率</td>
+</tr>
+<tr>
+<td>$r_{\text{部}}$、$r_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的增长率</td>
+<td>$A_{\text{部}}$、$A_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的现期量</td>
+</tr>
+<tr>
+<td>$n$</td>
+<td>间隔年数</td>
+<td>$\bar r$</td>
+<td>年均增长率</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="一、增长率与增长量"><a href="#一、增长率与增长量" class="headerlink" title="一、增长率与增长量"></a>一、增长率与增长量</h2><p>$$r=\frac{A-B}{B}\times100\% \qquad \Delta=A-B=Br=\frac{Ar}{1+r}$$</p>
+<p><strong>例</strong> 2025 年 GDP 1200 亿元、2024 年 1000 亿元：$\Delta=200$，$r=20\%$。</p>
+<p><strong>例</strong> 现期 660 万元、同比 $r=10\%$：$B=\dfrac{660}{1.1}=600$，$\Delta=660-600=60$（或 $\Delta=\dfrac{660\times0.1}{1.1}=60$，两式互验）。</p>
+<p><strong>例</strong> 增长量 30 万台、$r=10\%$：$B=\dfrac{30}{0.1}=300$，$A=330$。</p>
+<blockquote>
+<p>增长量比较：$A_1\approx A_2$ 时看 $r$，$r$ 大者增量大；$r_1\approx r_2$ 时看 $A$，$A$ 大者增量大。</p>
+</blockquote>
+<hr>
+<h2 id="二、基期量（含隔年、年均）"><a href="#二、基期量（含隔年、年均）" class="headerlink" title="二、基期量（含隔年、年均）"></a>二、基期量（含隔年、年均）</h2><p>$$B=\frac{A}{1+r} \qquad B_1-B_2=\frac{A_1}{1+r_1}-\frac{A_2}{1+r_2}$$</p>
+<p><strong>例</strong> 收入 8400 元、$r=20\%$：$B=\dfrac{8400}{1.2}=7000$ 元。</p>
+<p><strong>例</strong> 两地 840 亿（$+20\%$）与 550 亿（$+10\%$）：基期 $700$ 与 $500$，差 $200$ 亿元。</p>
+<p><strong>隔年</strong>：</p>
+<p>$$r_{\text{隔}}=r_1+r_2+r_1r_2 \qquad B=\frac{A}{(1+r_1)(1+r_2)}=\frac{A}{1+r_{\text{隔}}}$$</p>
+<p><strong>例</strong> $r_1=10\%$、$r_2=20\%$，2025 年 660 亿：$r_{\text{隔}}=0.1+0.2+0.02=32\%$，2023 年 $=\dfrac{660}{1.32}=500$ 亿元。<br>验算：$500\times1.1\times1.2=660$。</p>
+<p><strong>年均</strong>：</p>
+<p>$$\text{年均增长量}=\frac{A-B}{n} \qquad \bar r=\sqrt[n]{\frac{A}{B}}-1$$</p>
+<p><strong>例</strong> 2020 年 200 亿、2025 年 320 亿（$n=5$）：年均增长量 $=\dfrac{120}{5}=24$ 亿元；$\bar r=\sqrt[5]{1.6}-1\approx9.9\%$。</p>
+<blockquote>
+<p>$n$ 是<strong>间隔年数</strong>：2020→2025 是 $n=5$，不是 6。</p>
+</blockquote>
+<hr>
+<h2 id="三、比重"><a href="#三、比重" class="headerlink" title="三、比重"></a>三、比重</h2><p>$$\text{比重}=\frac{\text{部分}}{\text{整体}}\times100\% \qquad \text{基期比重}=\text{现期比重}\times\frac{1+r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> 第三产业 3000 亿（$r_{\text{部}}=20\%$）、GDP 6000 亿（$r_{\text{整}}=10\%$）：现期比重 $50\%$；<br>基期比重 $=\dfrac{3000/1.2}{6000/1.1}=\dfrac{2500}{5454.5}\approx45.8\%$，<br>或 $50\%\times\dfrac{1.1}{1.2}\approx45.8\%$（两式一致）。</p>
+<p><strong>比重变化</strong>：</p>
+<p>$$\text{变化}=\text{现期比重}-\text{基期比重}\approx\text{现期比重}\times\frac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> $50\%-45.8\%=+4.2$ 个百分点；近似式 $50\%\times\dfrac{0.2-0.1}{1.2}=4.17$ 个百分点。</p>
+<p><strong>升降判断</strong>：</p>
+<p>$$r_{\text{部}}>r_{\text{整}}\Rightarrow\text{上升} \qquad r_{\text{部}}<r_{\text{整}}\Rightarrow\text{下降}$$</p>
+<p><strong>例</strong> $20\%>10\%$，占比<strong>上升</strong>，无需算数值。</p>
+<blockquote>
+<p>单位：比重的变化叫「百分点」，不是「增长 4.2%」。</p>
+</blockquote>
+<hr>
+<h2 id="四、平均数"><a href="#四、平均数" class="headerlink" title="四、平均数"></a>四、平均数</h2><p>$$\text{平均数}=\frac{\text{总量}}{\text{份数}} \qquad \text{平均数增长率}=\frac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$$</p>
+<p><strong>例</strong> 总产 1200 万吨、面积 200 万亩：平均亩产 $6$ 吨。</p>
+<p><strong>例</strong> $r_{\text{总}}=20\%$、$r_{\text{份}}=10\%$：平均数增长率 $=\dfrac{1.2}{1.1}-1\approx9.1\%$。<br>（分子涨得比分母快 ⇒ 平均数上升）</p>
+<p><strong>基期平均数</strong>：</p>
+<p>$$\text{基期平均数}=\text{现期平均数}\times\frac{1+r_{\text{份}}}{1+r_{\text{总}}}$$</p>
+<p><strong>例</strong> 现期 $6$ 吨&#x2F;亩、$r_{\text{总}}=20\%$、$r_{\text{份}}=10\%$：基期 $=6\times\dfrac{1.1}{1.2}=5.5$ 吨&#x2F;亩；增长量 $0.5$ 吨&#x2F;亩。</p>
+<blockquote>
+<p><strong>平均数增长率</strong>（%）与<strong>平均数增长量</strong>（带单位）是两个问题，别混。</p>
+</blockquote>
+<hr>
+<h2 id="五、倍数与比值"><a href="#五、倍数与比值" class="headerlink" title="五、倍数与比值"></a>五、倍数与比值</h2><p>$$\text{是几倍}=\frac{A}{B} \qquad \text{多几倍}=\frac{A}{B}-1 \qquad \text{基期倍数}=\frac{A_1/(1+r_1)}{A_2/(1+r_2)}$$</p>
+<p><strong>例</strong> 甲 300 万、乙 120 万：甲是乙的 $2.5$ 倍，即<strong>多 1.5 倍</strong>。</p>
+<p><strong>例</strong> 甲 300 万（$+25\%$）、乙 120 万（$+20\%$）：基期倍数 $=\dfrac{240}{100}=2.4$ 倍。</p>
+<hr>
+<h2 id="六、指数、拉动增长与贡献率"><a href="#六、指数、拉动增长与贡献率" class="headerlink" title="六、指数、拉动增长与贡献率"></a>六、指数、拉动增长与贡献率</h2><p>$$\text{指数}=\frac{\text{现期值}}{\text{基期值}}\times100$$</p>
+<p><strong>例</strong> 基期指数 100，现期 150：是基期的 $1.5$ 倍，即 $+50\%$。</p>
+<p>$$\text{拉动增长率}=\frac{\text{部分增长量}}{\text{整体基期量}} \qquad \text{贡献率}=\frac{\text{部分增长量}}{\text{整体增长量}}$$</p>
+<p><strong>例</strong> GDP 基期 1000 亿、某产业增长 30 亿：拉动 $\dfrac{30}{1000}=3$ 个百分点。</p>
+<p><strong>例</strong> GDP 增长 40 亿、某产业增长 30 亿：贡献率 $\dfrac{30}{40}=75\%$。</p>
+<blockquote>
+<p>分母不同：拉动除以「整体<strong>基期量</strong>」，贡献率除以「整体<strong>增长量</strong>」。</p>
+</blockquote>
+<hr>
+<h2 id="七、混合增长率（十字交叉）"><a href="#七、混合增长率（十字交叉）" class="headerlink" title="七、混合增长率（十字交叉）"></a>七、混合增长率（十字交叉）</h2><p>$$\min(r_1,r_2)<r<\max(r_1,r_2)$$</p>
+<p>$$r=\frac{B_1r_1+B_2r_2}{B_1+B_2} \qquad (r-r_2):(r_1-r)=B_1:B_2$$</p>
+<p><strong>例</strong> $B_1=300$、$r_1=10\%$；$B_2=100$、$r_2=30\%$：$r=\dfrac{300\times10\%+100\times30\%}{400}=15\%$，<br>落在 $10\%\sim30\%$ 之间且偏向 $10\%$（$B_1$ 更大）。<br>十字交叉：$(15-30):(10-15)=3:1$，与 $300:100$ 吻合。</p>
+<hr>
+<h2 id="八、速算"><a href="#八、速算" class="headerlink" title="八、速算"></a>八、速算</h2><table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>做法</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>截位直除</td>
+<td>分子分母各留 3 位</td>
+<td>$\dfrac{8347}{2361}\approx\dfrac{8350}{2360}\approx3.54$</td>
+</tr>
+<tr>
+<td>特征数字</td>
+<td>百分数换分数</td>
+<td>$14.3\%\approx\dfrac{1}{7}$、$11.1\%\approx\dfrac{1}{9}$、$16.7\%\approx\dfrac{1}{6}$</td>
+</tr>
+<tr>
+<td>化同</td>
+<td>分母凑近再比</td>
+<td>$\dfrac{8347}{2361}$ vs $\dfrac{8547}{2401}$：后者 3.560 更大</td>
+</tr>
+<tr>
+<td>拆分</td>
+<td>整数 + 小数</td>
+<td>$1234\times1.23\approx1234+284=1518$</td>
+</tr>
+<tr>
+<td>尾数法</td>
+<td>加减只看末位</td>
+<td>末位 $7+1=8$ 直接排选项</td>
+</tr>
+<tr>
+<td>首数法</td>
+<td>除法先定首位</td>
+<td>$\dfrac{8347}{2361}$ 首位 3</td>
+</tr>
+<tr>
+<td>放缩</td>
+<td>定上下界</td>
+<td>$2361\times3.5=8263.5<8347\Rightarrow$ 大于 3.5</td>
+</tr>
+</tbody></table>
+<p><strong>分数速记</strong></p>
+<table>
+<thead>
+<tr>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1/6$</td>
+<td>16.7%</td>
+<td>$1/7$</td>
+<td>14.3%</td>
+<td>$1/8$</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>$1/9$</td>
+<td>11.1%</td>
+<td>$1/11$</td>
+<td>9.1%</td>
+<td>$1/12$</td>
+<td>8.3%</td>
+</tr>
+<tr>
+<td>$1/13$</td>
+<td>7.7%</td>
+<td>$1/14$</td>
+<td>7.1%</td>
+<td>$1/15$</td>
+<td>6.7%</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="附：问法-→-公式"><a href="#附：问法-→-公式" class="headerlink" title="附：问法 → 公式"></a>附：问法 → 公式</h2><table>
+<thead>
+<tr>
+<th>问法</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增长了百分之几</td>
+<td>$r=\dfrac{A-B}{B}$</td>
+</tr>
+<tr>
+<td>增长了多少（带单位）</td>
+<td>$\Delta=\dfrac{Ar}{1+r}$</td>
+</tr>
+<tr>
+<td>上年是多少</td>
+<td>$B=\dfrac{A}{1+r}$</td>
+</tr>
+<tr>
+<td>占比 &#x2F; 比重</td>
+<td>$\dfrac{\text{部分}}{\text{整体}}$</td>
+</tr>
+<tr>
+<td>比重升降及幅度</td>
+<td>比较 $r_{\text{部}}$ 与 $r_{\text{整}}$，再算百分点</td>
+</tr>
+<tr>
+<td>平均每亩 &#x2F; 人均</td>
+<td>$\dfrac{\text{总量}}{\text{份数}}$</td>
+</tr>
+<tr>
+<td>平均数增长百分之几</td>
+<td>$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</td>
+</tr>
+<tr>
+<td>是几倍 &#x2F; 多几倍</td>
+<td>$\dfrac{A}{B}$ &#x2F; $\dfrac{A}{B}-1$</td>
+</tr>
+<tr>
+<td>年均增速</td>
+<td>$\sqrt[n]{\dfrac{A}{B}}-1$</td>
+</tr>
+<tr>
+<td>拉动几个百分点</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</td>
+</tr>
+<tr>
+<td>贡献率</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</td>
+</tr>
+</tbody></table>
+<h2 id="坑（六条）"><a href="#坑（六条）" class="headerlink" title="坑（六条）"></a>坑（六条）</h2><ol>
+<li><strong>百分点 vs %</strong>：比重&#x2F;占比&#x2F;拉动&#x2F;贡献率的<strong>变化</strong>用「百分点」；增速变化才用「%」。</li>
+<li><strong>是几倍 vs 多几倍</strong>：$2.5$ 倍 &#x3D; 多 $1.5$ 倍。</li>
+<li><strong>同比 vs 环比</strong>：同比对去年同期，环比对上一期。</li>
+<li><strong>累计 vs 单月</strong>：单月 $=$ 本期累计 $-$ 上期累计。</li>
+<li><strong>单位</strong>：亿元&#x2F;万元、万人&#x2F;人，选项常在此设套，算完先看量级。</li>
+<li><strong>增长到 vs 增长了</strong>：增长到 $=A$；增长了 $=\Delta$。</li>
+</ol>
+<hr>
+<blockquote>
+<p>公式按通用考纲口径整理，例题数值均可自行验算；与某机构讲义表述不同时，以公式与真题为准。<br>检索来源：华图《常用速算方法》<a href="https://www.huatu.com/2025/0529/2817027.html">https://www.huatu.com/2025/0529/2817027.html</a>、中公《增长率其实不简单》<a href="http://m.offcn.com/gwy/2020/1103/69374.html">http://m.offcn.com/gwy/2020/1103/69374.html</a>、华图《增长贡献率》<a href="https://www.huatu.com/2021/1126/2335363.html">https://www.huatu.com/2021/1126/2335363.html</a>。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析 · 做题前</title>
+    <url>/notes/civil-service/data-analysis/data-analysis-workflow/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-28</div>
+
+<blockquote>
+<p>一篇 5 分钟，正确率不低于 80%。国考 135 题 120 分钟，平均一题 53 秒，资料分析摊到一分钟一题，是略宽而不是紧。<br>这一页只管「怎么读、怎么列」；<strong>列出来之后怎么算快，去 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a> 和 <a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>。</strong></p>
+</blockquote>
+<h2 id="0-四步"><a href="#0-四步" class="headerlink" title="0. 四步"></a>0. 四步</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>做什么</th>
+<th>产出</th>
+<th>易错</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 读材料</td>
+<td>建框架，勾主体</td>
+<td>心里一张结构图</td>
+<td>精读、漏看单位与累计</td>
+</tr>
+<tr>
+<td>2 审题</td>
+<td>勾主体 + 勾关键词</td>
+<td>一句话：求什么、哪一型</td>
+<td>算完才发现求的是别的</td>
+</tr>
+<tr>
+<td>3 列式</td>
+<td>先把完整式子写出来</td>
+<td>一个式子</td>
+<td>边算边列，算错无从查</td>
+</tr>
+<tr>
+<td>4 速算</td>
+<td>分数 → 化除为乘 → 截位</td>
+<td>答案 + 偏大偏小</td>
+<td>不分档，见数就除</td>
+</tr>
+</tbody></table>
+<h3 id="1-读材料"><a href="#1-读材料" class="headerlink" title="1 读材料"></a>1 读材料</h3><p>只扫，不精读。抓六样：<strong>标题、时间、单位、表头、图例、有没有累计</strong>。</p>
+<ul>
+<li><strong>表格</strong>：每一列是量还是率，单位在表头还是在标题里，时间跨度，有没有「累计」列</li>
+<li><strong>柱状 &#x2F; 折线</strong>：横轴是什么、纵轴单位；<strong>双轴图先确认左右轴各管哪条线</strong></li>
+<li><strong>饼图</strong>：占比的基数是谁</li>
+<li><strong>文字</strong>：划斜线分段，勾出每段的大主体，再串起大主体下面的细分主体</li>
+</ul>
+<p>出口是一个结构：这段材料讲哪几个主体，每个主体的数在哪个表哪一列。别背数，记住位置。</p>
+<h3 id="2-审题"><a href="#2-审题" class="headerlink" title="2 审题"></a>2 审题</h3><p>在题干上勾两样东西：</p>
+<ol>
+<li>主体（问的是谁）</li>
+<li>关键词（日均、每、占比、增量、增速、倍数、翻番、百分点……）</li>
+</ol>
+<p>勾完用一句话把所求说清楚——「求 XX 主体 20XX 年的增量」。说不清就别动笔，说明还没读准。</p>
+<p>关键词对式子，查下面第 1 节。</p>
+<h3 id="3-列式"><a href="#3-列式" class="headerlink" title="3 列式"></a>3 列式</h3><p><strong>先列完整式子，再动笔算。</strong> 数据在原文圈出来即可，不抄进式子，也不在式子旁边做草稿算术。</p>
+<p>好处很实在：算错了回头能看出错在哪一步，而不是从头再读一遍材料。</p>
+<h3 id="4-速算"><a href="#4-速算" class="headerlink" title="4 速算"></a>4 速算</h3><p>固定顺序，从上往下，能用上面的就不往下走：</p>
+<ol>
+<li><strong>特征分数</strong>：$r$ 命中 $\dfrac1n$，直接乘分数，查分数表</li>
+<li><strong>化除为乘</strong>：$r$ 不大、选项够松时用一阶 $A(1-r)$ 或二阶 $A(1-r+r^{2})$</li>
+<li><strong>截位直除</strong>：兜底，也是最常用的一招</li>
+</ol>
+<p>前两招是特殊情形的捷径，命中就跳级；命中不了就老老实实除，别硬凑。<strong>每一档能用不能用、截几位、结果偏大还是偏小，全在骨架卡的「选档」一节。</strong></p>
+<h2 id="1-关键词-→-式子"><a href="#1-关键词-→-式子" class="headerlink" title="1. 关键词 → 式子"></a>1. 关键词 → 式子</h2><table>
+<thead>
+<tr>
+<th>关键词</th>
+<th>求什么</th>
+<th>式子</th>
+<th>易错</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日均 &#x2F; 平均每天</td>
+<td>日平均量</td>
+<td>$\dfrac{\text{总量}}{\text{天数}}$</td>
+<td>天数是实际天数：2 月 28 或 29、闰年 366、大小月；不是一律 30</td>
+</tr>
+<tr>
+<td>每 &#x2F; 人均 &#x2F; 万人拥有</td>
+<td>平均数</td>
+<td>$\dfrac{\text{分子}}{\text{分母}}$</td>
+<td>分母是谁要看题；单位常是元&#x2F;人、张&#x2F;千人，别漏乘群体数</td>
+</tr>
+<tr>
+<td>占比 &#x2F; 比重</td>
+<td>部分占整体的比例</td>
+<td>$\dfrac{\text{部分}}{\text{整体}}$</td>
+<td>求的是现期比重还是基期比重；基期要再乘 $\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</td>
+</tr>
+<tr>
+<td>增量 &#x2F; 增长量</td>
+<td>$\Delta$</td>
+<td>$A-B$，或 $\dfrac{Ar}{1+r}$，或 $\dfrac{A}{n+1}$</td>
+<td>「增长了」是 $\Delta$，「增长到」是 $A$</td>
+</tr>
+<tr>
+<td>增速 &#x2F; 增长率</td>
+<td>$r$</td>
+<td>$\dfrac{A-B}{B}$，或 $\dfrac{A}{B}-1$</td>
+<td>与「百分点」混；$\pm$ 号要带住</td>
+</tr>
+<tr>
+<td>倍数</td>
+<td>$A$ 是 $B$ 的几倍</td>
+<td>$\dfrac{A}{B}$</td>
+<td>「是几倍」用 $\dfrac{A}{B}$；「增长了几倍」用 $\dfrac{A}{B}-1$，两者差 1</td>
+</tr>
+<tr>
+<td>翻番</td>
+<td>翻 $m$ 番</td>
+<td>$\times2^{m}$</td>
+<td>翻一番是 2 倍，翻两番是 4 倍，不是 3 倍</td>
+</tr>
+<tr>
+<td>百分点</td>
+<td>两个百分数之差</td>
+<td>$r_{1}-r_{2}$</td>
+<td>答案单位是百分点，后面不带 $\%$；$12\%-7\%=5$ 个百分点，不是 $5\%$</td>
+</tr>
+<tr>
+<td>两期比重差</td>
+<td>现期比重 $-$ 基期比重</td>
+<td>$=\text{现期比重}\times\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$</td>
+<td>判升降只看 $r_{\text{部}}$ 与 $r_{\text{整}}$ 谁大，不用算</td>
+</tr>
+<tr>
+<td>平均数增长率</td>
+<td>平均数的增速</td>
+<td>$\dfrac{r_{\text{总}}-r_{\text{份}}}{1+r_{\text{份}}}$</td>
+<td>分子是「总量的增速 $-$ 份数的增速」，别反</td>
+</tr>
+<tr>
+<td>顺差 &#x2F; 逆差</td>
+<td>出口 $-$ 进口 &#x2F; 进口 $-$ 出口</td>
+<td>直接减</td>
+<td>单位（亿元 &#x2F; 亿美元）要跟材料一致；正负号别丢</td>
+</tr>
+<tr>
+<td>同比 &#x2F; 环比</td>
+<td>基期不同</td>
+<td>同比比的是上年同期，环比比的是上一期</td>
+<td>1—2 月常合并发布；「累计」列不能直接当单月用</td>
+</tr>
+<tr>
+<td>增速最快 &#x2F; 最慢</td>
+<td>比 $r$</td>
+<td>比增长率</td>
+<td>与「增量最多 &#x2F; 最少」不是一回事，题目常混着问</td>
+</tr>
+</tbody></table>
+<h2 id="2-三个高频分辨"><a href="#2-三个高频分辨" class="headerlink" title="2. 三个高频分辨"></a>2. 三个高频分辨</h2><p><strong>「增长到」与「增长了」</strong>：「增长到」后面是现期量 $A$，「增长了」后面是增长量 $\Delta$。题目给「增长到 120 亿」，问增长量，得先减基期。</p>
+<p><strong>「是几倍」与「增长几倍」</strong>：$A$ 是 $B$ 的 3 倍 $\Rightarrow A/B=3$；$A$ 比 $B$ 增长 3 倍 $\Rightarrow A/B=4$。差一个 1，选项里专门放这个。</p>
+<p><strong>「比重」与「平均数」</strong>：比重是部分 ÷ 整体，单位是 $\%$；平均数是总量 ÷ 份数，单位是复合单位。两者都写成「$\dfrac{\text{甲}}{\text{乙}}$」，但增长率公式不同——比重差用 $\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$，平均数增长率用 $\dfrac{r_{\text{总}}-r_{\text{份}}}{1+r_{\text{份}}}$。</p>
+<h2 id="3-综合判断题"><a href="#3-综合判断题" class="headerlink" title="3. 综合判断题"></a>3. 综合判断题</h2><p>「以下说法正确的是」这类，一套材料通常一道。</p>
+<ul>
+<li><strong>放最后做</strong>，前面四题的数据正好都用过了</li>
+<li>从<strong>验证过程最简单</strong>的选项切入——不是最短的选项。短的选项也可能要跨表联动、要两个增长率联算，那就不简单</li>
+<li>验到一个成立的立刻停，不用把四个选项都验完</li>
+</ul>
+<h2 id="4-不做的事"><a href="#4-不做的事" class="headerlink" title="4. 不做的事"></a>4. 不做的事</h2><ul>
+<li>不掐秒表。计时靠流程省出来，不靠盯表</li>
+<li>不大段誊抄数据。原文圈画即可</li>
+<li>不留复查时间。每题一次做对，资料分析每题的分都很贵</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析 · 分数表</title>
+    <url>/notes/civil-service/data-analysis/fraction-table/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-28</div>
+
+<blockquote>
+<p>见到百分数先来这里找分数。找到就直接乘分数，找不到再回骨架卡套线性修正。</p>
+</blockquote>
+<h2 id="0-怎么用（三步）"><a href="#0-怎么用（三步）" class="headerlink" title="0. 怎么用（三步）"></a>0. 怎么用（三步）</h2><ol>
+<li>看 $r$，在下表找最接近的分数</li>
+<li>完全相等 → 直接乘：基期 $B=A\times\dfrac{n}{n+p}$，增量 $\Delta=A\div(n+p)$</li>
+<li>不等 → 记下差多少（$e$），回 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a> 做一次线性修正</li>
+</ol>
+<p>表里 $p/n$ 表示「$r=p/n$」，$n$ 是分母、$p$ 是分子。$1/n$ 那几行最常考，记住它们就够应付八成题。</p>
+<h2 id="1-主表（按-$r$-升序）"><a href="#1-主表（按-$r$-升序）" class="headerlink" title="1. 主表（按 $r$ 升序）"></a>1. 主表（按 $r$ 升序）</h2><table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>分数</th>
+<th>基期 $B$</th>
+<th>增量 $\Delta$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$4.00\%$</td>
+<td>$\dfrac{1}{25}$</td>
+<td>$A\times\dfrac{25}{26}$</td>
+<td>$A\div 26$</td>
+</tr>
+<tr>
+<td>$5.00\%$</td>
+<td>$\dfrac{1}{20}$</td>
+<td>$A\times\dfrac{20}{21}$</td>
+<td>$A\div 21$</td>
+</tr>
+<tr>
+<td>$5.26\%$</td>
+<td>$\dfrac{1}{19}$</td>
+<td>$A\times\dfrac{19}{20}$</td>
+<td>$A\div 20$</td>
+</tr>
+<tr>
+<td>$5.56\%$</td>
+<td>$\dfrac{1}{18}$</td>
+<td>$A\times\dfrac{18}{19}$</td>
+<td>$A\div 19$</td>
+</tr>
+<tr>
+<td>$5.88\%$</td>
+<td>$\dfrac{1}{17}$</td>
+<td>$A\times\dfrac{17}{18}$</td>
+<td>$A\div 18$</td>
+</tr>
+<tr>
+<td>$6.25\%$</td>
+<td>$\dfrac{1}{16}$</td>
+<td>$A\times\dfrac{16}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$6.67\%$</td>
+<td>$\dfrac{1}{15}$</td>
+<td>$A\times\dfrac{15}{16}$</td>
+<td>$A\div 16$</td>
+</tr>
+<tr>
+<td>$7.14\%$</td>
+<td>$\dfrac{1}{14}$</td>
+<td>$A\times\dfrac{14}{15}$</td>
+<td>$A\div 15$</td>
+</tr>
+<tr>
+<td>$7.69\%$</td>
+<td>$\dfrac{1}{13}$</td>
+<td>$A\times\dfrac{13}{14}$</td>
+<td>$A\div 14$</td>
+</tr>
+<tr>
+<td>$8.33\%$</td>
+<td>$\dfrac{1}{12}$</td>
+<td>$A\times\dfrac{12}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$9.09\%$</td>
+<td>$\dfrac{1}{11}$</td>
+<td>$A\times\dfrac{11}{12}$</td>
+<td>$A\div 12$</td>
+</tr>
+<tr>
+<td>$10.00\%$</td>
+<td>$\dfrac{1}{10}$</td>
+<td>$A\times\dfrac{10}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$11.11\%$</td>
+<td>$\dfrac{1}{9}$</td>
+<td>$A\times\dfrac{9}{10}$</td>
+<td>$A\div 10$</td>
+</tr>
+<tr>
+<td>$12.50\%$</td>
+<td>$\dfrac{1}{8}$</td>
+<td>$A\times\dfrac{8}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$14.29\%$</td>
+<td>$\dfrac{1}{7}$</td>
+<td>$A\times\dfrac{7}{8}$</td>
+<td>$A\div 8$</td>
+</tr>
+<tr>
+<td>$16.67\%$</td>
+<td>$\dfrac{1}{6}$</td>
+<td>$A\times\dfrac{6}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$20.00\%$</td>
+<td>$\dfrac{1}{5}$</td>
+<td>$A\times\dfrac{5}{6}$</td>
+<td>$A\div 6$</td>
+</tr>
+<tr>
+<td>$22.22\%$</td>
+<td>$\dfrac{2}{9}$</td>
+<td>$A\times\dfrac{9}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$25.00\%$</td>
+<td>$\dfrac{1}{4}$</td>
+<td>$A\times\dfrac{4}{5}$</td>
+<td>$A\div 5$</td>
+</tr>
+<tr>
+<td>$28.57\%$</td>
+<td>$\dfrac{2}{7}$</td>
+<td>$A\times\dfrac{7}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$30.00\%$</td>
+<td>$\dfrac{3}{10}$</td>
+<td>$A\times\dfrac{10}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$33.33\%$</td>
+<td>$\dfrac{1}{3}$</td>
+<td>$A\times\dfrac{3}{4}$</td>
+<td>$A\div 4$</td>
+</tr>
+<tr>
+<td>$37.50\%$</td>
+<td>$\dfrac{3}{8}$</td>
+<td>$A\times\dfrac{8}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$40.00\%$</td>
+<td>$\dfrac{2}{5}$</td>
+<td>$A\times\dfrac{5}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$42.86\%$</td>
+<td>$\dfrac{3}{7}$</td>
+<td>$A\times\dfrac{7}{10}$</td>
+<td>$A\div 10$</td>
+</tr>
+<tr>
+<td>$44.44\%$</td>
+<td>$\dfrac{4}{9}$</td>
+<td>$A\times\dfrac{9}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$50.00\%$</td>
+<td>$\dfrac{1}{2}$</td>
+<td>$A\times\dfrac{2}{3}$</td>
+<td>$A\div 3$</td>
+</tr>
+<tr>
+<td>$55.56\%$</td>
+<td>$\dfrac{5}{9}$</td>
+<td>$A\times\dfrac{9}{14}$</td>
+<td>$A\div 14$</td>
+</tr>
+<tr>
+<td>$57.14\%$</td>
+<td>$\dfrac{4}{7}$</td>
+<td>$A\times\dfrac{7}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$60.00\%$</td>
+<td>$\dfrac{3}{5}$</td>
+<td>$A\times\dfrac{5}{8}$</td>
+<td>$A\div 8$</td>
+</tr>
+<tr>
+<td>$62.50\%$</td>
+<td>$\dfrac{5}{8}$</td>
+<td>$A\times\dfrac{8}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$66.67\%$</td>
+<td>$\dfrac{2}{3}$</td>
+<td>$A\times\dfrac{3}{5}$</td>
+<td>$A\div 5$</td>
+</tr>
+<tr>
+<td>$70.00\%$</td>
+<td>$\dfrac{7}{10}$</td>
+<td>$A\times\dfrac{10}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$75.00\%$</td>
+<td>$\dfrac{3}{4}$</td>
+<td>$A\times\dfrac{4}{7}$</td>
+<td>$A\div 7$</td>
+</tr>
+<tr>
+<td>$80.00\%$</td>
+<td>$\dfrac{4}{5}$</td>
+<td>$A\times\dfrac{5}{9}$</td>
+<td>$A\div 9$</td>
+</tr>
+<tr>
+<td>$83.33\%$</td>
+<td>$\dfrac{5}{6}$</td>
+<td>$A\times\dfrac{6}{11}$</td>
+<td>$A\div 11$</td>
+</tr>
+<tr>
+<td>$85.71\%$</td>
+<td>$\dfrac{6}{7}$</td>
+<td>$A\times\dfrac{7}{13}$</td>
+<td>$A\div 13$</td>
+</tr>
+<tr>
+<td>$87.50\%$</td>
+<td>$\dfrac{7}{8}$</td>
+<td>$A\times\dfrac{8}{15}$</td>
+<td>$A\div 15$</td>
+</tr>
+<tr>
+<td>$88.89\%$</td>
+<td>$\dfrac{8}{9}$</td>
+<td>$A\times\dfrac{9}{17}$</td>
+<td>$A\div 17$</td>
+</tr>
+<tr>
+<td>$90.00\%$</td>
+<td>$\dfrac{9}{10}$</td>
+<td>$A\times\dfrac{10}{19}$</td>
+<td>$A\div 19$</td>
+</tr>
+</tbody></table>
+<h2 id="2-记忆锚点（先记这几组，覆盖最高频）"><a href="#2-记忆锚点（先记这几组，覆盖最高频）" class="headerlink" title="2. 记忆锚点（先记这几组，覆盖最高频）"></a>2. 记忆锚点（先记这几组，覆盖最高频）</h2><p><strong>五分之一族</strong>（$1/5,1/6,1/4,1/3,1/2$）：$20\%$、$16.7\%$、$25\%$、$33.3\%$、$50\%$。这五个先背死，考场上一半的增长率落在附近。</p>
+<p><strong>八分族</strong>：$\dfrac18=12.5\%$、$\dfrac38=37.5\%$、$\dfrac58=62.5\%$、$\dfrac78=87.5\%$。都是 $12.5$ 的整数倍，$12.5\to37.5\to62.5\to87.5$ 一路加，不用另记。</p>
+<p><strong>九分与十一分</strong>：$\dfrac19=11.1\%$、$\dfrac29=22.2\%$、$\dfrac{1}{11}=9.09\%$。循环小数，同分母的分子就是「$1.11$ 的整数倍」。</p>
+<p><strong>小尾巴</strong>（$1/12$ 到 $1/20$）：$8.3\%$、$7.7\%$、$7.1\%$、$6.7\%$、$6.3\%$、$5.9\%$、$5.6\%$、$5.3\%$、$5.0\%$。分母每大 1，百分数掉一点，按顺序记不按数值记。</p>
+<p><strong>两个常见非单位分数</strong>：$\dfrac23=66.7\%$、$\dfrac34=75\%$、$\dfrac45=80\%$。题目里给「增长 66.7%」时，$n=3$、$p=2$，增量分母是 $3+2=5$。</p>
+<h2 id="3-找不到时怎么办"><a href="#3-找不到时怎么办" class="headerlink" title="3. 找不到时怎么办"></a>3. 找不到时怎么办</h2><ul>
+<li>差一点 → 用骨架卡的线性修正，$e$ 越小越准，$e<2$ 个百分点基本不亏精度</li>
+<li>差很多 → 别硬凑分数，直接截位直除，分母截几位看选项</li>
+<li>永远不要为了凑分数把 $r$ 改掉好几个百分点，$r$ 越小，这种改动越致命</li>
+</ul>
+<h2 id="4-下降别用错分母"><a href="#4-下降别用错分母" class="headerlink" title="4. 下降别用错分母"></a>4. 下降别用错分母</h2><p>表里是<strong>增长</strong>的口径。若 $r$ 是下降率（现期 $A$、降幅 $d=1/n$）：</p>
+<p>$$B=\frac{A}{1-d}=A\times\frac{n}{n-1}$$</p>
+<p>分母是 $n-1$，不是 $n+1$。$\dfrac15$ 的下降对应 $A\times\dfrac54$，$\dfrac18$ 对应 $A\times\dfrac87$，别顺手抄成上面的系数。</p>
+<h2 id="5-与骨架卡的关系"><a href="#5-与骨架卡的关系" class="headerlink" title="5. 与骨架卡的关系"></a>5. 与骨架卡的关系</h2><p>这张表只解决「$r$ 恰好等于某个分数」。<strong>不恰好时的修正、选档、方向判断，全在 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a>。</strong> 表是查字用的，卡是拿主意用的。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析 · 增长量速算</title>
+    <url>/notes/civil-service/data-analysis/growth-amount-shortcuts/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-25</div>
+
+<blockquote>
+<p>原策略的主干是特征分数，这一版把它和放缩档位接上：命中分数走快路，没命中就放缩并标方向。<br>做题顺序与截位精度分级见 <a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题流程</a>。</p>
+</blockquote>
+<h2 id="0-一眼决策"><a href="#0-一眼决策" class="headerlink" title="0. 一眼决策"></a>0. 一眼决策</h2><p>固定顺序，从上往下，能用上面的就不往下走。</p>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>用什么</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>给现期，$r$ 命中 $\dfrac1n$</td>
+<td>$\Delta=\dfrac{A}{n+1}$</td>
+<td>精确，优先级最高</td>
+</tr>
+<tr>
+<td>给基期</td>
+<td>$\Delta=B\cdot r$</td>
+<td>一次乘法，不涉及放缩</td>
+</tr>
+<tr>
+<td>给现期，$r$ 凑不成整分数</td>
+<td>$A\,r(1-r)$</td>
+<td>主力，偏小 $r^{2}$</td>
+</tr>
+<tr>
+<td>上一档定不住、选项间距 $1\%\sim2\%$</td>
+<td>二阶 $A\,r(1-r+r^{2})$</td>
+<td>偏大 $r^{3}$</td>
+</tr>
+<tr>
+<td>上面都不合适</td>
+<td>截位直除 $\dfrac{A\,r}{1+r}$</td>
+<td><strong>兜底，也最常用</strong></td>
+</tr>
+<tr>
+<td>下降且 $d$ 命中 $\dfrac1n$</td>
+<td>$\lvert\Delta\rvert=\dfrac{A}{n-1}$</td>
+<td>精确</td>
+</tr>
+</tbody></table>
+<p><strong>先看条件给的是现期还是基期</strong>，这一条比什么都重要：给现期用 $n+1$，给基期用 $n$，卷面上两种情况长得很像。</p>
+<h2 id="1-记号与基准式"><a href="#1-记号与基准式" class="headerlink" title="1. 记号与基准式"></a>1. 记号与基准式</h2><p>$$\Delta=A-B=\frac{Ar}{1+r}=B\,r$$</p>
+<p>$A$ 现期量，$B$ 基期量，$r$ 增长率（下降取负），$\Delta$ 增长量。</p>
+<p>两个反向也要会用：</p>
+<p>$$\Delta\to A:\quad A=\frac{\Delta(1+r)}{r}\qquad \Delta\to B:\quad B=\frac{\Delta}{r}$$</p>
+<p>$r=\dfrac1n$ 时化成 $A=\Delta(n+1)$、$B=\Delta\cdot n$，同样不用放缩。</p>
+<h2 id="2-主干三条"><a href="#2-主干三条" class="headerlink" title="2. 主干三条"></a>2. 主干三条</h2><h3 id="2-1-命中特征分数：$\Delta=\dfrac{A}{n+1}$"><a href="#2-1-命中特征分数：$\Delta=\dfrac{A}{n+1}$" class="headerlink" title="2.1 命中特征分数：$\Delta=\dfrac{A}{n+1}$"></a>2.1 命中特征分数：$\Delta=\dfrac{A}{n+1}$</h3><p>$r=\dfrac1n$ 时 $\dfrac{r}{1+r}=\dfrac1{n+1}$，一次除法出答案，零误差。这是原策略的主干，仍然是全章最快的一条。</p>
+<p><strong>例</strong> 某市 GDP 3.2 万亿元，同比增长 $11.1\%$：$11.1\%$ 按 $\dfrac19$（$=11.11\%$）处理，$\Delta=3.2\div10=0.32$ 万亿元 $=3200$ 亿元。真值 $3197$ 亿，差 3 亿，选项里只有这个整齐数。</p>
+<h3 id="2-2-凑不成分数：$\Delta\approx A\,r(1-r)$"><a href="#2-2-凑不成分数：$\Delta\approx A\,r(1-r)$" class="headerlink" title="2.2 凑不成分数：$\Delta\approx A\,r(1-r)$"></a>2.2 凑不成分数：$\Delta\approx A\,r(1-r)$</h3><p>大部分 $r$ 贴不上整分数（$13\%$、$8.4\%$、$17.2\%$），主力换成这一档：</p>
+<p>$$\frac{r}{1+r}=r\left(1-r+r^{2}-r^{3}+\cdots\right)$$</p>
+<p>$$\Delta_{1}=A\,r(1-r)=\Delta(1-r^{2})\quad\Rightarrow\quad\text{偏小 }r^{2}$$</p>
+<p><strong>这是全章用得最多的一条。</strong> 它比「直接乘 $A\cdot r$」慢一点，但 $A\cdot r$ 偏大 $r$、$r=13\%$ 就大 $13\%$，除了选项特别宽基本定不住位；$A\,r(1-r)$ 只偏 $r^{2}$，$r=13\%$ 时偏 $1.7\%$，绝大部分题够用。</p>
+<p><strong>例</strong> 现期 $1786$、同比 $13\%$，选项 $195/205/215/225$：</p>
+<p>$$\Delta\approx1786\times0.13\times0.87=232.2\times0.87=202.0$$</p>
+<p>偏<strong>小</strong> $1.7\%$，真值在 $202$ 右边；右边一格是 $205$（间距 $4.9\%$），选 $205$（真值 $205.5$）。</p>
+<h3 id="2-3-选项紧：二阶-$\Delta\approx A\,r(1-r+r^{2})$"><a href="#2-3-选项紧：二阶-$\Delta\approx A\,r(1-r+r^{2})$" class="headerlink" title="2.3 选项紧：二阶 $\Delta\approx A\,r(1-r+r^{2})$"></a>2.3 选项紧：二阶 $\Delta\approx A\,r(1-r+r^{2})$</h3><p>$$\Delta_{2}=A\,r(1-r+r^{2})=\Delta(1+r^{3})\quad\Rightarrow\quad r>0\text{ 偏大 }r^{3}$$</p>
+<p><strong>符号是 $1-r+r^{2}$</strong>，不是 $1+r+r^{2}$。写成加分项，误差直接跳到 $2r$ 那个量级。</p>
+<p><strong>例</strong> 同上题，选项改成 $203/205/207/209$（间距 $1\%$）：$\Delta\approx232.18\times0.8869=205.9$，偏<strong>大</strong> $0.22\%$。但下界 $A\,r(1-r)=202.0$ 偏得太远，两界合起来 $[202.0,\ 205.9]$ 横跨 $203$ 和 $205$ 两个选项，还是定不住。</p>
+<h3 id="2-4-兜底：截位直除"><a href="#2-4-兜底：截位直除" class="headerlink" title="2.4 兜底：截位直除"></a>2.4 兜底：截位直除</h3><p>$$\Delta=\frac{1786\times13}{113}=\frac{23218}{113}=205.5$$</p>
+<p>选 $205$。这一档反而快，因为分子正好是个整数（$A\times r$ 的整数形式）。</p>
+<p><strong>分母怎么截</strong>：看选项。首位就不同，分母截 2 位；首位相同再看第二位差，差小于首位数字就截 3 位，否则截 2 位。<strong>多步运算中间照常四舍五入，只在这最后一步截除数</strong>；分母截大则商偏小、截小则商偏大。上面的例子分母 $113$ 已是 3 位，原样除即可。</p>
+<p>等价写法 $\Delta=A-\dfrac{A}{1+r}$ 要先算基期再减，两步带一个除法，不如直接除。</p>
+<h2 id="3-失效边界：什么时候换档"><a href="#3-失效边界：什么时候换档" class="headerlink" title="3. 失效边界：什么时候换档"></a>3. 失效边界：什么时候换档</h2><h3 id="3-1-档位与方向总表"><a href="#3-1-档位与方向总表" class="headerlink" title="3.1 档位与方向总表"></a>3.1 档位与方向总表</h3><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>条件</th>
+<th>结果方向</th>
+<th>幅度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\dfrac{A}{n+1}$</td>
+<td>$r=\dfrac1n$</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$B\cdot r$</td>
+<td>给的是基期</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$A\,r(1-r)$</td>
+<td>给的是现期</td>
+<td><strong>缩小</strong></td>
+<td>$r^{2}$</td>
+</tr>
+<tr>
+<td>$A\cdot r$</td>
+<td>同上，最省事</td>
+<td><strong>放大</strong></td>
+<td>$r$</td>
+</tr>
+<tr>
+<td>$A\,r(1-r+r^{2})$</td>
+<td>同上</td>
+<td><strong>放大</strong></td>
+<td>$r^{3}$</td>
+</tr>
+<tr>
+<td>$A-\dfrac{A}{1+r}$</td>
+<td>兜底</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+<p>方向交替的规律：括号里的级数交错，截到奇数项放大、偶数项缩小。记「<strong>零阶放大、一阶缩小、二阶放大</strong>」一句就够。</p>
+<p>$r$ 带符号，下降时 $r<0$，方向照样按表判；但下降有个例外，见 §4.2。</p>
+<h3 id="3-2-定位规则"><a href="#3-2-定位规则" class="headerlink" title="3.2 定位规则"></a>3.2 定位规则</h3><p>设粗算值 $C$，选项升序：</p>
+<ol>
+<li>$C$ <strong>偏小</strong> → 真值在右 → 取比 $C$ 大的最小选项</li>
+<li>$C$ <strong>偏大</strong> → 真值在左 → 取比 $C$ 小的最大选项</li>
+<li>$C$ 两侧都有选项 → 这一档没定住，换下一档</li>
+<li>幅度 $\le$ 半个选项间距时，基本不会翻错，直接用</li>
+</ol>
+<p>第 3 条很常见：$r=13\%$ 时 $A\cdot r=232.2$ 偏大 $13\%$，落在选项最右端之外，翻回去只能到 $225$，离真值差一档——这时候 $A\cdot r$ 就没用。</p>
+<h3 id="3-3-凑分数的敏感度（换-$r$-也是一次放缩）"><a href="#3-3-凑分数的敏感度（换-$r$-也是一次放缩）" class="headerlink" title="3.3 凑分数的敏感度（换 $r$ 也是一次放缩）"></a>3.3 凑分数的敏感度（换 $r$ 也是一次放缩）</h3><p>$\dfrac1n$ 和真 $r$ 不等时，本来「精确」的公式也变成估算，方向由两者大小定：</p>
+<ul>
+<li>$\dfrac1n>r$ → 用了更大的增长率 → $\Delta$ <strong>偏大</strong></li>
+<li>$\dfrac1n<r$ → $\Delta$ <strong>偏小</strong></li>
+</ul>
+<p>幅度：$r$ 差 $e$（百分点）时，$\Delta$ 约偏 $e\cdot\dfrac{n^{2}}{n+1}$。</p>
+<p>$e=0.1$ 个百分点时的实测：</p>
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$r=\dfrac1n$</th>
+<th>幅度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>$20\%$</td>
+<td>$0.42\%$</td>
+</tr>
+<tr>
+<td>8</td>
+<td>$12.5\%$</td>
+<td>$0.71\%$</td>
+</tr>
+<tr>
+<td>10</td>
+<td>$10\%$</td>
+<td>$0.91\%$</td>
+</tr>
+<tr>
+<td>12</td>
+<td>$8.3\%$</td>
+<td>$1.11\%$</td>
+</tr>
+<tr>
+<td>14</td>
+<td>$7.1\%$</td>
+<td>$1.31\%$</td>
+</tr>
+<tr>
+<td>20</td>
+<td>$5\%$</td>
+<td>$1.90\%$</td>
+</tr>
+</tbody></table>
+<p>规律：<strong>$r$ 越小，1 个百分点越值钱</strong>。$r=20\%$ 时差 $0.5$ 个百分点只偏 $2\%$，$r=7\%$ 时差 $0.5$ 个百分点就偏 $6.5\%$。</p>
+<p>所以 $13\%$ 凑 $\dfrac18$ 会<strong>缩小</strong> $3.4\%$，凑 $\dfrac17$ 会<strong>放大</strong> $8.7\%$——前者还能用，后者基本废。同一道题两个方向反着来，这是最容易翻错的地方。</p>
+<h3 id="3-4-分数表"><a href="#3-4-分数表" class="headerlink" title="3.4 分数表"></a>3.4 分数表</h3><p>$r=\dfrac1n$ 时，给现期 $\div(n+1)$，给基期 $\div n$。</p>
+<table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>现期 $\div$</th>
+<th>基期 $\div$</th>
+<th></th>
+<th>$r$</th>
+<th>现期 $\div$</th>
+<th>基期 $\div$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$50\%$</td>
+<td>3</td>
+<td>2</td>
+<td></td>
+<td>$11.1\%$</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>$33.3\%$</td>
+<td>4</td>
+<td>3</td>
+<td></td>
+<td>$10\%$</td>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr>
+<td>$25\%$</td>
+<td>5</td>
+<td>4</td>
+<td></td>
+<td>$9.1\%$</td>
+<td>12</td>
+<td>11</td>
+</tr>
+<tr>
+<td>$20\%$</td>
+<td>6</td>
+<td>5</td>
+<td></td>
+<td>$8.3\%$</td>
+<td>13</td>
+<td>12</td>
+</tr>
+<tr>
+<td>$16.7\%$</td>
+<td>7</td>
+<td>6</td>
+<td></td>
+<td>$7.7\%$</td>
+<td>14</td>
+<td>13</td>
+</tr>
+<tr>
+<td>$14.3\%$</td>
+<td>8</td>
+<td>7</td>
+<td></td>
+<td>$7.1\%$</td>
+<td>15</td>
+<td>14</td>
+</tr>
+<tr>
+<td>$12.5\%$</td>
+<td>9</td>
+<td>8</td>
+<td></td>
+<td>$6.7\%$</td>
+<td>16</td>
+<td>15</td>
+</tr>
+</tbody></table>
+<p>再往下：$6.25\%$ 用 $17/16$、$5.9\%$ 用 $18/17$、$5.6\%$ 用 $19/18$、$5.3\%$ 用 $20/19$、$5\%$ 用 $21/20$。</p>
+<p>非单位分数 $r=\dfrac{m}{n}$：$\Delta=A\cdot\dfrac{m}{n+m}$，不背系数，现推。</p>
+<table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>系数</th>
+<th>$r$</th>
+<th>系数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$40\%=\dfrac25$</td>
+<td>$\dfrac27$</td>
+<td>$100\%=\dfrac11$</td>
+<td>$\dfrac12$</td>
+</tr>
+<tr>
+<td>$60\%=\dfrac35$</td>
+<td>$\dfrac38$</td>
+<td>$150\%=\dfrac32$</td>
+<td>$\dfrac35$</td>
+</tr>
+<tr>
+<td>$66.7\%=\dfrac23$</td>
+<td>$\dfrac25$</td>
+<td>$200\%=\dfrac21$</td>
+<td>$\dfrac23$</td>
+</tr>
+<tr>
+<td>$75\%=\dfrac34$</td>
+<td>$\dfrac37$</td>
+<td>$300\%=\dfrac31$</td>
+<td>$\dfrac34$</td>
+</tr>
+<tr>
+<td>$80\%=\dfrac45$</td>
+<td>$\dfrac49$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="4-补充分支"><a href="#4-补充分支" class="headerlink" title="4. 补充分支"></a>4. 补充分支</h2><h3 id="4-1-给的是基期"><a href="#4-1-给的是基期" class="headerlink" title="4.1 给的是基期"></a>4.1 给的是基期</h3><p>$\Delta=B\cdot r$，一次乘法，放缩到不了这一步。$r=\dfrac1n$ 时就是 $\Delta=B/n$——<strong>除以 $n$，不是 $n+1$</strong>。</p>
+<p><strong>例</strong> 上年产值 $1847$ 亿元、同比 $16.7\%$：$\Delta=1847\times0.167=308.4$。换成 $\dfrac16$（$16.67\%<16.7\%$，偏小）：$1847\div6=307.8$。两个都能用，差 $0.2\%$。</p>
+<p>材料若把 $r$ 圆成了整数百分比，误差按 $\dfrac{e}{r}$ 传进来（$r=5\%$ 时 $r$ 差 $0.1$ 个百分点，$\Delta$ 就差 $2\%$），这是数据给的，只能靠选项宽不宽来兜。</p>
+<h3 id="4-2-下降"><a href="#4-2-下降" class="headerlink" title="4.2 下降"></a>4.2 下降</h3><p>公式与增长同构，$r$ 代负值即可，方向照 §3.1 判。只有一处要留神：<strong>下降时一阶和二阶的绝对值都偏小</strong>（$r<0$ 时 $1-r^{2}$、$1-|r|^{3}$ 都小于 $1$），拿不到上界，双界夹逼不成立。</p>
+<ul>
+<li>现期 + 下降 $d=\dfrac1n$：$|\Delta|=\dfrac{A}{n-1}$</li>
+<li>基期 + 下降：$|\Delta|=B\cdot d$，直接乘</li>
+</ul>
+<p><strong>例</strong> 某地面积 $932$ 万公顷、同比降 $7.1\%$，减少多少：凑 $\dfrac1{14}=7.14\%$（比 $7.1\%$ 大，$d$ 越大 $|\Delta|$ 越大，<strong>偏大</strong>），$|\Delta|=932\div13=71.7$，真值 $71.2$，选 $71$。</p>
+<h3 id="4-3-比较各年增长量"><a href="#4-3-比较各年增长量" class="headerlink" title="4.3 比较各年增长量"></a>4.3 比较各年增长量</h3><p>$\Delta$ 对 $A$ 和 $r$ 都单调增，「$A$ 大且 $r$ 大」的年份直接锁定，不用算。</p>
+<p>两个指标打架时要排。排序不需要精确，只需要顺序别翻：先用 $A\cdot r$ 粗排，若各年 $r$ 相近（差不到 $2$ 个百分点），$r$ 那一档的放大比例几乎一样，顺序不会变；$r$ 差得远就换 $A\,r(1-r)$，把 $r^{2}$ 的差别吃进去。</p>
+<h2 id="5-例题"><a href="#5-例题" class="headerlink" title="5. 例题"></a>5. 例题</h2><p>以上六则贯穿全章：$3.2$ 万亿&#x2F;$11.1\%$（分数）、$1786$&#x2F;$13\%$ 配宽选项（一阶）、同题配紧选项（二阶）、同题直除（兜底）、$1847$&#x2F;$16.7\%$（给基期）、$932$&#x2F;降 $7.1\%$（下降）。数值全部反算验过，可以直接当模板用。</p>
+<h2 id="6-坑"><a href="#6-坑" class="headerlink" title="6. 坑"></a>6. 坑</h2><ol>
+<li><strong>除以 $n+1$ 还是 $n$</strong>：给现期用 $n+1$，给基期用 $n$。这是第一大错源。</li>
+<li><strong>下降忘了减一</strong>：下降用 $A/(n-1)$，不是 $A/(n+1)$；$20\%$ 下降是 $\div4$。</li>
+<li><strong>凑分数不问方向</strong>：凑完必须能说出偏大还是偏小。$13\%$ 凑 $\dfrac18$ 缩小 $3.4\%$、凑 $\dfrac17$ 放大 $8.7\%$。</li>
+<li><strong>拿 $A\cdot r$ 当答案</strong>：偏大 $r$，$r=13\%$ 就大 $13\%$，除 $r<3\%$ 或选项特别宽之外都别用。</li>
+<li><strong>二阶符号</strong>：是 $1-r+r^{2}$，不是 $1+r+r^{2}$。</li>
+<li><strong>忘了方向就瞎翻</strong>：粗值 $202$ 偏小，真值在右，别往 $195$ 那边看。</li>
+<li><strong>增长量与增长率混</strong>：选项带 $\%$ 的是增长率，带数值单位的是增长量。</li>
+<li><strong>同比与环比混</strong>：环比基期是上期，不是上年同期。</li>
+<li><strong>累计与单月混</strong>：给累计值问单月增长量，先减出单月现期再套公式。</li>
+<li><strong>名义与实际</strong>：题目说「按可比价格计算」，用实际增长率。</li>
+<li><strong>单位</strong>：万亿元与亿元、万人与人，$\Delta$ 的量级跟着 $A$ 走，答完先看数级。</li>
+<li><strong>「增长了」与「增长到」</strong>：「增长了」是 $\Delta$，「增长到」是 $A$，问增长量而条件是「增长到」时要先减基期。</li>
+<li><strong>截位截早了</strong>：分母该截，但只在最后一步截；中间结果四舍五入留几位，截完标偏大偏小。</li>
+</ol>
+<h2 id="7-后续补充"><a href="#7-后续补充" class="headerlink" title="7. 后续补充"></a>7. 后续补充</h2><ul>
+<li>比较题的严格判据（$\dfrac{A_{1}r_{1}}{1+r_{1}}$ 与 $\dfrac{A_{2}r_{2}}{1+r_{2}}$ 交叉相乘，完全省掉除法）</li>
+<li>隔年增长量：合成 $r_{\text{隔}}=r_{1}+r_{2}+r_{1}r_{2}$ 后还剩几成放缩空间</li>
+<li>增长量占比类题</li>
+<li>平均数的增长量（需与「两期比重差」合并）</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>前缀和数组算法</title>
+    <url>/notes/computer/algorithms/balanced-matrix-prefix-sum/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">题解 · 计算机 / 算法 · 2025-06-23</div>
+
+<h1 id="前缀和数组算法"><a href="#前缀和数组算法" class="headerlink" title="前缀和数组算法#"></a>前缀和数组算法#</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>小美的平衡矩阵<br>小美拿到了一个<br>n∗n的矩阵，其中每个元素是 0 或者 1。<br>小美认为一个矩形区域是完美的，当且仅当该区域内 0 的数量恰好等于 1 的数量。<br>现在，小美希望你回答有多少个i∗i的完美矩形区域。你需要回答1≤i≤n的所有答案。</p>
+<p>分析：<br>这里的元素是特殊的，只有0和1，所以n（0）&#x3D;n（1）实际上可以是计数n（1）&#x3D;n&#x2F;2。<br>即，要求矩阵内数字之和为矩阵大小的一半。<br>因此，需要多次求出小矩阵之和，即部分和–&gt;前缀和算法是求部分和的经典算法。</p>
+<p>特殊：<br>这里不是一维数组而是二维数组，不能直接进行做差求和，需要进行特殊处理。（算法的核心）</p>
+<h2 id="输入-出示例"><a href="#输入-出示例" class="headerlink" title="输入&#x2F;出示例"></a>输入&#x2F;出示例</h2><p>输入例子:<br>4<br>1010<br>0101<br>1100<br>0011<br>输出例子：<br>0<br>7<br>0<br>1</p>
+<h2 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">count</span><span class="params">(<span class="type">const</span> vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; prefix_sum, <span class="type">int</span> n, <span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> N = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> a_sq = a * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt;= n - a; x++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> y = <span class="number">0</span>; y &lt;= n - a; y++) &#123;</span><br><span class="line">            <span class="type">int</span> x_end = x + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> y_end = y + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> total_ones;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x_end][y<span class="number">-1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end] - prefix_sum[x_end][y<span class="number">-1</span>] + prefix_sum[x<span class="number">-1</span>][y<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (total_ones * <span class="number">2</span> == a_sq) &#123;</span><br><span class="line">                N++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> N;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">grid</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; grid[i];</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix_sum</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            prefix_sum[i][j] = (grid[i][j] == <span class="string">&#x27;1&#x27;</span>) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span> (j &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i][j<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) prefix_sum[i][j] -= prefix_sum[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> a = <span class="number">1</span>; a &lt;= n; a++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="built_in">count</span>(prefix_sum, n, a) &lt;&lt; endl;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cout &lt;&lt; <span class="number">0</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>逻辑梳理：</p>
+<ol>
+<li>读入大矩阵，初始化前缀和数组prefix_sum</li>
+<li>遍历大矩阵，计算完美矩形区域的数量</li>
+<li>输出结果</li>
+</ol>
+<h3 id="核心算法"><a href="#核心算法" class="headerlink" title="核心算法"></a>核心算法</h3><ol>
+<li>初始化计算前缀和数组prefix_sum</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">prefix_sum</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        prefix_sum[i][j] = (grid[i][j] == <span class="string">&#x27;1&#x27;</span>) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i<span class="number">-1</span>][j];</span><br><span class="line">        <span class="keyword">if</span> (j &gt; <span class="number">0</span>) prefix_sum[i][j] += prefix_sum[i][j<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) prefix_sum[i][j] -= prefix_sum[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键在于这3个if语句：</p>
+<ul>
+<li>prefix_sum[i][j] &#x3D; (grid[i][j] &#x3D;&#x3D; ‘1’) ? 1 : 0;<br>前缀和算法下，这里应当是置入原始数据，但是由于只有0，1两种数，可以直接使用三目运算符赋值0，1.（增强了代码的性能、可读性，但是放弃了拓展性、一般性）</li>
+</ul>
+<ol>
+<li><p>if (i &gt; 0) prefix_sum[i][j] +&#x3D; prefix_sum[i-1][j];<br>这里是边界情况，即第一行元素的前缀和，只需要和前一个前缀和相加</p>
+</li>
+<li><p>if (j &gt; 0) prefix_sum[i][j] +&#x3D; prefix_sum[i][j-1];<br>同理，这里是第一列元素的前缀和，只需要和上一个前缀和相加</p>
+</li>
+<li><p>if (i &gt; 0 &amp;&amp; j &gt; 0) prefix_sum[i][j] -&#x3D; prefix_sum[i-1][j-1];<br>这里是非边界情况，即非第一行非第一列元素的前缀和，这里也用到了前两个if语句的结果，是对加上了前一个前缀和和上一个前缀和之后的结果进行处理。<br>处理方式：由于既加了上一个前缀和又加了前一个前缀和，索引左上的前缀和重复了，所以需要减去左上角的前缀和。</p>
+</li>
+</ol>
+<p>形象化解释：（斜体为标记）<br>假设矩阵为：</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>1.if: sum[1][1]+&#x3D;sum[0][y];</p>
+<p>1 <em>0</em> 1 0</p>
+<p>0 <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>2.if: sum[1][1]+&#x3D;sum[1][0]+1;</p>
+<p>1 0 1 0</p>
+<p><em>0</em> <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>3.if: sum[x][y]-&#x3D;sum[x-1][y-1];</p>
+<p><em>1</em> 0 1 0</p>
+<p>0 <em>1</em> 0 1</p>
+<p>1 0 1 0</p>
+<p>0 1 0 1</p>
+<p>2.遍历大矩阵，计算完美矩形区域的数量</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">count</span><span class="params">(<span class="type">const</span> vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; prefix_sum, <span class="type">int</span> n, <span class="type">int</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> N = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> a_sq = a * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = <span class="number">0</span>; x &lt;= n - a; x++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> y = <span class="number">0</span>; y &lt;= n - a; y++) &#123;</span><br><span class="line">            <span class="type">int</span> x_end = x + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> y_end = y + a - <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> total_ones;</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (x == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x_end][y<span class="number">-1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (y == <span class="number">0</span>) &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                total_ones = prefix_sum[x_end][y_end] - prefix_sum[x<span class="number">-1</span>][y_end] - prefix_sum[x_end][y<span class="number">-1</span>] + prefix_sum[x<span class="number">-1</span>][y<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (total_ones * <span class="number">2</span> == a_sq) &#123;</span><br><span class="line">                N++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，前两个if是边界情况，第三个if是一般情况，加减逻辑与初始化逻辑基本一致。（初始化时时加法，这里是减法）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>TCP 为什么必须三次握手</title>
+    <url>/notes/computer/network/tcp-three-way-handshake/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">概念卡 · 计算机 / 网络 · 2026-10-16</div>
+
+<h2 id="一句话结论"><a href="#一句话结论" class="headerlink" title="一句话结论"></a>一句话结论</h2><p>三次握手的本质不是”确认连接存在”，而是<strong>把两个方向上的收发能力各验证一遍</strong>，顺带交换双方的初始序列号（ISN）。</p>
+<h2 id="三次分别在做什么"><a href="#三次分别在做什么" class="headerlink" title="三次分别在做什么"></a>三次分别在做什么</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>报文</th>
+<th>此后被确认的能力</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>客户端 → 服务端：<code>SYN, seq=x</code></td>
+<td>服务端知道：客户端能发</td>
+</tr>
+<tr>
+<td>2</td>
+<td>服务端 → 客户端：<code>SYN+ACK, seq=y, ack=x+1</code></td>
+<td>客户端知道：服务端能收、也能发</td>
+</tr>
+<tr>
+<td>3</td>
+<td>客户端 → 服务端：<code>ACK, ack=y+1</code></td>
+<td>服务端知道：自己发的包客户端收到了</td>
+</tr>
+</tbody></table>
+<p>关键是第三次。只有那个 ACK 回来了，服务端才有把握说”我发出去的东西对方收得到”。</p>
+<h2 id="为什么必须验证双向"><a href="#为什么必须验证双向" class="headerlink" title="为什么必须验证双向"></a>为什么必须验证双向</h2><p>TCP 是全双工的，两个方向各自独立维护序列号与窗口。如果只握两次，服务端在自己发送链路不通的情况下也会开始发数据，结果就是白白重传。</p>
+<h2 id="常见追问"><a href="#常见追问" class="headerlink" title="常见追问"></a>常见追问</h2><ul>
+<li><strong>两次行不行？</strong> 连接能建起来，但服务端对自己的发送能力没有证据，不满足 TCP 对可靠性的要求。</li>
+<li><strong>为什么不是四次？</strong> 第二次把 <code>SYN</code> 和 <code>ACK</code> 合并了——服务端声明自己的 ISN 时，可以顺带确认对方的。</li>
+<li><strong>SYN 洪泛攻击</strong>：攻击者只发第一步、不完成第三步，把服务端的半连接队列占满。这正是”三次”这个设计的被攻击面。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>资料分析速算 · 骨架卡</title>
+    <url>/notes/civil-service/data-analysis/shortcuts-skeleton/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-26</div>
+
+<h1 id="资料分析速算-·-骨架卡"><a href="#资料分析速算-·-骨架卡" class="headerlink" title="资料分析速算 · 骨架卡"></a>资料分析速算 · 骨架卡</h1><h2 id="0-这张卡怎么用"><a href="#0-这张卡怎么用" class="headerlink" title="0. 这张卡怎么用"></a>0. 这张卡怎么用</h2><ol>
+<li><strong>先看列式落到哪一格</strong> —— 不是先看题型。</li>
+<li>在这一格里挑档位：粗档（近似）→ 中档（修正）→ 精档（直除）。</li>
+<li>无论哪一档，<strong>算完必须标方向</strong>（偏大还是偏小）。</li>
+</ol>
+<p>题型只在两处出现：帮你回忆「这题大概会问什么」，以及提供该题型特有的坑。手法本身不重复。</p>
+<p>配套两页：<a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题前</a>（读材料、勾关键词、列式）、<a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>（$r$ 查到分数，直接乘）。</p>
+<h2 id="1-五类骨架"><a href="#1-五类骨架" class="headerlink" title="1. 五类骨架"></a>1. 五类骨架</h2><table>
+<thead>
+<tr>
+<th>骨架</th>
+<th>典型题型</th>
+<th>式子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>① 除以 $1\pm r$</td>
+<td>基期量、隔年基期、基期平均数、基期倍数</td>
+<td>$A/(1+r)$</td>
+</tr>
+<tr>
+<td>② 除以 $1\pm r$ 再乘 $r$</td>
+<td>增长量、增长贡献量、拉动增长</td>
+<td>$A\,r/(1+r)$</td>
+</tr>
+<tr>
+<td>③ 两个数之比</td>
+<td>比重、倍数、平均数、增速是否超过某值</td>
+<td>$A/B$</td>
+</tr>
+<tr>
+<td>④ 乘 $1\pm r$</td>
+<td>求增长后（现期）、求翻番后</td>
+<td>$A(1+r)$</td>
+</tr>
+<tr>
+<td>⑤ 比值再乘比值</td>
+<td>两期比重、两期比重差、平均数增长率</td>
+<td>$\dfrac{A}{B}\cdot\dfrac{1+r_2}{1+r_1}$</td>
+</tr>
+</tbody></table>
+<p><strong>⑤ 的前半截就是 ③，①②③④ 覆盖了绝大多数题。</strong> 遇到复合式子先拆成这五格，再决定用哪档。</p>
+<h2 id="2-骨架-①-$A/(1+r)$"><a href="#2-骨架-①-$A/(1+r)$" class="headerlink" title="2. 骨架 ① $A/(1+r)$"></a>2. 骨架 ① $A/(1+r)$</h2><table>
+<thead>
+<tr>
+<th>档位</th>
+<th>算式</th>
+<th>误差</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶</td>
+<td>$A(1-r)$</td>
+<td>$r^2$</td>
+<td>恒偏小</td>
+</tr>
+<tr>
+<td>二阶</td>
+<td>$A(1-r+r^2)$</td>
+<td>$r^3$</td>
+<td>$r>0$ 偏大</td>
+</tr>
+<tr>
+<td>百化分</td>
+<td>$r=1/n$ 时 $B=A\cdot\frac{n}{n+1}$</td>
+<td>0</td>
+<td>精确</td>
+</tr>
+<tr>
+<td>直除</td>
+<td>截分子、不截分母</td>
+<td>截 2 位 1<del>2%，最坏 4</del>5%；截 3 位约 $0.5\%$</td>
+<td>看截法</td>
+</tr>
+</tbody></table>
+<p>$r$ 为下降时写 $A/(1-d)$：一阶 $A(1+d)$、二阶 $A(1+d+d^2)$，两档<strong>都偏小</strong>，没有上界，双界法失效。</p>
+<p><strong>例（增长，$A=1250$、$r=8.4\%$，选项 1145 &#x2F; 1155 &#x2F; 1165 &#x2F; 1175）</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>结果</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶 $A(1-r)$</td>
+<td>$1145.00$</td>
+<td>正好落在第一个选项上 —— 这是出题人埋的坑</td>
+</tr>
+<tr>
+<td>二阶 $A(1-r+r^2)$</td>
+<td>$1153.82$</td>
+<td>真值 $1153.14$，选 1155</td>
+</tr>
+</tbody></table>
+<p><strong>例（下降，$A=932$、$d=7.2\%$）</strong>：一阶 $A(1+d)=999.10$（偏小 5.2）、二阶 $A(1+d+d^2)=1003.94$、真值 $1004.31$。二阶够用，一阶差了半个选项。</p>
+<h2 id="3-骨架-②-$A\,r/(1+r)$"><a href="#3-骨架-②-$A\,r/(1+r)$" class="headerlink" title="3. 骨架 ② $A\,r/(1+r)$"></a>3. 骨架 ② $A\,r/(1+r)$</h2><p>这是 ① 的孪生兄弟：<strong>$\Delta=A-\text{骨架①}$</strong>，一次除法同时得基期和增量，不要分两次算。</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>算式</th>
+<th>误差（相对）</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶</td>
+<td>$A\,r$</td>
+<td>$r$</td>
+<td>恒偏大</td>
+</tr>
+<tr>
+<td>二阶</td>
+<td>$A\,r(1-r)$</td>
+<td>$r^2$</td>
+<td>恒偏小</td>
+</tr>
+<tr>
+<td>百化分</td>
+<td>$r=1/n$ 时 $\Delta=A/(n+1)$</td>
+<td>0</td>
+<td>精确</td>
+</tr>
+<tr>
+<td>直除</td>
+<td>$A r\div(1+r)$</td>
+<td>同 ①</td>
+<td>看截法</td>
+</tr>
+</tbody></table>
+<p>三阶 $A\,r(1-r+r^2)$ 误差 $r^3$、偏大，一般用不上，但需要时照写。</p>
+<p><strong>例（给现期，$A=1786$、$r=13\%$，真值 $205.47$）</strong></p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>结果</th>
+<th>偏差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一阶 $A\,r$</td>
+<td>$232.18$</td>
+<td>偏大 $13\%$，选项贴边时直接废</td>
+</tr>
+<tr>
+<td>二阶 $A\,r(1-r)$</td>
+<td>$202.00$</td>
+<td>偏小 $1.7\%$，选项中距够大就选它</td>
+</tr>
+</tbody></table>
+<p><strong>例（给基期，$B=1847$、$r=16.7\%\approx 1/6$）</strong>：$\Delta=B/n=1847/6=307.8$，与精确 16.7% 的 308.5 只差 0.2%。<strong>给基期时 $r$ 就是乘数，不需要再除以 $1+r$。</strong></p>
+<h2 id="4-骨架-③-$A/B$"><a href="#4-骨架-③-$A/B$" class="headerlink" title="4. 骨架 ③ $A/B$"></a>4. 骨架 ③ $A/B$</h2><p><strong>这一格的误差来自除法本身，不来自「题型」。</strong> 手法按精度从粗到细：</p>
+<table>
+<thead>
+<tr>
+<th>档位</th>
+<th>手法</th>
+<th>适用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>判定</td>
+<td>交叉相乘：判 $A/B>k$ 两边同乘正数</td>
+<td>只问超没超，零误差</td>
+</tr>
+<tr>
+<td>粗</td>
+<td>截位直除，分母留 2 位</td>
+<td>首位不同</td>
+</tr>
+<tr>
+<td>中</td>
+<td>截位直除，分母留 3 位</td>
+<td>第二位不同</td>
+</tr>
+<tr>
+<td>细</td>
+<td>差分法（两分数接近）、化同（分母凑同）</td>
+<td>比较大小、选项贴边</td>
+</tr>
+<tr>
+<td>精</td>
+<td>分母留 4 位</td>
+<td>前三位都要分</td>
+</tr>
+</tbody></table>
+<p>判「增长率超过 $a\%$」：$100\Delta>aB$。判「比重超过 $p\%$」：$100\times\text{部分}>\ p\times\text{整体}$。形式一样，分母含义不同 —— 这是本格最大的坑。</p>
+<p><strong>例（判定，零误差）</strong>：$43/387$ 是否超过 $12\%$？交叉乘 $100\times 43=4300<12\times 387=4644$，未超（实际 $11.11\%$）。<br><strong>例（判定）</strong>：某量从 $1010$ 涨到 $1120$，是否超过 $10\%$？判 $100A>110B$：$112000>111100$，超了（实际 $10.89\%$）。两个数都不必真除。</p>
+<h3 id="4-1-精档细则：分母截几位"><a href="#4-1-精档细则：分母截几位" class="headerlink" title="4.1 精档细则：分母截几位"></a>4.1 精档细则：分母截几位</h3><p>判断依据是<strong>选项本身</strong>，不是感觉。</p>
+<table>
+<thead>
+<tr>
+<th>选项情况</th>
+<th>精度</th>
+<th>分母截几位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首位就不同</td>
+<td>低精度</td>
+<td>2 位</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 <strong>&lt;</strong> 首位数字</td>
+<td>高精度</td>
+<td>3 位</td>
+</tr>
+<tr>
+<td>首位相同，第二位数字差 <strong>≥</strong> 首位数字</td>
+<td>低精度</td>
+<td>2 位</td>
+</tr>
+</tbody></table>
+<p><strong>例</strong> $563$ 与 $524$：首位都是 5，第二位 $6-2=4<5$，算高精度，分母截 3 位。两者实际间距 $6.9\%$，按高精度处理偏保守，但保守只多花一秒，不丢分。</p>
+<p><strong>多步运算的两条规矩</strong>：</p>
+<ol>
+<li><strong>中间结果照常四舍五入</strong>（一般留 3~4 位有效数字），不要在中途就把分母截掉</li>
+<li><strong>截位只发生在最后一步的除数上</strong></li>
+</ol>
+<p>方向不用背表：<strong>分母截大 → 商偏小；分母截小 → 商偏大。</strong></p>
+<p>实测误差：</p>
+<table>
+<thead>
+<tr>
+<th>分母</th>
+<th>截 2 位</th>
+<th>误差</th>
+<th>截 3 位</th>
+<th>误差</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1.084$</td>
+<td>$1.1$</td>
+<td>$+1.48\%$</td>
+<td>$1.08$</td>
+<td>$-0.37\%$</td>
+</tr>
+<tr>
+<td>$2.153$</td>
+<td>$2.2$</td>
+<td>$+2.18\%$</td>
+<td>$2.15$</td>
+<td>$-0.14\%$</td>
+</tr>
+<tr>
+<td>$1.0475$</td>
+<td>$1.0$</td>
+<td>$-4.53\%$</td>
+<td>$1.05$</td>
+<td>$+0.24\%$</td>
+</tr>
+<tr>
+<td>$3.876$</td>
+<td>$3.9$</td>
+<td>$+0.62\%$</td>
+<td>$3.88$</td>
+<td>$+0.10\%$</td>
+</tr>
+<tr>
+<td>$1.386$</td>
+<td>$1.4$</td>
+<td>$+1.01\%$</td>
+<td>$1.39$</td>
+<td>$+0.29\%$</td>
+</tr>
+</tbody></table>
+<p>结论：<strong>截 2 位常见 1%<del>2%，最坏 4%</del>5%；截 3 位基本在 0.5% 以内。</strong></p>
+<h2 id="5-骨架-④-$A(1+r)$"><a href="#5-骨架-④-$A(1+r)$" class="headerlink" title="5. 骨架 ④ $A(1+r)$"></a>5. 骨架 ④ $A(1+r)$</h2><p>纯乘法，没有固有误差，只有拆分时的取整误差。两招：$A+A r$（拆成加法）或百化分（$r=1/n$ 时变成 $A+A/n$）。乘法的放缩方向好判：$r$ 取大则结果偏大。</p>
+<p><strong>例</strong>：$1240\times 1.125=1240+1240/8=1240+155=1395$。<br><strong>例</strong>：$1786\times 1.23=1786+1786\times 0.23=1786+410.8=2196.8$。</p>
+<h2 id="6-骨架-⑤-比值再乘比值"><a href="#6-骨架-⑤-比值再乘比值" class="headerlink" title="6. 骨架 ⑤ 比值再乘比值"></a>6. 骨架 ⑤ 比值再乘比值</h2><p>两期比重差：</p>
+<p>$$\text{比重差}=\frac{\text{部分}}{\text{整体}}\cdot\frac{r_{\text{部分}}-r_{\text{整体}}}{1+r_{\text{部分}}}$$</p>
+<p>方向只看 $r_{\text{部分}}-r_{\text{整体}}$ 的符号，与数值大小无关 —— 这是本格最快的一刀，很多题根本不用算完。</p>
+<p><strong>例</strong>：部分 $480$（$+12\%$）、整体 $2000$（$+8\%$）。现期比重 $24.00\%$，基期比重 $23.14\%$，差 $0.86$ 个百分点。公式一刀：$0.24\times\dfrac{4\%}{112\%}=0.857$ 个百分点。</p>
+<p>基期比重、基期倍数走 ① 的修正思路，但修正因子要乘在比值外面，不是乘在分子分母上，容易错位。同例：基期比重 $=0.24\times\dfrac{1.08}{1.12}=23.14\%$。</p>
+<h2 id="7-选档：看选项「第几位不同」，不算百分比"><a href="#7-选档：看选项「第几位不同」，不算百分比" class="headerlink" title="7. 选档：看选项「第几位不同」，不算百分比"></a>7. 选档：看选项「第几位不同」，不算百分比</h2><p>考场只做两次目测：<strong>选项差在第几位</strong>、<strong>r 是几档</strong>。不用算间距，更不用开根号。</p>
+<table>
+<thead>
+<tr>
+<th>选项形态（目测）</th>
+<th>相对间距约</th>
+<th>① 一阶</th>
+<th>① 二阶</th>
+<th>② 二阶</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>首位就不同</td>
+<td>$10\%$ 以上</td>
+<td>$r<20\%$ 随便用</td>
+<td>够用</td>
+<td>$r<20\%$</td>
+</tr>
+<tr>
+<td>第二位不同</td>
+<td>$1\%\sim2.5\%$</td>
+<td>$r<10\%$</td>
+<td>$r<20\%$</td>
+<td>$r<7\%$，再大上百化分</td>
+</tr>
+<tr>
+<td>第二位相同、第三位才分</td>
+<td>$1\%$ 以下</td>
+<td>别用</td>
+<td>$r<10\%$ 勉强</td>
+<td>别用</td>
+</tr>
+</tbody></table>
+<p>骨架 ④ 是纯乘法、③ 是判定，都不受这张表限制。</p>
+<p><strong>背后道理（只用来解释，考场别算）</strong>：允许误差 $\varepsilon\approx$ 间距的一半；① 的一阶误差是 $r^2$、二阶 $r^3$；② 的一阶误差就是 $r$ 本身、二阶 $r^2$。所以 ② 对精度最敏感 —— 这就是增长量题宁可上百化分的原因。</p>
+<p>顺带说一句：原先记的「$r<10\%$ 一阶、$10\%\sim20\%$ 二阶」正好就是「第二位不同」那一行，不是拍脑袋来的。</p>
+<h2 id="8-百化分-线性修正"><a href="#8-百化分-线性修正" class="headerlink" title="8. 百化分 + 线性修正"></a>8. 百化分 + 线性修正</h2><p>适用：$r$ 不在分数表上，但离某个 $1/n$ 很近（如 $31.4\%$ 离 $\dfrac13$ 只差 $1.9\%$）。选项差到第三位就别用，直接直除。</p>
+<p><strong>三步</strong></p>
+<ol>
+<li>就近取 $\hat r=\dfrac1n$，一次算出两个数：$\hat\Delta=A\div(n+1)$、$\hat B=A\times\dfrac{n}{n+1}$。</li>
+<li>$e=\lvert r-\hat r\rvert$；$r$ 比 $\hat r$ 大就<strong>加</strong>，小就<strong>减</strong>，基期方向相反。</li>
+<li>修正量 $=\dfrac{\hat B\,e}{1+\hat r}$。同一个数：增量加它，基期减它。</li>
+</ol>
+<p><strong>例</strong>：$A=3486$、$r=31.4\%$（真值 $\Delta=833.0$、$B=2653.0$）。取 $\hat r=\dfrac13$：$\hat\Delta=871.5$、$\hat B=2614.5$、$e=1.93\%$，修正量 $2614.5\times1.93\%\div\dfrac43=37.9$。因 $r<\hat r$，增量 $871.5-37.9=833.6$ ✓，基期 $2614.5+37.9=2652.4$ ✓。</p>
+<p><strong>坑</strong>：修正量只乘 $\hat B\,e$、不除 $(1+\hat r)$ 会修过头 —— 上例得 $821.0$，差 $12$，够选错相邻选项。</p>
+<h2 id="9-三条铁律"><a href="#9-三条铁律" class="headerlink" title="9. 三条铁律"></a>9. 三条铁律</h2><ol>
+<li><strong>能乘不除</strong>：判大小先交叉相乘，别真的除。</li>
+<li><strong>一次除法两用</strong>：$A/(1+r)$ 算出来，$A$ 减它就是增量。</li>
+<li><strong>精算最后上</strong>：粗档能定就停，别一路算到第四位。</li>
+</ol>
+<h2 id="10-分数去哪儿查"><a href="#10-分数去哪儿查" class="headerlink" title="10. 分数去哪儿查"></a>10. 分数去哪儿查</h2><p>完整分数表单独一页：<a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>。那张按 $r$ 升序排，直接读出 $B$ 的系数和 $\Delta$ 的除数，还带记忆锚点。</p>
+<p>这里只留三行必须脱口而出的：</p>
+<ul>
+<li>$r=1/n$ 时 $\Delta=A\div(n+1)$、$B=A\times\dfrac{n}{n+1}$</li>
+<li>下降 $d=1/n$ 时 $B=A\times\dfrac{n}{n-1}$（分母是 $n-1$）</li>
+<li>$\dfrac18=12.5\%$、$\dfrac17=14.3\%$、$\dfrac16=16.7\%$、$\dfrac19=11.1\%$</li>
+</ul>
+<h2 id="11-与其他页的关系"><a href="#11-与其他页的关系" class="headerlink" title="11. 与其他页的关系"></a>11. 与其他页的关系</h2><table>
+<thead>
+<tr>
+<th>页</th>
+<th>管什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题前</a></td>
+<td>读材料、勾关键词、列完整式子</td>
+</tr>
+<tr>
+<td>本卡</td>
+<td>列式落到哪一格、用哪档、误差与方向</td>
+</tr>
+<tr>
+<td><a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a></td>
+<td>$r$ 查到分数，直接乘</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>同一个会话挂在 QQ 和网页两端，会发生什么</title>
+    <url>/notes/computer/pitfalls/dsh-im-dual-client-desync/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">踩坑记录 · 计算机 / 踩坑 · 2026-10-17</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><p>三件事同时发生，看起来像三个 bug，其实是同一个：</p>
+<ol>
+<li><strong>选项框弹不出来</strong>：在网页端让我「选一个方案」，界面一直显示「思考中」，<br>等了七八分钟，最后只收到一句 <code>Error: [object Object]</code>。</li>
+<li><strong>文件只到一半</strong>：我写到临时目录的排查脚本，<strong>QQ 里自动收到了一份</strong>，<br>网页端却什么都没有。</li>
+<li><strong>消息变两份</strong>：同一句话在聊天里重复出现，或者网页这边刚发的内容「被顶掉了」。</li>
+</ol>
+<h2 id="现场（从日志读出来的时间线）"><a href="#现场（从日志读出来的时间线）" class="headerlink" title="现场（从日志读出来的时间线）"></a>现场（从日志读出来的时间线）</h2><table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>发生了什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>15:16:56</td>
+<td>我发出的选项提问被投递到 QQ（长度 438）→ 会话进入等待，<strong>网页端没有任何提示</strong></td>
+</tr>
+<tr>
+<td>15:24:08</td>
+<td>在网页端又发了一条消息 → 当前回合被中断（<code>aborted</code>）</td>
+</tr>
+<tr>
+<td>15:24:08.811</td>
+<td>同一秒，工具结果写进转录：<code>Error: [object Object]</code></td>
+</tr>
+<tr>
+<td>15:24:09</td>
+<td>新回合照常开始，交流继续</td>
+</tr>
+</tbody></table>
+<p>所以它<strong>不会永久卡死</strong>，但会白等一次、并且丢掉真正的失败原因。</p>
+<h2 id="根因：三层叠在一起"><a href="#根因：三层叠在一起" class="headerlink" title="根因：三层叠在一起"></a>根因：三层叠在一起</h2><h3 id="1-会话身份是「IM-会话」，提问通道被机器人接管"><a href="#1-会话身份是「IM-会话」，提问通道被机器人接管" class="headerlink" title="1. 会话身份是「IM 会话」，提问通道被机器人接管"></a>1. 会话身份是「IM 会话」，提问通道被机器人接管</h3><p>这个会话的 ID 形如 <code>im:qq_...</code>，从创建那一刻起，<br>IM 插件（<code>@michengai/dsh-im-connect</code>）就在启动日志里写明了<br>「已接管 userQuestions service 的 IM 会话」。</p>
+<p>后果：<strong>提问只会被投递到 QQ</strong>，网页界面永远不会弹出选项控件；<br>而提问工具的旧模式<strong>没有超时</strong>——于是网页这边等用户、用户那边在等网页，双方互等。</p>
+<h3 id="2-运行中从另一端发消息-排队-顶掉-中断"><a href="#2-运行中从另一端发消息-排队-顶掉-中断" class="headerlink" title="2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断"></a>2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断</h3><p>回合运行期间，另一端发来的消息不会「插进去」：</p>
+<ul>
+<li>默认当作排队消息，等当前这轮结束再处理；</li>
+<li>网页端再发一条，会把前一条<strong>顶掉</strong>（<code>splice target=next-step</code>），<br>并<strong>中断当前步骤</strong>。</li>
+</ul>
+<p>中断信号在插件里是<strong>裸对象</strong>直接抛出的（<code>signal.reason</code>，一个普通对象，<br>既不是 <code>Error</code>，也没有 <code>message</code> 字段）。框架的错误渲染只认 <code>Error.message</code>，<br>其余一律 <code>String(obj)</code> → 于是屏幕上只剩 <code>[object Object]</code>，真实原因被吃掉。</p>
+<p>日志里还反复出现「助手消息为空」「忽略重复助手消息」，<br>说明网关侧另有一轮重复注入的噪音——这就是消息变两份的来源。</p>
+<h3 id="3-文件推送是单通道行为"><a href="#3-文件推送是单通道行为" class="headerlink" title="3. 文件推送是单通道行为"></a>3. 文件推送是单通道行为</h3><p>插件在<strong>回合结束时</strong>，会把 <code>write</code> &#x2F; <code>edit</code> 写出的文件自动推送到 IM 聊天，<br>而且<strong>不过滤路径与类型</strong>——临时目录里的草稿脚本照样推。<br>网页端只在显式「呈现」时出附件卡片，不会自动同步。</p>
+<h2 id="处置与规避"><a href="#处置与规避" class="headerlink" title="处置与规避"></a>处置与规避</h2><ul>
+<li><strong>最省事的规矩：同一个会话不要同时挂在两个客户端上。</strong><br>这不是「多端同步」，而是<strong>竞态</strong>——谁在什么时候拥有控制权，插件没有统一仲裁。</li>
+<li>电脑上干活时就把 QQ 那条会话放一边；要用 QQ 就只用 QQ。</li>
+<li>临时脚本改用命令行内联写入，别用会触发文件推送的写文件方式。</li>
+<li>已经卡住了：在 QQ 里直接回文字或数字作答（<strong>提问挂起期间，该会话任何不以 <code>/</code> 开头的文字都会被当成答案</strong>，<br>不会变成新任务），或者发 <code>/stop</code> 跳出。</li>
+</ul>
+<h2 id="QQ-侧的手动闸门（功能一直有）"><a href="#QQ-侧的手动闸门（功能一直有）" class="headerlink" title="QQ 侧的手动闸门（功能一直有）"></a>QQ 侧的手动闸门（功能一直有）</h2><p>在 QQ 私聊里直接发这些命令即可，<strong>不需要改任何配置</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/stop</code></td>
+<td><strong>真正中断当前运行</strong>，排队消息保留，停下后直接发消息即可续聊</td>
+</tr>
+<tr>
+<td><code>/steer 补充要求</code></td>
+<td><strong>运行中插入补充指令</strong>，边跑边改需求，不打断本轮</td>
+</tr>
+<tr>
+<td><code>/status</code></td>
+<td>查看运行中 &#x2F; 空闲（会附带一个「停止任务」按钮）</td>
+</tr>
+<tr>
+<td><code>/queue</code></td>
+<td>查看排队消息；可 <code>remove</code> &#x2F; <code>edit</code> &#x2F; <code>steer &lt;消息ID&gt;</code>（把排队消息转成补充指令）</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>全部命令</td>
+</tr>
+</tbody></table>
+<p>其余常用：<code>/new</code>（<code>/clear</code>）新开会话、<code>/sessions</code> 接续旧会话、<code>/history</code> 最近记录、<br><code>/model</code> <code>/reasoning</code> <code>/presets</code> 查看与切换模型、推理等级、Agent 预设、<br><code>/fork</code> 分叉、<code>/rename</code> 改名、<code>/delivery</code> 交付记录、<code>/unbind</code> <code>/mute</code> 解除绑定与静音。</p>
+<h2 id="教训"><a href="#教训" class="headerlink" title="教训"></a>教训</h2><ol>
+<li><strong>「多端在线」不等于「多端同步」</strong>：一个会话同时被两个客户端操作时，<br>消息去哪、谁有控制权、失败算谁的，都需要明确的仲裁规则；没有规则就是竞态。</li>
+<li><strong>别只信界面上的错误文本</strong>：<code>String(非 Error 对象)</code> 会把真因压成 <code>[object Object]</code>。<br>遇到这种没有信息量的报错，要去翻<strong>原始转录与网关日志</strong>，那里才有完整的中断原因。</li>
+<li><strong>自动推送类的功能要看它推什么、推给谁</strong>：不过滤路径与类型的文件推送，<br>会把临时草稿也送到聊天窗口里。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Git 走代理与 GitHub 推送速查</title>
+    <url>/notes/computer/tools/git-proxy-cheatsheet/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">速查表 · 计算机 / 工具 · 2026-10-16</div>
+
+<h2 id="核心事实"><a href="#核心事实" class="headerlink" title="核心事实"></a>核心事实</h2><p><strong>git 命令行不读取操作系统的系统代理设置。</strong></p>
+<p>所以”浏览器能打开 GitHub，<code>git push</code> 却超时”是完全正常的现象——这两者走的是不同的通道。git 只认两个来源：</p>
+<ol>
+<li>git 自己的配置：<code>http.proxy</code> &#x2F; <code>https.proxy</code></li>
+<li>环境变量：<code>http_proxy</code> &#x2F; <code>https_proxy</code> &#x2F; <code>all_proxy</code></li>
+</ol>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<thead>
+<tr>
+<th>目的</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只给 github.com 配代理</td>
+<td><code>git config --global http.https://github.com/.proxy http://127.0.0.1:7892</code></td>
+</tr>
+<tr>
+<td>取消该配置</td>
+<td><code>git config --global --unset http.https://github.com/.proxy</code></td>
+</tr>
+<tr>
+<td>查看现有代理配置</td>
+<td><code>git config --global --get-regexp &quot;http\..*proxy&quot;</code></td>
+</tr>
+<tr>
+<td>仅本次生效</td>
+<td><code>git -c http.proxy=... &lt;子命令&gt;</code></td>
+</tr>
+<tr>
+<td>列出远端分支</td>
+<td><code>git ls-remote --heads origin</code></td>
+</tr>
+<tr>
+<td>查看当前代理环境变量</td>
+<td><code>env | grep -i proxy</code></td>
+</tr>
+</tbody></table>
+<h2 id="排查顺序"><a href="#排查顺序" class="headerlink" title="排查顺序"></a>排查顺序</h2><ol>
+<li><code>git config --global --get http.proxy</code>——输出为空，说明 git 在直连</li>
+<li>找本地代理端口：<code>netstat -ano | grep LISTENING | grep 127.0.0.1</code></li>
+<li>逐个验证端口：<code>curl -x http://127.0.0.1:端口 https://github.com</code>，返回 200 的那个就是</li>
+</ol>
+<h2 id="三个提醒"><a href="#三个提醒" class="headerlink" title="三个提醒"></a>三个提醒</h2><ul>
+<li>用 <code>http.https://github.com/.proxy</code> 而不是全局 <code>http.proxy</code>，可以把影响限制在 GitHub 一个域名上，不干扰其他仓库。</li>
+<li>VPN 关闭时这个配置会让 github.com <strong>完全连不上</strong>（不是变慢），需要临时 unset。</li>
+<li><code>hexo deploy</code> 内部是 spawn 一个 git 进程，<strong>没法用 <code>-c</code> 传参</strong>，只能靠全局配置或环境变量。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>VPN 明明开着，git push 却不动</title>
+    <url>/notes/computer/tools/github-push-behind-proxy/index.html</url>
+    <content><![CDATA[<div class="kb-note-meta">踩坑记录 · 计算机 / 工具 · 2026-10-16</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><ul>
+<li>VPN 开着，浏览器能正常打开 GitHub 网页</li>
+<li>终端里 <code>git push</code> 报 <code>Empty reply from server</code>，或者干脆连接超时</li>
+<li>隔一段时间重试，偶尔又能推成功一次</li>
+</ul>
+<h2 id="第一判断（只说对了一半）"><a href="#第一判断（只说对了一半）" class="headerlink" title="第一判断（只说对了一半）"></a>第一判断（只说对了一半）</h2><p>一开始怀疑是”GitHub 被间歇性封锁”。网络确实不稳——但这<strong>不是主因</strong>。真正让 git 完全推不动的原因在本地。</p>
+<h2 id="关键验证"><a href="#关键验证" class="headerlink" title="关键验证"></a>关键验证</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global --get http.proxy</span><br><span class="line">（输出为空）</span><br></pre></td></tr></table></figure>
+
+<p>空的。也就是说 <strong>git 从来没有走代理</strong>，一直在直连 github.com。</p>
+<p>原因：VPN 是<strong>系统代理模式</strong>——往 Windows 的 Internet 设置里写一个代理地址。浏览器会遵循这个设置，但<strong>终端程序不会自动遵循</strong>。</p>
+<h2 id="定位代理端口"><a href="#定位代理端口" class="headerlink" title="定位代理端口"></a>定位代理端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ netstat -ano | grep LISTENING | grep 127.0.0.1</span><br><span class="line">$ curl -x http://127.0.0.1:7892 https://github.com</span><br><span class="line">200</span><br></pre></td></tr></table></figure>
+
+<p>把所有监听的本地端口逐个当代理试一遍，只有一个返回 200，那就是代理端口。</p>
+<h2 id="结论与修法"><a href="#结论与修法" class="headerlink" title="结论与修法"></a>结论与修法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com/.proxy http://127.0.0.1:7892</span><br></pre></td></tr></table></figure>
+
+<p>配好之后 <code>git push</code> 与 <code>hexo deploy</code> 都能直接用，不用每次导环境变量。</p>
+<h2 id="还没踩完的坑"><a href="#还没踩完的坑" class="headerlink" title="还没踩完的坑"></a>还没踩完的坑</h2><ol>
+<li>代理端口跟着 VPN 客户端走，换版本或改设置都可能变——变了就重新探测一遍。</li>
+<li>VPN 关掉时，这个配置会让 github.com <strong>完全连不上</strong>，需要临时 unset。</li>
+<li>如果命令是在某个沙箱或容器里跑的，里面可能注入了<strong>另一套代理环境变量</strong>，它会干扰排查。先 <code>env | grep -i proxy</code> 看一眼再下结论。</li>
+</ol>
+]]></content>
+  </entry>
+  </search>

@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>资料分析 · 增长量速算 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-25   原策略的主干是特征分数，这一版把它和放缩档位接上：命中分数走快路，没命中就放缩并标方向。做题顺序与截位精度分级见 做题流程。  0. 一眼决策固定顺序，从上往下，能用上面的就不往下走。    情形 用什么 说明    给现期，$r$ 命中 $\dfrac1n$ $\Delta&#x3D;\dfrac{A}{n+1}$ 精确，优先级最高   给基期">
+<meta property="og:type" content="website">
+<meta property="og:title" content="资料分析 · 增长量速算">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/growth-amount-shortcuts/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-25   原策略的主干是特征分数，这一版把它和放缩档位接上：命中分数走快路，没命中就放缩并标方向。做题顺序与截位精度分级见 做题流程。  0. 一眼决策固定顺序，从上往下，能用上面的就不往下走。    情形 用什么 说明    给现期，$r$ 命中 $\dfrac1n$ $\Delta&#x3D;\dfrac{A}{n+1}$ 精确，优先级最高   给基期">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.545Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/growth-amount-shortcuts/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '资料分析 · 增长量速算',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"><link rel="preload" as="script" href="/js/mathjax/tex-svg.js" fetchpriority="high"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">资料分析 · 增长量速算</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">资料分析 · 增长量速算</div><div class="container" id="article-container"><div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-25</div>
+
+<blockquote>
+<p>原策略的主干是特征分数，这一版把它和放缩档位接上：命中分数走快路，没命中就放缩并标方向。<br>做题顺序与截位精度分级见 <a href="/notes/civil-service/data-analysis/data-analysis-workflow/">做题流程</a>。</p>
+</blockquote>
+<h2 id="0-一眼决策"><a href="#0-一眼决策" class="headerlink" title="0. 一眼决策"></a>0. 一眼决策</h2><p>固定顺序，从上往下，能用上面的就不往下走。</p>
+<table>
+<thead>
+<tr>
+<th>情形</th>
+<th>用什么</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>给现期，$r$ 命中 $\dfrac1n$</td>
+<td>$\Delta=\dfrac{A}{n+1}$</td>
+<td>精确，优先级最高</td>
+</tr>
+<tr>
+<td>给基期</td>
+<td>$\Delta=B\cdot r$</td>
+<td>一次乘法，不涉及放缩</td>
+</tr>
+<tr>
+<td>给现期，$r$ 凑不成整分数</td>
+<td>$A\,r(1-r)$</td>
+<td>主力，偏小 $r^{2}$</td>
+</tr>
+<tr>
+<td>上一档定不住、选项间距 $1\%\sim2\%$</td>
+<td>二阶 $A\,r(1-r+r^{2})$</td>
+<td>偏大 $r^{3}$</td>
+</tr>
+<tr>
+<td>上面都不合适</td>
+<td>截位直除 $\dfrac{A\,r}{1+r}$</td>
+<td><strong>兜底，也最常用</strong></td>
+</tr>
+<tr>
+<td>下降且 $d$ 命中 $\dfrac1n$</td>
+<td>$\lvert\Delta\rvert=\dfrac{A}{n-1}$</td>
+<td>精确</td>
+</tr>
+</tbody></table>
+<p><strong>先看条件给的是现期还是基期</strong>，这一条比什么都重要：给现期用 $n+1$，给基期用 $n$，卷面上两种情况长得很像。</p>
+<h2 id="1-记号与基准式"><a href="#1-记号与基准式" class="headerlink" title="1. 记号与基准式"></a>1. 记号与基准式</h2><p>$$\Delta=A-B=\frac{Ar}{1+r}=B\,r$$</p>
+<p>$A$ 现期量，$B$ 基期量，$r$ 增长率（下降取负），$\Delta$ 增长量。</p>
+<p>两个反向也要会用：</p>
+<p>$$\Delta\to A:\quad A=\frac{\Delta(1+r)}{r}\qquad \Delta\to B:\quad B=\frac{\Delta}{r}$$</p>
+<p>$r=\dfrac1n$ 时化成 $A=\Delta(n+1)$、$B=\Delta\cdot n$，同样不用放缩。</p>
+<h2 id="2-主干三条"><a href="#2-主干三条" class="headerlink" title="2. 主干三条"></a>2. 主干三条</h2><h3 id="2-1-命中特征分数：$\Delta=\dfrac{A}{n+1}$"><a href="#2-1-命中特征分数：$\Delta=\dfrac{A}{n+1}$" class="headerlink" title="2.1 命中特征分数：$\Delta=\dfrac{A}{n+1}$"></a>2.1 命中特征分数：$\Delta=\dfrac{A}{n+1}$</h3><p>$r=\dfrac1n$ 时 $\dfrac{r}{1+r}=\dfrac1{n+1}$，一次除法出答案，零误差。这是原策略的主干，仍然是全章最快的一条。</p>
+<p><strong>例</strong> 某市 GDP 3.2 万亿元，同比增长 $11.1\%$：$11.1\%$ 按 $\dfrac19$（$=11.11\%$）处理，$\Delta=3.2\div10=0.32$ 万亿元 $=3200$ 亿元。真值 $3197$ 亿，差 3 亿，选项里只有这个整齐数。</p>
+<h3 id="2-2-凑不成分数：$\Delta\approx A\,r(1-r)$"><a href="#2-2-凑不成分数：$\Delta\approx A\,r(1-r)$" class="headerlink" title="2.2 凑不成分数：$\Delta\approx A\,r(1-r)$"></a>2.2 凑不成分数：$\Delta\approx A\,r(1-r)$</h3><p>大部分 $r$ 贴不上整分数（$13\%$、$8.4\%$、$17.2\%$），主力换成这一档：</p>
+<p>$$\frac{r}{1+r}=r\left(1-r+r^{2}-r^{3}+\cdots\right)$$</p>
+<p>$$\Delta_{1}=A\,r(1-r)=\Delta(1-r^{2})\quad\Rightarrow\quad\text{偏小 }r^{2}$$</p>
+<p><strong>这是全章用得最多的一条。</strong> 它比「直接乘 $A\cdot r$」慢一点，但 $A\cdot r$ 偏大 $r$、$r=13\%$ 就大 $13\%$，除了选项特别宽基本定不住位；$A\,r(1-r)$ 只偏 $r^{2}$，$r=13\%$ 时偏 $1.7\%$，绝大部分题够用。</p>
+<p><strong>例</strong> 现期 $1786$、同比 $13\%$，选项 $195/205/215/225$：</p>
+<p>$$\Delta\approx1786\times0.13\times0.87=232.2\times0.87=202.0$$</p>
+<p>偏<strong>小</strong> $1.7\%$，真值在 $202$ 右边；右边一格是 $205$（间距 $4.9\%$），选 $205$（真值 $205.5$）。</p>
+<h3 id="2-3-选项紧：二阶-$\Delta\approx A\,r(1-r+r^{2})$"><a href="#2-3-选项紧：二阶-$\Delta\approx A\,r(1-r+r^{2})$" class="headerlink" title="2.3 选项紧：二阶 $\Delta\approx A\,r(1-r+r^{2})$"></a>2.3 选项紧：二阶 $\Delta\approx A\,r(1-r+r^{2})$</h3><p>$$\Delta_{2}=A\,r(1-r+r^{2})=\Delta(1+r^{3})\quad\Rightarrow\quad r>0\text{ 偏大 }r^{3}$$</p>
+<p><strong>符号是 $1-r+r^{2}$</strong>，不是 $1+r+r^{2}$。写成加分项，误差直接跳到 $2r$ 那个量级。</p>
+<p><strong>例</strong> 同上题，选项改成 $203/205/207/209$（间距 $1\%$）：$\Delta\approx232.18\times0.8869=205.9$，偏<strong>大</strong> $0.22\%$。但下界 $A\,r(1-r)=202.0$ 偏得太远，两界合起来 $[202.0,\ 205.9]$ 横跨 $203$ 和 $205$ 两个选项，还是定不住。</p>
+<h3 id="2-4-兜底：截位直除"><a href="#2-4-兜底：截位直除" class="headerlink" title="2.4 兜底：截位直除"></a>2.4 兜底：截位直除</h3><p>$$\Delta=\frac{1786\times13}{113}=\frac{23218}{113}=205.5$$</p>
+<p>选 $205$。这一档反而快，因为分子正好是个整数（$A\times r$ 的整数形式）。</p>
+<p><strong>分母怎么截</strong>：看选项。首位就不同，分母截 2 位；首位相同再看第二位差，差小于首位数字就截 3 位，否则截 2 位。<strong>多步运算中间照常四舍五入，只在这最后一步截除数</strong>；分母截大则商偏小、截小则商偏大。上面的例子分母 $113$ 已是 3 位，原样除即可。</p>
+<p>等价写法 $\Delta=A-\dfrac{A}{1+r}$ 要先算基期再减，两步带一个除法，不如直接除。</p>
+<h2 id="3-失效边界：什么时候换档"><a href="#3-失效边界：什么时候换档" class="headerlink" title="3. 失效边界：什么时候换档"></a>3. 失效边界：什么时候换档</h2><h3 id="3-1-档位与方向总表"><a href="#3-1-档位与方向总表" class="headerlink" title="3.1 档位与方向总表"></a>3.1 档位与方向总表</h3><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>条件</th>
+<th>结果方向</th>
+<th>幅度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\dfrac{A}{n+1}$</td>
+<td>$r=\dfrac1n$</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$B\cdot r$</td>
+<td>给的是基期</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$A\,r(1-r)$</td>
+<td>给的是现期</td>
+<td><strong>缩小</strong></td>
+<td>$r^{2}$</td>
+</tr>
+<tr>
+<td>$A\cdot r$</td>
+<td>同上，最省事</td>
+<td><strong>放大</strong></td>
+<td>$r$</td>
+</tr>
+<tr>
+<td>$A\,r(1-r+r^{2})$</td>
+<td>同上</td>
+<td><strong>放大</strong></td>
+<td>$r^{3}$</td>
+</tr>
+<tr>
+<td>$A-\dfrac{A}{1+r}$</td>
+<td>兜底</td>
+<td>无（真值）</td>
+<td>$0$</td>
+</tr>
+</tbody></table>
+<p>方向交替的规律：括号里的级数交错，截到奇数项放大、偶数项缩小。记「<strong>零阶放大、一阶缩小、二阶放大</strong>」一句就够。</p>
+<p>$r$ 带符号，下降时 $r<0$，方向照样按表判；但下降有个例外，见 §4.2。</p>
+<h3 id="3-2-定位规则"><a href="#3-2-定位规则" class="headerlink" title="3.2 定位规则"></a>3.2 定位规则</h3><p>设粗算值 $C$，选项升序：</p>
+<ol>
+<li>$C$ <strong>偏小</strong> → 真值在右 → 取比 $C$ 大的最小选项</li>
+<li>$C$ <strong>偏大</strong> → 真值在左 → 取比 $C$ 小的最大选项</li>
+<li>$C$ 两侧都有选项 → 这一档没定住，换下一档</li>
+<li>幅度 $\le$ 半个选项间距时，基本不会翻错，直接用</li>
+</ol>
+<p>第 3 条很常见：$r=13\%$ 时 $A\cdot r=232.2$ 偏大 $13\%$，落在选项最右端之外，翻回去只能到 $225$，离真值差一档——这时候 $A\cdot r$ 就没用。</p>
+<h3 id="3-3-凑分数的敏感度（换-$r$-也是一次放缩）"><a href="#3-3-凑分数的敏感度（换-$r$-也是一次放缩）" class="headerlink" title="3.3 凑分数的敏感度（换 $r$ 也是一次放缩）"></a>3.3 凑分数的敏感度（换 $r$ 也是一次放缩）</h3><p>$\dfrac1n$ 和真 $r$ 不等时，本来「精确」的公式也变成估算，方向由两者大小定：</p>
+<ul>
+<li>$\dfrac1n>r$ → 用了更大的增长率 → $\Delta$ <strong>偏大</strong></li>
+<li>$\dfrac1n<r$ → $\Delta$ <strong>偏小</strong></li>
+</ul>
+<p>幅度：$r$ 差 $e$（百分点）时，$\Delta$ 约偏 $e\cdot\dfrac{n^{2}}{n+1}$。</p>
+<p>$e=0.1$ 个百分点时的实测：</p>
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$r=\dfrac1n$</th>
+<th>幅度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>$20\%$</td>
+<td>$0.42\%$</td>
+</tr>
+<tr>
+<td>8</td>
+<td>$12.5\%$</td>
+<td>$0.71\%$</td>
+</tr>
+<tr>
+<td>10</td>
+<td>$10\%$</td>
+<td>$0.91\%$</td>
+</tr>
+<tr>
+<td>12</td>
+<td>$8.3\%$</td>
+<td>$1.11\%$</td>
+</tr>
+<tr>
+<td>14</td>
+<td>$7.1\%$</td>
+<td>$1.31\%$</td>
+</tr>
+<tr>
+<td>20</td>
+<td>$5\%$</td>
+<td>$1.90\%$</td>
+</tr>
+</tbody></table>
+<p>规律：<strong>$r$ 越小，1 个百分点越值钱</strong>。$r=20\%$ 时差 $0.5$ 个百分点只偏 $2\%$，$r=7\%$ 时差 $0.5$ 个百分点就偏 $6.5\%$。</p>
+<p>所以 $13\%$ 凑 $\dfrac18$ 会<strong>缩小</strong> $3.4\%$，凑 $\dfrac17$ 会<strong>放大</strong> $8.7\%$——前者还能用，后者基本废。同一道题两个方向反着来，这是最容易翻错的地方。</p>
+<h3 id="3-4-分数表"><a href="#3-4-分数表" class="headerlink" title="3.4 分数表"></a>3.4 分数表</h3><p>$r=\dfrac1n$ 时，给现期 $\div(n+1)$，给基期 $\div n$。</p>
+<table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>现期 $\div$</th>
+<th>基期 $\div$</th>
+<th></th>
+<th>$r$</th>
+<th>现期 $\div$</th>
+<th>基期 $\div$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$50\%$</td>
+<td>3</td>
+<td>2</td>
+<td></td>
+<td>$11.1\%$</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr>
+<td>$33.3\%$</td>
+<td>4</td>
+<td>3</td>
+<td></td>
+<td>$10\%$</td>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr>
+<td>$25\%$</td>
+<td>5</td>
+<td>4</td>
+<td></td>
+<td>$9.1\%$</td>
+<td>12</td>
+<td>11</td>
+</tr>
+<tr>
+<td>$20\%$</td>
+<td>6</td>
+<td>5</td>
+<td></td>
+<td>$8.3\%$</td>
+<td>13</td>
+<td>12</td>
+</tr>
+<tr>
+<td>$16.7\%$</td>
+<td>7</td>
+<td>6</td>
+<td></td>
+<td>$7.7\%$</td>
+<td>14</td>
+<td>13</td>
+</tr>
+<tr>
+<td>$14.3\%$</td>
+<td>8</td>
+<td>7</td>
+<td></td>
+<td>$7.1\%$</td>
+<td>15</td>
+<td>14</td>
+</tr>
+<tr>
+<td>$12.5\%$</td>
+<td>9</td>
+<td>8</td>
+<td></td>
+<td>$6.7\%$</td>
+<td>16</td>
+<td>15</td>
+</tr>
+</tbody></table>
+<p>再往下：$6.25\%$ 用 $17/16$、$5.9\%$ 用 $18/17$、$5.6\%$ 用 $19/18$、$5.3\%$ 用 $20/19$、$5\%$ 用 $21/20$。</p>
+<p>非单位分数 $r=\dfrac{m}{n}$：$\Delta=A\cdot\dfrac{m}{n+m}$，不背系数，现推。</p>
+<table>
+<thead>
+<tr>
+<th>$r$</th>
+<th>系数</th>
+<th>$r$</th>
+<th>系数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$40\%=\dfrac25$</td>
+<td>$\dfrac27$</td>
+<td>$100\%=\dfrac11$</td>
+<td>$\dfrac12$</td>
+</tr>
+<tr>
+<td>$60\%=\dfrac35$</td>
+<td>$\dfrac38$</td>
+<td>$150\%=\dfrac32$</td>
+<td>$\dfrac35$</td>
+</tr>
+<tr>
+<td>$66.7\%=\dfrac23$</td>
+<td>$\dfrac25$</td>
+<td>$200\%=\dfrac21$</td>
+<td>$\dfrac23$</td>
+</tr>
+<tr>
+<td>$75\%=\dfrac34$</td>
+<td>$\dfrac37$</td>
+<td>$300\%=\dfrac31$</td>
+<td>$\dfrac34$</td>
+</tr>
+<tr>
+<td>$80\%=\dfrac45$</td>
+<td>$\dfrac49$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="4-补充分支"><a href="#4-补充分支" class="headerlink" title="4. 补充分支"></a>4. 补充分支</h2><h3 id="4-1-给的是基期"><a href="#4-1-给的是基期" class="headerlink" title="4.1 给的是基期"></a>4.1 给的是基期</h3><p>$\Delta=B\cdot r$，一次乘法，放缩到不了这一步。$r=\dfrac1n$ 时就是 $\Delta=B/n$——<strong>除以 $n$，不是 $n+1$</strong>。</p>
+<p><strong>例</strong> 上年产值 $1847$ 亿元、同比 $16.7\%$：$\Delta=1847\times0.167=308.4$。换成 $\dfrac16$（$16.67\%<16.7\%$，偏小）：$1847\div6=307.8$。两个都能用，差 $0.2\%$。</p>
+<p>材料若把 $r$ 圆成了整数百分比，误差按 $\dfrac{e}{r}$ 传进来（$r=5\%$ 时 $r$ 差 $0.1$ 个百分点，$\Delta$ 就差 $2\%$），这是数据给的，只能靠选项宽不宽来兜。</p>
+<h3 id="4-2-下降"><a href="#4-2-下降" class="headerlink" title="4.2 下降"></a>4.2 下降</h3><p>公式与增长同构，$r$ 代负值即可，方向照 §3.1 判。只有一处要留神：<strong>下降时一阶和二阶的绝对值都偏小</strong>（$r<0$ 时 $1-r^{2}$、$1-|r|^{3}$ 都小于 $1$），拿不到上界，双界夹逼不成立。</p>
+<ul>
+<li>现期 + 下降 $d=\dfrac1n$：$|\Delta|=\dfrac{A}{n-1}$</li>
+<li>基期 + 下降：$|\Delta|=B\cdot d$，直接乘</li>
+</ul>
+<p><strong>例</strong> 某地面积 $932$ 万公顷、同比降 $7.1\%$，减少多少：凑 $\dfrac1{14}=7.14\%$（比 $7.1\%$ 大，$d$ 越大 $|\Delta|$ 越大，<strong>偏大</strong>），$|\Delta|=932\div13=71.7$，真值 $71.2$，选 $71$。</p>
+<h3 id="4-3-比较各年增长量"><a href="#4-3-比较各年增长量" class="headerlink" title="4.3 比较各年增长量"></a>4.3 比较各年增长量</h3><p>$\Delta$ 对 $A$ 和 $r$ 都单调增，「$A$ 大且 $r$ 大」的年份直接锁定，不用算。</p>
+<p>两个指标打架时要排。排序不需要精确，只需要顺序别翻：先用 $A\cdot r$ 粗排，若各年 $r$ 相近（差不到 $2$ 个百分点），$r$ 那一档的放大比例几乎一样，顺序不会变；$r$ 差得远就换 $A\,r(1-r)$，把 $r^{2}$ 的差别吃进去。</p>
+<h2 id="5-例题"><a href="#5-例题" class="headerlink" title="5. 例题"></a>5. 例题</h2><p>以上六则贯穿全章：$3.2$ 万亿&#x2F;$11.1\%$（分数）、$1786$&#x2F;$13\%$ 配宽选项（一阶）、同题配紧选项（二阶）、同题直除（兜底）、$1847$&#x2F;$16.7\%$（给基期）、$932$&#x2F;降 $7.1\%$（下降）。数值全部反算验过，可以直接当模板用。</p>
+<h2 id="6-坑"><a href="#6-坑" class="headerlink" title="6. 坑"></a>6. 坑</h2><ol>
+<li><strong>除以 $n+1$ 还是 $n$</strong>：给现期用 $n+1$，给基期用 $n$。这是第一大错源。</li>
+<li><strong>下降忘了减一</strong>：下降用 $A/(n-1)$，不是 $A/(n+1)$；$20\%$ 下降是 $\div4$。</li>
+<li><strong>凑分数不问方向</strong>：凑完必须能说出偏大还是偏小。$13\%$ 凑 $\dfrac18$ 缩小 $3.4\%$、凑 $\dfrac17$ 放大 $8.7\%$。</li>
+<li><strong>拿 $A\cdot r$ 当答案</strong>：偏大 $r$，$r=13\%$ 就大 $13\%$，除 $r<3\%$ 或选项特别宽之外都别用。</li>
+<li><strong>二阶符号</strong>：是 $1-r+r^{2}$，不是 $1+r+r^{2}$。</li>
+<li><strong>忘了方向就瞎翻</strong>：粗值 $202$ 偏小，真值在右，别往 $195$ 那边看。</li>
+<li><strong>增长量与增长率混</strong>：选项带 $\%$ 的是增长率，带数值单位的是增长量。</li>
+<li><strong>同比与环比混</strong>：环比基期是上期，不是上年同期。</li>
+<li><strong>累计与单月混</strong>：给累计值问单月增长量，先减出单月现期再套公式。</li>
+<li><strong>名义与实际</strong>：题目说「按可比价格计算」，用实际增长率。</li>
+<li><strong>单位</strong>：万亿元与亿元、万人与人，$\Delta$ 的量级跟着 $A$ 走，答完先看数级。</li>
+<li><strong>「增长了」与「增长到」</strong>：「增长了」是 $\Delta$，「增长到」是 $A$，问增长量而条件是「增长到」时要先减基期。</li>
+<li><strong>截位截早了</strong>：分母该截，但只在最后一步截；中间结果四舍五入留几位，截完标偏大偏小。</li>
+</ol>
+<h2 id="7-后续补充"><a href="#7-后续补充" class="headerlink" title="7. 后续补充"></a>7. 后续补充</h2><ul>
+<li>比较题的严格判据（$\dfrac{A_{1}r_{1}}{1+r_{1}}$ 与 $\dfrac{A_{2}r_{2}}{1+r_{2}}$ 交叉相乘，完全省掉除法）</li>
+<li>隔年增长量：合成 $r_{\text{隔}}=r_{1}+r_{2}+r_{1}r_{2}$ 后还剩几成放缩空间</li>
+<li>增长量占比类题</li>
+<li>平均数的增长量（需与「两期比重差」合并）</li>
+</ul>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/js/mathjax/tex-svg.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : document.addEventListener('DOMContentLoaded', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script>
+  (function () {
+    var box = document.getElementById('article-container');
+    if (!box || box.textContent.indexOf('</html>) < 0) return;
+    var tip = document.createElement('div');
+    tip.className = 'kb-math-tip';
+    tip.textContent = '公式排版中…';
+    document.body.appendChild(tip);
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      if (tip.parentNode) tip.parentNode.removeChild(tip);
+    }
+    function wait() {
+      var mj = window.MathJax;
+      if (mj && mj.startup && mj.startup.promise) {
+        mj.startup.promise.then(finish, finish);
+      } else if (mj && mj.typesetPromise) {
+        mj.typesetPromise().then(finish, finish);
+      } else {
+        setTimeout(wait, 150);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wait);
+    } else {
+      wait();
+    }
+    setTimeout(finish, 20000);
+  })();
+</script></body></html>

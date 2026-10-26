@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>资料分析公式速查（含例题） | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-17  0. 公式罗列（速记版） 先抄这一节；下面各节是它的展开与例题。  基本关系  $A&#x3D;B(1+r)$ $\Delta&#x3D;A-B&#x3D;Br&#x3D;\dfrac{Ar}{1+r}$ $B&#x3D;\dfrac{A}{1+r}&#x3D;\dfrac{\Delta}{r}$ $r&#x3D;\dfrac{A-B}{B}&#x3D;\dfrac{\Delta}{B}$  增长  隔年增长率：$r">
+<meta property="og:type" content="website">
+<meta property="og:title" content="资料分析公式速查（含例题）">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/data-analysis-formulas/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-17  0. 公式罗列（速记版） 先抄这一节；下面各节是它的展开与例题。  基本关系  $A&#x3D;B(1+r)$ $\Delta&#x3D;A-B&#x3D;Br&#x3D;\dfrac{Ar}{1+r}$ $B&#x3D;\dfrac{A}{1+r}&#x3D;\dfrac{\Delta}{r}$ $r&#x3D;\dfrac{A-B}{B}&#x3D;\dfrac{\Delta}{B}$  增长  隔年增长率：$r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.545Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/data-analysis-formulas/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '资料分析公式速查（含例题）',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"><link rel="preload" as="script" href="/js/mathjax/tex-svg.js" fetchpriority="high"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">资料分析公式速查（含例题）</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">资料分析公式速查（含例题）</div><div class="container" id="article-container"><div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-17</div>
+
+<h2 id="0-公式罗列（速记版）"><a href="#0-公式罗列（速记版）" class="headerlink" title="0. 公式罗列（速记版）"></a>0. 公式罗列（速记版）</h2><blockquote>
+<p>先抄这一节；下面各节是它的展开与例题。</p>
+</blockquote>
+<p><strong>基本关系</strong></p>
+<ul>
+<li>$A=B(1+r)$</li>
+<li>$\Delta=A-B=Br=\dfrac{Ar}{1+r}$</li>
+<li>$B=\dfrac{A}{1+r}=\dfrac{\Delta}{r}$</li>
+<li>$r=\dfrac{A-B}{B}=\dfrac{\Delta}{B}$</li>
+</ul>
+<p><strong>增长</strong></p>
+<ul>
+<li>隔年增长率：$r_{\text{隔}}=r_1+r_2+r_1r_2$</li>
+<li>隔年基期：$B=\dfrac{A}{1+r_{\text{隔}}}$</li>
+<li>年均增长量：$\dfrac{A-B}{n}$</li>
+<li>年均增长率：$\bar r=\sqrt[n]{\dfrac{A}{B}}-1$</li>
+<li>增长量比较：$A_1\approx A_2$ 看 $r$；$r_1\approx r_2$ 看 $A$</li>
+</ul>
+<p><strong>比重</strong></p>
+<ul>
+<li>比重：$\dfrac{\text{部分}}{\text{整体}}\times100\%$</li>
+<li>基期比重：$\dfrac{A_{\text{部}}}{1+r_{\text{部}}}\div\dfrac{A_{\text{整}}}{1+r_{\text{整}}}=\text{现期比重}\times\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>比重变化（百分点）：$\text{现期比重}\times\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$</li>
+<li>升降判断：$r_{\text{部}}\gtrless r_{\text{整}}\Rightarrow$ 比重上升&#x2F;下降</li>
+</ul>
+<p><strong>平均数</strong></p>
+<ul>
+<li>平均数：$\dfrac{\text{总量}}{\text{份数}}$</li>
+<li>平均数增长率：$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</li>
+<li>基期平均数：$\text{现期平均数}\times\dfrac{1+r_{\text{份}}}{1+r_{\text{总}}}$</li>
+<li>平均数增长量：$\text{现期平均数}-\text{基期平均数}$</li>
+</ul>
+<p><strong>倍数与比值</strong></p>
+<ul>
+<li>是几倍：$\dfrac{A}{B}$</li>
+<li>多几倍：$\dfrac{A}{B}-1$</li>
+<li>基期倍数：$\dfrac{A_1/(1+r_1)}{A_2/(1+r_2)}$</li>
+</ul>
+<p><strong>指数 · 拉动 · 贡献率</strong></p>
+<ul>
+<li>指数：$\dfrac{\text{现期值}}{\text{基期值}}\times100$</li>
+<li>拉动增长率：$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</li>
+<li>贡献率：$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</li>
+</ul>
+<p><strong>混合增长率</strong></p>
+<ul>
+<li>区间：$\min(r_1,r_2)<r<\max(r_1,r_2)$，且 $r$ 偏向 $B$ 大的一侧</li>
+<li>十字交叉：$(r-r_2):(r_1-r)=B_1:B_2$</li>
+</ul>
+<hr>
+<h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><table>
+<thead>
+<tr>
+<th>记号</th>
+<th>含义</th>
+<th>记号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$A$</td>
+<td>现期量</td>
+<td>$B$</td>
+<td>基期量</td>
+</tr>
+<tr>
+<td>$\Delta$</td>
+<td>增长量</td>
+<td>$r$</td>
+<td>增长率</td>
+</tr>
+<tr>
+<td>$r_{\text{部}}$、$r_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的增长率</td>
+<td>$A_{\text{部}}$、$A_{\text{整}}$</td>
+<td>部分 &#x2F; 整体的现期量</td>
+</tr>
+<tr>
+<td>$n$</td>
+<td>间隔年数</td>
+<td>$\bar r$</td>
+<td>年均增长率</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="一、增长率与增长量"><a href="#一、增长率与增长量" class="headerlink" title="一、增长率与增长量"></a>一、增长率与增长量</h2><p>$$r=\frac{A-B}{B}\times100\% \qquad \Delta=A-B=Br=\frac{Ar}{1+r}$$</p>
+<p><strong>例</strong> 2025 年 GDP 1200 亿元、2024 年 1000 亿元：$\Delta=200$，$r=20\%$。</p>
+<p><strong>例</strong> 现期 660 万元、同比 $r=10\%$：$B=\dfrac{660}{1.1}=600$，$\Delta=660-600=60$（或 $\Delta=\dfrac{660\times0.1}{1.1}=60$，两式互验）。</p>
+<p><strong>例</strong> 增长量 30 万台、$r=10\%$：$B=\dfrac{30}{0.1}=300$，$A=330$。</p>
+<blockquote>
+<p>增长量比较：$A_1\approx A_2$ 时看 $r$，$r$ 大者增量大；$r_1\approx r_2$ 时看 $A$，$A$ 大者增量大。</p>
+</blockquote>
+<hr>
+<h2 id="二、基期量（含隔年、年均）"><a href="#二、基期量（含隔年、年均）" class="headerlink" title="二、基期量（含隔年、年均）"></a>二、基期量（含隔年、年均）</h2><p>$$B=\frac{A}{1+r} \qquad B_1-B_2=\frac{A_1}{1+r_1}-\frac{A_2}{1+r_2}$$</p>
+<p><strong>例</strong> 收入 8400 元、$r=20\%$：$B=\dfrac{8400}{1.2}=7000$ 元。</p>
+<p><strong>例</strong> 两地 840 亿（$+20\%$）与 550 亿（$+10\%$）：基期 $700$ 与 $500$，差 $200$ 亿元。</p>
+<p><strong>隔年</strong>：</p>
+<p>$$r_{\text{隔}}=r_1+r_2+r_1r_2 \qquad B=\frac{A}{(1+r_1)(1+r_2)}=\frac{A}{1+r_{\text{隔}}}$$</p>
+<p><strong>例</strong> $r_1=10\%$、$r_2=20\%$，2025 年 660 亿：$r_{\text{隔}}=0.1+0.2+0.02=32\%$，2023 年 $=\dfrac{660}{1.32}=500$ 亿元。<br>验算：$500\times1.1\times1.2=660$。</p>
+<p><strong>年均</strong>：</p>
+<p>$$\text{年均增长量}=\frac{A-B}{n} \qquad \bar r=\sqrt[n]{\frac{A}{B}}-1$$</p>
+<p><strong>例</strong> 2020 年 200 亿、2025 年 320 亿（$n=5$）：年均增长量 $=\dfrac{120}{5}=24$ 亿元；$\bar r=\sqrt[5]{1.6}-1\approx9.9\%$。</p>
+<blockquote>
+<p>$n$ 是<strong>间隔年数</strong>：2020→2025 是 $n=5$，不是 6。</p>
+</blockquote>
+<hr>
+<h2 id="三、比重"><a href="#三、比重" class="headerlink" title="三、比重"></a>三、比重</h2><p>$$\text{比重}=\frac{\text{部分}}{\text{整体}}\times100\% \qquad \text{基期比重}=\text{现期比重}\times\frac{1+r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> 第三产业 3000 亿（$r_{\text{部}}=20\%$）、GDP 6000 亿（$r_{\text{整}}=10\%$）：现期比重 $50\%$；<br>基期比重 $=\dfrac{3000/1.2}{6000/1.1}=\dfrac{2500}{5454.5}\approx45.8\%$，<br>或 $50\%\times\dfrac{1.1}{1.2}\approx45.8\%$（两式一致）。</p>
+<p><strong>比重变化</strong>：</p>
+<p>$$\text{变化}=\text{现期比重}-\text{基期比重}\approx\text{现期比重}\times\frac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$$</p>
+<p><strong>例</strong> $50\%-45.8\%=+4.2$ 个百分点；近似式 $50\%\times\dfrac{0.2-0.1}{1.2}=4.17$ 个百分点。</p>
+<p><strong>升降判断</strong>：</p>
+<p>$$r_{\text{部}}>r_{\text{整}}\Rightarrow\text{上升} \qquad r_{\text{部}}<r_{\text{整}}\Rightarrow\text{下降}$$</p>
+<p><strong>例</strong> $20\%>10\%$，占比<strong>上升</strong>，无需算数值。</p>
+<blockquote>
+<p>单位：比重的变化叫「百分点」，不是「增长 4.2%」。</p>
+</blockquote>
+<hr>
+<h2 id="四、平均数"><a href="#四、平均数" class="headerlink" title="四、平均数"></a>四、平均数</h2><p>$$\text{平均数}=\frac{\text{总量}}{\text{份数}} \qquad \text{平均数增长率}=\frac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$$</p>
+<p><strong>例</strong> 总产 1200 万吨、面积 200 万亩：平均亩产 $6$ 吨。</p>
+<p><strong>例</strong> $r_{\text{总}}=20\%$、$r_{\text{份}}=10\%$：平均数增长率 $=\dfrac{1.2}{1.1}-1\approx9.1\%$。<br>（分子涨得比分母快 ⇒ 平均数上升）</p>
+<p><strong>基期平均数</strong>：</p>
+<p>$$\text{基期平均数}=\text{现期平均数}\times\frac{1+r_{\text{份}}}{1+r_{\text{总}}}$$</p>
+<p><strong>例</strong> 现期 $6$ 吨&#x2F;亩、$r_{\text{总}}=20\%$、$r_{\text{份}}=10\%$：基期 $=6\times\dfrac{1.1}{1.2}=5.5$ 吨&#x2F;亩；增长量 $0.5$ 吨&#x2F;亩。</p>
+<blockquote>
+<p><strong>平均数增长率</strong>（%）与<strong>平均数增长量</strong>（带单位）是两个问题，别混。</p>
+</blockquote>
+<hr>
+<h2 id="五、倍数与比值"><a href="#五、倍数与比值" class="headerlink" title="五、倍数与比值"></a>五、倍数与比值</h2><p>$$\text{是几倍}=\frac{A}{B} \qquad \text{多几倍}=\frac{A}{B}-1 \qquad \text{基期倍数}=\frac{A_1/(1+r_1)}{A_2/(1+r_2)}$$</p>
+<p><strong>例</strong> 甲 300 万、乙 120 万：甲是乙的 $2.5$ 倍，即<strong>多 1.5 倍</strong>。</p>
+<p><strong>例</strong> 甲 300 万（$+25\%$）、乙 120 万（$+20\%$）：基期倍数 $=\dfrac{240}{100}=2.4$ 倍。</p>
+<hr>
+<h2 id="六、指数、拉动增长与贡献率"><a href="#六、指数、拉动增长与贡献率" class="headerlink" title="六、指数、拉动增长与贡献率"></a>六、指数、拉动增长与贡献率</h2><p>$$\text{指数}=\frac{\text{现期值}}{\text{基期值}}\times100$$</p>
+<p><strong>例</strong> 基期指数 100，现期 150：是基期的 $1.5$ 倍，即 $+50\%$。</p>
+<p>$$\text{拉动增长率}=\frac{\text{部分增长量}}{\text{整体基期量}} \qquad \text{贡献率}=\frac{\text{部分增长量}}{\text{整体增长量}}$$</p>
+<p><strong>例</strong> GDP 基期 1000 亿、某产业增长 30 亿：拉动 $\dfrac{30}{1000}=3$ 个百分点。</p>
+<p><strong>例</strong> GDP 增长 40 亿、某产业增长 30 亿：贡献率 $\dfrac{30}{40}=75\%$。</p>
+<blockquote>
+<p>分母不同：拉动除以「整体<strong>基期量</strong>」，贡献率除以「整体<strong>增长量</strong>」。</p>
+</blockquote>
+<hr>
+<h2 id="七、混合增长率（十字交叉）"><a href="#七、混合增长率（十字交叉）" class="headerlink" title="七、混合增长率（十字交叉）"></a>七、混合增长率（十字交叉）</h2><p>$$\min(r_1,r_2)<r<\max(r_1,r_2)$$</p>
+<p>$$r=\frac{B_1r_1+B_2r_2}{B_1+B_2} \qquad (r-r_2):(r_1-r)=B_1:B_2$$</p>
+<p><strong>例</strong> $B_1=300$、$r_1=10\%$；$B_2=100$、$r_2=30\%$：$r=\dfrac{300\times10\%+100\times30\%}{400}=15\%$，<br>落在 $10\%\sim30\%$ 之间且偏向 $10\%$（$B_1$ 更大）。<br>十字交叉：$(15-30):(10-15)=3:1$，与 $300:100$ 吻合。</p>
+<hr>
+<h2 id="八、速算"><a href="#八、速算" class="headerlink" title="八、速算"></a>八、速算</h2><table>
+<thead>
+<tr>
+<th>技巧</th>
+<th>做法</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>截位直除</td>
+<td>分子分母各留 3 位</td>
+<td>$\dfrac{8347}{2361}\approx\dfrac{8350}{2360}\approx3.54$</td>
+</tr>
+<tr>
+<td>特征数字</td>
+<td>百分数换分数</td>
+<td>$14.3\%\approx\dfrac{1}{7}$、$11.1\%\approx\dfrac{1}{9}$、$16.7\%\approx\dfrac{1}{6}$</td>
+</tr>
+<tr>
+<td>化同</td>
+<td>分母凑近再比</td>
+<td>$\dfrac{8347}{2361}$ vs $\dfrac{8547}{2401}$：后者 3.560 更大</td>
+</tr>
+<tr>
+<td>拆分</td>
+<td>整数 + 小数</td>
+<td>$1234\times1.23\approx1234+284=1518$</td>
+</tr>
+<tr>
+<td>尾数法</td>
+<td>加减只看末位</td>
+<td>末位 $7+1=8$ 直接排选项</td>
+</tr>
+<tr>
+<td>首数法</td>
+<td>除法先定首位</td>
+<td>$\dfrac{8347}{2361}$ 首位 3</td>
+</tr>
+<tr>
+<td>放缩</td>
+<td>定上下界</td>
+<td>$2361\times3.5=8263.5<8347\Rightarrow$ 大于 3.5</td>
+</tr>
+</tbody></table>
+<p><strong>分数速记</strong></p>
+<table>
+<thead>
+<tr>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+<th>分数</th>
+<th>百分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1/6$</td>
+<td>16.7%</td>
+<td>$1/7$</td>
+<td>14.3%</td>
+<td>$1/8$</td>
+<td>12.5%</td>
+</tr>
+<tr>
+<td>$1/9$</td>
+<td>11.1%</td>
+<td>$1/11$</td>
+<td>9.1%</td>
+<td>$1/12$</td>
+<td>8.3%</td>
+</tr>
+<tr>
+<td>$1/13$</td>
+<td>7.7%</td>
+<td>$1/14$</td>
+<td>7.1%</td>
+<td>$1/15$</td>
+<td>6.7%</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="附：问法-→-公式"><a href="#附：问法-→-公式" class="headerlink" title="附：问法 → 公式"></a>附：问法 → 公式</h2><table>
+<thead>
+<tr>
+<th>问法</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>增长了百分之几</td>
+<td>$r=\dfrac{A-B}{B}$</td>
+</tr>
+<tr>
+<td>增长了多少（带单位）</td>
+<td>$\Delta=\dfrac{Ar}{1+r}$</td>
+</tr>
+<tr>
+<td>上年是多少</td>
+<td>$B=\dfrac{A}{1+r}$</td>
+</tr>
+<tr>
+<td>占比 &#x2F; 比重</td>
+<td>$\dfrac{\text{部分}}{\text{整体}}$</td>
+</tr>
+<tr>
+<td>比重升降及幅度</td>
+<td>比较 $r_{\text{部}}$ 与 $r_{\text{整}}$，再算百分点</td>
+</tr>
+<tr>
+<td>平均每亩 &#x2F; 人均</td>
+<td>$\dfrac{\text{总量}}{\text{份数}}$</td>
+</tr>
+<tr>
+<td>平均数增长百分之几</td>
+<td>$\dfrac{1+r_{\text{总}}}{1+r_{\text{份}}}-1$</td>
+</tr>
+<tr>
+<td>是几倍 &#x2F; 多几倍</td>
+<td>$\dfrac{A}{B}$ &#x2F; $\dfrac{A}{B}-1$</td>
+</tr>
+<tr>
+<td>年均增速</td>
+<td>$\sqrt[n]{\dfrac{A}{B}}-1$</td>
+</tr>
+<tr>
+<td>拉动几个百分点</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体基期量}}$</td>
+</tr>
+<tr>
+<td>贡献率</td>
+<td>$\dfrac{\text{部分增长量}}{\text{整体增长量}}$</td>
+</tr>
+</tbody></table>
+<h2 id="坑（六条）"><a href="#坑（六条）" class="headerlink" title="坑（六条）"></a>坑（六条）</h2><ol>
+<li><strong>百分点 vs %</strong>：比重&#x2F;占比&#x2F;拉动&#x2F;贡献率的<strong>变化</strong>用「百分点」；增速变化才用「%」。</li>
+<li><strong>是几倍 vs 多几倍</strong>：$2.5$ 倍 &#x3D; 多 $1.5$ 倍。</li>
+<li><strong>同比 vs 环比</strong>：同比对去年同期，环比对上一期。</li>
+<li><strong>累计 vs 单月</strong>：单月 $=$ 本期累计 $-$ 上期累计。</li>
+<li><strong>单位</strong>：亿元&#x2F;万元、万人&#x2F;人，选项常在此设套，算完先看量级。</li>
+<li><strong>增长到 vs 增长了</strong>：增长到 $=A$；增长了 $=\Delta$。</li>
+</ol>
+<hr>
+<blockquote>
+<p>公式按通用考纲口径整理，例题数值均可自行验算；与某机构讲义表述不同时，以公式与真题为准。<br>检索来源：华图《常用速算方法》<a target="_blank" rel="noopener" href="https://www.huatu.com/2025/0529/2817027.html">https://www.huatu.com/2025/0529/2817027.html</a>、中公《增长率其实不简单》<a target="_blank" rel="noopener" href="http://m.offcn.com/gwy/2020/1103/69374.html">http://m.offcn.com/gwy/2020/1103/69374.html</a>、华图《增长贡献率》<a target="_blank" rel="noopener" href="https://www.huatu.com/2021/1126/2335363.html">https://www.huatu.com/2021/1126/2335363.html</a>。</p>
+</blockquote>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/js/mathjax/tex-svg.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : document.addEventListener('DOMContentLoaded', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script>
+  (function () {
+    var box = document.getElementById('article-container');
+    if (!box || box.textContent.indexOf('</html>) < 0) return;
+    var tip = document.createElement('div');
+    tip.className = 'kb-math-tip';
+    tip.textContent = '公式排版中…';
+    document.body.appendChild(tip);
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      if (tip.parentNode) tip.parentNode.removeChild(tip);
+    }
+    function wait() {
+      var mj = window.MathJax;
+      if (mj && mj.startup && mj.startup.promise) {
+        mj.startup.promise.then(finish, finish);
+      } else if (mj && mj.typesetPromise) {
+        mj.typesetPromise().then(finish, finish);
+      } else {
+        setTimeout(wait, 150);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wait);
+    } else {
+      wait();
+    }
+    setTimeout(finish, 20000);
+  })();
+</script></body></html>

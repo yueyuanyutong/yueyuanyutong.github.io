@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>VPN 明明开着，git push 却不动 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="踩坑记录 · 计算机 &#x2F; 工具 · 2026-10-16  症状 VPN 开着，浏览器能正常打开 GitHub 网页 终端里 git push 报 Empty reply from server，或者干脆连接超时 隔一段时间重试，偶尔又能推成功一次  第一判断（只说对了一半）一开始怀疑是”GitHub 被间歇性封锁”。网络确实不稳——但这不是主因。真正让 git 完全推不动的原因在本地。 关键验证">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VPN 明明开着，git push 却不动">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/computer/tools/github-push-behind-proxy/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="踩坑记录 · 计算机 &#x2F; 工具 · 2026-10-16  症状 VPN 开着，浏览器能正常打开 GitHub 网页 终端里 git push 报 Empty reply from server，或者干脆连接超时 隔一段时间重试，偶尔又能推成功一次  第一判断（只说对了一半）一开始怀疑是”GitHub 被间歇性封锁”。网络确实不稳——但这不是主因。真正让 git 完全推不动的原因在本地。 关键验证">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.545Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/computer/tools/github-push-behind-proxy/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'VPN 明明开着，git push 却不动',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">VPN 明明开着，git push 却不动</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">VPN 明明开着，git push 却不动</div><div class="container" id="article-container"><div class="kb-note-meta">踩坑记录 · 计算机 / 工具 · 2026-10-16</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><ul>
+<li>VPN 开着，浏览器能正常打开 GitHub 网页</li>
+<li>终端里 <code>git push</code> 报 <code>Empty reply from server</code>，或者干脆连接超时</li>
+<li>隔一段时间重试，偶尔又能推成功一次</li>
+</ul>
+<h2 id="第一判断（只说对了一半）"><a href="#第一判断（只说对了一半）" class="headerlink" title="第一判断（只说对了一半）"></a>第一判断（只说对了一半）</h2><p>一开始怀疑是”GitHub 被间歇性封锁”。网络确实不稳——但这<strong>不是主因</strong>。真正让 git 完全推不动的原因在本地。</p>
+<h2 id="关键验证"><a href="#关键验证" class="headerlink" title="关键验证"></a>关键验证</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global --get http.proxy</span><br><span class="line">（输出为空）</span><br></pre></td></tr></table></figure>
+
+<p>空的。也就是说 <strong>git 从来没有走代理</strong>，一直在直连 github.com。</p>
+<p>原因：VPN 是<strong>系统代理模式</strong>——往 Windows 的 Internet 设置里写一个代理地址。浏览器会遵循这个设置，但<strong>终端程序不会自动遵循</strong>。</p>
+<h2 id="定位代理端口"><a href="#定位代理端口" class="headerlink" title="定位代理端口"></a>定位代理端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ netstat -ano | grep LISTENING | grep 127.0.0.1</span><br><span class="line">$ curl -x http://127.0.0.1:7892 https://github.com</span><br><span class="line">200</span><br></pre></td></tr></table></figure>
+
+<p>把所有监听的本地端口逐个当代理试一遍，只有一个返回 200，那就是代理端口。</p>
+<h2 id="结论与修法"><a href="#结论与修法" class="headerlink" title="结论与修法"></a>结论与修法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.https://github.com/.proxy http://127.0.0.1:7892</span><br></pre></td></tr></table></figure>
+
+<p>配好之后 <code>git push</code> 与 <code>hexo deploy</code> 都能直接用，不用每次导环境变量。</p>
+<h2 id="还没踩完的坑"><a href="#还没踩完的坑" class="headerlink" title="还没踩完的坑"></a>还没踩完的坑</h2><ol>
+<li>代理端口跟着 VPN 客户端走，换版本或改设置都可能变——变了就重新探测一遍。</li>
+<li>VPN 关掉时，这个配置会让 github.com <strong>完全连不上</strong>，需要临时 unset。</li>
+<li>如果命令是在某个沙箱或容器里跑的，里面可能注入了<strong>另一套代理环境变量</strong>，它会干扰排查。先 <code>env | grep -i proxy</code> 看一眼再下结论。</li>
+</ol>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>同一个会话挂在 QQ 和网页两端，会发生什么 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="踩坑记录 · 计算机 &#x2F; 踩坑 · 2026-10-17  症状三件事同时发生，看起来像三个 bug，其实是同一个：  选项框弹不出来：在网页端让我「选一个方案」，界面一直显示「思考中」，等了七八分钟，最后只收到一句 Error: [object Object]。 文件只到一半：我写到临时目录的排查脚本，QQ 里自动收到了一份，网页端却什么都没有。 消息变两份：同一句话在聊天里重复出现，或者网页这">
+<meta property="og:type" content="website">
+<meta property="og:title" content="同一个会话挂在 QQ 和网页两端，会发生什么">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/computer/pitfalls/dsh-im-dual-client-desync/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="踩坑记录 · 计算机 &#x2F; 踩坑 · 2026-10-17  症状三件事同时发生，看起来像三个 bug，其实是同一个：  选项框弹不出来：在网页端让我「选一个方案」，界面一直显示「思考中」，等了七八分钟，最后只收到一句 Error: [object Object]。 文件只到一半：我写到临时目录的排查脚本，QQ 里自动收到了一份，网页端却什么都没有。 消息变两份：同一句话在聊天里重复出现，或者网页这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.545Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/computer/pitfalls/dsh-im-dual-client-desync/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '同一个会话挂在 QQ 和网页两端，会发生什么',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">同一个会话挂在 QQ 和网页两端，会发生什么</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">同一个会话挂在 QQ 和网页两端，会发生什么</div><div class="container" id="article-container"><div class="kb-note-meta">踩坑记录 · 计算机 / 踩坑 · 2026-10-17</div>
+
+<h2 id="症状"><a href="#症状" class="headerlink" title="症状"></a>症状</h2><p>三件事同时发生，看起来像三个 bug，其实是同一个：</p>
+<ol>
+<li><strong>选项框弹不出来</strong>：在网页端让我「选一个方案」，界面一直显示「思考中」，<br>等了七八分钟，最后只收到一句 <code>Error: [object Object]</code>。</li>
+<li><strong>文件只到一半</strong>：我写到临时目录的排查脚本，<strong>QQ 里自动收到了一份</strong>，<br>网页端却什么都没有。</li>
+<li><strong>消息变两份</strong>：同一句话在聊天里重复出现，或者网页这边刚发的内容「被顶掉了」。</li>
+</ol>
+<h2 id="现场（从日志读出来的时间线）"><a href="#现场（从日志读出来的时间线）" class="headerlink" title="现场（从日志读出来的时间线）"></a>现场（从日志读出来的时间线）</h2><table>
+<thead>
+<tr>
+<th>时刻</th>
+<th>发生了什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>15:16:56</td>
+<td>我发出的选项提问被投递到 QQ（长度 438）→ 会话进入等待，<strong>网页端没有任何提示</strong></td>
+</tr>
+<tr>
+<td>15:24:08</td>
+<td>在网页端又发了一条消息 → 当前回合被中断（<code>aborted</code>）</td>
+</tr>
+<tr>
+<td>15:24:08.811</td>
+<td>同一秒，工具结果写进转录：<code>Error: [object Object]</code></td>
+</tr>
+<tr>
+<td>15:24:09</td>
+<td>新回合照常开始，交流继续</td>
+</tr>
+</tbody></table>
+<p>所以它<strong>不会永久卡死</strong>，但会白等一次、并且丢掉真正的失败原因。</p>
+<h2 id="根因：三层叠在一起"><a href="#根因：三层叠在一起" class="headerlink" title="根因：三层叠在一起"></a>根因：三层叠在一起</h2><h3 id="1-会话身份是「IM-会话」，提问通道被机器人接管"><a href="#1-会话身份是「IM-会话」，提问通道被机器人接管" class="headerlink" title="1. 会话身份是「IM 会话」，提问通道被机器人接管"></a>1. 会话身份是「IM 会话」，提问通道被机器人接管</h3><p>这个会话的 ID 形如 <code>im:qq_...</code>，从创建那一刻起，<br>IM 插件（<code>@michengai/dsh-im-connect</code>）就在启动日志里写明了<br>「已接管 userQuestions service 的 IM 会话」。</p>
+<p>后果：<strong>提问只会被投递到 QQ</strong>，网页界面永远不会弹出选项控件；<br>而提问工具的旧模式<strong>没有超时</strong>——于是网页这边等用户、用户那边在等网页，双方互等。</p>
+<h3 id="2-运行中从另一端发消息-排队-顶掉-中断"><a href="#2-运行中从另一端发消息-排队-顶掉-中断" class="headerlink" title="2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断"></a>2. 运行中从另一端发消息 &#x3D; 排队 &#x2F; 顶掉 &#x2F; 中断</h3><p>回合运行期间，另一端发来的消息不会「插进去」：</p>
+<ul>
+<li>默认当作排队消息，等当前这轮结束再处理；</li>
+<li>网页端再发一条，会把前一条<strong>顶掉</strong>（<code>splice target=next-step</code>），<br>并<strong>中断当前步骤</strong>。</li>
+</ul>
+<p>中断信号在插件里是<strong>裸对象</strong>直接抛出的（<code>signal.reason</code>，一个普通对象，<br>既不是 <code>Error</code>，也没有 <code>message</code> 字段）。框架的错误渲染只认 <code>Error.message</code>，<br>其余一律 <code>String(obj)</code> → 于是屏幕上只剩 <code>[object Object]</code>，真实原因被吃掉。</p>
+<p>日志里还反复出现「助手消息为空」「忽略重复助手消息」，<br>说明网关侧另有一轮重复注入的噪音——这就是消息变两份的来源。</p>
+<h3 id="3-文件推送是单通道行为"><a href="#3-文件推送是单通道行为" class="headerlink" title="3. 文件推送是单通道行为"></a>3. 文件推送是单通道行为</h3><p>插件在<strong>回合结束时</strong>，会把 <code>write</code> &#x2F; <code>edit</code> 写出的文件自动推送到 IM 聊天，<br>而且<strong>不过滤路径与类型</strong>——临时目录里的草稿脚本照样推。<br>网页端只在显式「呈现」时出附件卡片，不会自动同步。</p>
+<h2 id="处置与规避"><a href="#处置与规避" class="headerlink" title="处置与规避"></a>处置与规避</h2><ul>
+<li><strong>最省事的规矩：同一个会话不要同时挂在两个客户端上。</strong><br>这不是「多端同步」，而是<strong>竞态</strong>——谁在什么时候拥有控制权，插件没有统一仲裁。</li>
+<li>电脑上干活时就把 QQ 那条会话放一边；要用 QQ 就只用 QQ。</li>
+<li>临时脚本改用命令行内联写入，别用会触发文件推送的写文件方式。</li>
+<li>已经卡住了：在 QQ 里直接回文字或数字作答（<strong>提问挂起期间，该会话任何不以 <code>/</code> 开头的文字都会被当成答案</strong>，<br>不会变成新任务），或者发 <code>/stop</code> 跳出。</li>
+</ul>
+<h2 id="QQ-侧的手动闸门（功能一直有）"><a href="#QQ-侧的手动闸门（功能一直有）" class="headerlink" title="QQ 侧的手动闸门（功能一直有）"></a>QQ 侧的手动闸门（功能一直有）</h2><p>在 QQ 私聊里直接发这些命令即可，<strong>不需要改任何配置</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/stop</code></td>
+<td><strong>真正中断当前运行</strong>，排队消息保留，停下后直接发消息即可续聊</td>
+</tr>
+<tr>
+<td><code>/steer 补充要求</code></td>
+<td><strong>运行中插入补充指令</strong>，边跑边改需求，不打断本轮</td>
+</tr>
+<tr>
+<td><code>/status</code></td>
+<td>查看运行中 &#x2F; 空闲（会附带一个「停止任务」按钮）</td>
+</tr>
+<tr>
+<td><code>/queue</code></td>
+<td>查看排队消息；可 <code>remove</code> &#x2F; <code>edit</code> &#x2F; <code>steer &lt;消息ID&gt;</code>（把排队消息转成补充指令）</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>全部命令</td>
+</tr>
+</tbody></table>
+<p>其余常用：<code>/new</code>（<code>/clear</code>）新开会话、<code>/sessions</code> 接续旧会话、<code>/history</code> 最近记录、<br><code>/model</code> <code>/reasoning</code> <code>/presets</code> 查看与切换模型、推理等级、Agent 预设、<br><code>/fork</code> 分叉、<code>/rename</code> 改名、<code>/delivery</code> 交付记录、<code>/unbind</code> <code>/mute</code> 解除绑定与静音。</p>
+<h2 id="教训"><a href="#教训" class="headerlink" title="教训"></a>教训</h2><ol>
+<li><strong>「多端在线」不等于「多端同步」</strong>：一个会话同时被两个客户端操作时，<br>消息去哪、谁有控制权、失败算谁的，都需要明确的仲裁规则；没有规则就是竞态。</li>
+<li><strong>别只信界面上的错误文本</strong>：<code>String(非 Error 对象)</code> 会把真因压成 <code>[object Object]</code>。<br>遇到这种没有信息量的报错，要去翻<strong>原始转录与网关日志</strong>，那里才有完整的中断原因。</li>
+<li><strong>自动推送类的功能要看它推什么、推给谁</strong>：不过滤路径与类型的文件推送，<br>会把临时草稿也送到聊天窗口里。</li>
+</ol>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

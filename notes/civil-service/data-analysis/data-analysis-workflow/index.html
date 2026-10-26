@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>资料分析 · 做题前 | YueYuan's Blog</title><meta name="author" content="YueYuan"><meta name="copyright" content="YueYuan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-28   一篇 5 分钟，正确率不低于 80%。国考 135 题 120 分钟，平均一题 53 秒，资料分析摊到一分钟一题，是略宽而不是紧。这一页只管「怎么读、怎么列」；列出来之后怎么算快，去 骨架卡 和 分数表。  0. 四步   步骤 做什么 产出 易错    1 读材料 建框架，勾主体 心里一张结构图 精读、漏看单位与累计   2 审题 勾">
+<meta property="og:type" content="website">
+<meta property="og:title" content="资料分析 · 做题前">
+<meta property="og:url" content="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/data-analysis-workflow/index.html">
+<meta property="og:site_name" content="YueYuan&#39;s Blog">
+<meta property="og:description" content="速查表 · 考公 &#x2F; 资料分析 · 2026-10-28   一篇 5 分钟，正确率不低于 80%。国考 135 题 120 分钟，平均一题 53 秒，资料分析摊到一分钟一题，是略宽而不是紧。这一页只管「怎么读、怎么列」；列出来之后怎么算快，去 骨架卡 和 分数表。  0. 四步   步骤 做什么 产出 易错    1 读材料 建框架，勾主体 心里一张结构图 精读、漏看单位与累计   2 审题 勾">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yueyuanyutong.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-10-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-26T06:04:26.544Z">
+<meta property="article:author" content="YueYuan">
+<meta property="article:tag" content="前端,算法,编程,学习笔记,YueYuan">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yueyuanyutong.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://yueyuanyutong.github.io/notes/civil-service/data-analysis/data-analysis-workflow/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '资料分析 · 做题前',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/kb.css"><meta name="generator" content="Hexo 7.3.0"><link rel="preload" as="script" href="/js/mathjax/tex-svg.js" fetchpriority="high"></head><body><div id="web_bg" style="background-image: url(/img/background2.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">YueYuan's Blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/notes/"><i class="fa-fw fas fa-book"></i><span> 笔记</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">资料分析 · 做题前</h1></header><main class="layout" id="content-inner"><div id="page"><div class="kb-hero">
+<img class="kb-hero-avatar" src="/img/avatar.jpg" alt="YueYuan">
+<div class="kb-hero-body">
+<div class="kb-hero-name">YueYuan</div>
+<div class="kb-hero-tagline">学习笔记与踩坑记录</div>
+<div class="kb-hero-motto">欲揽星河摘星辰，先铸千蹬上九天</div>
+<div class="kb-hero-links"><a class="kb-hero-link" href="https://github.com/yueyuanyutong" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a class="kb-hero-link" href="/about/">关于笔者</a></div>
+</div>
+</div><div class="page-title">资料分析 · 做题前</div><div class="container" id="article-container"><div class="kb-note-meta">速查表 · 考公 / 资料分析 · 2026-10-28</div>
+
+<blockquote>
+<p>一篇 5 分钟，正确率不低于 80%。国考 135 题 120 分钟，平均一题 53 秒，资料分析摊到一分钟一题，是略宽而不是紧。<br>这一页只管「怎么读、怎么列」；<strong>列出来之后怎么算快，去 <a href="/notes/civil-service/data-analysis/shortcuts-skeleton/">骨架卡</a> 和 <a href="/notes/civil-service/data-analysis/fraction-table/">分数表</a>。</strong></p>
+</blockquote>
+<h2 id="0-四步"><a href="#0-四步" class="headerlink" title="0. 四步"></a>0. 四步</h2><table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>做什么</th>
+<th>产出</th>
+<th>易错</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 读材料</td>
+<td>建框架，勾主体</td>
+<td>心里一张结构图</td>
+<td>精读、漏看单位与累计</td>
+</tr>
+<tr>
+<td>2 审题</td>
+<td>勾主体 + 勾关键词</td>
+<td>一句话：求什么、哪一型</td>
+<td>算完才发现求的是别的</td>
+</tr>
+<tr>
+<td>3 列式</td>
+<td>先把完整式子写出来</td>
+<td>一个式子</td>
+<td>边算边列，算错无从查</td>
+</tr>
+<tr>
+<td>4 速算</td>
+<td>分数 → 化除为乘 → 截位</td>
+<td>答案 + 偏大偏小</td>
+<td>不分档，见数就除</td>
+</tr>
+</tbody></table>
+<h3 id="1-读材料"><a href="#1-读材料" class="headerlink" title="1 读材料"></a>1 读材料</h3><p>只扫，不精读。抓六样：<strong>标题、时间、单位、表头、图例、有没有累计</strong>。</p>
+<ul>
+<li><strong>表格</strong>：每一列是量还是率，单位在表头还是在标题里，时间跨度，有没有「累计」列</li>
+<li><strong>柱状 &#x2F; 折线</strong>：横轴是什么、纵轴单位；<strong>双轴图先确认左右轴各管哪条线</strong></li>
+<li><strong>饼图</strong>：占比的基数是谁</li>
+<li><strong>文字</strong>：划斜线分段，勾出每段的大主体，再串起大主体下面的细分主体</li>
+</ul>
+<p>出口是一个结构：这段材料讲哪几个主体，每个主体的数在哪个表哪一列。别背数，记住位置。</p>
+<h3 id="2-审题"><a href="#2-审题" class="headerlink" title="2 审题"></a>2 审题</h3><p>在题干上勾两样东西：</p>
+<ol>
+<li>主体（问的是谁）</li>
+<li>关键词（日均、每、占比、增量、增速、倍数、翻番、百分点……）</li>
+</ol>
+<p>勾完用一句话把所求说清楚——「求 XX 主体 20XX 年的增量」。说不清就别动笔，说明还没读准。</p>
+<p>关键词对式子，查下面第 1 节。</p>
+<h3 id="3-列式"><a href="#3-列式" class="headerlink" title="3 列式"></a>3 列式</h3><p><strong>先列完整式子，再动笔算。</strong> 数据在原文圈出来即可，不抄进式子，也不在式子旁边做草稿算术。</p>
+<p>好处很实在：算错了回头能看出错在哪一步，而不是从头再读一遍材料。</p>
+<h3 id="4-速算"><a href="#4-速算" class="headerlink" title="4 速算"></a>4 速算</h3><p>固定顺序，从上往下，能用上面的就不往下走：</p>
+<ol>
+<li><strong>特征分数</strong>：$r$ 命中 $\dfrac1n$，直接乘分数，查分数表</li>
+<li><strong>化除为乘</strong>：$r$ 不大、选项够松时用一阶 $A(1-r)$ 或二阶 $A(1-r+r^{2})$</li>
+<li><strong>截位直除</strong>：兜底，也是最常用的一招</li>
+</ol>
+<p>前两招是特殊情形的捷径，命中就跳级；命中不了就老老实实除，别硬凑。<strong>每一档能用不能用、截几位、结果偏大还是偏小，全在骨架卡的「选档」一节。</strong></p>
+<h2 id="1-关键词-→-式子"><a href="#1-关键词-→-式子" class="headerlink" title="1. 关键词 → 式子"></a>1. 关键词 → 式子</h2><table>
+<thead>
+<tr>
+<th>关键词</th>
+<th>求什么</th>
+<th>式子</th>
+<th>易错</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日均 &#x2F; 平均每天</td>
+<td>日平均量</td>
+<td>$\dfrac{\text{总量}}{\text{天数}}$</td>
+<td>天数是实际天数：2 月 28 或 29、闰年 366、大小月；不是一律 30</td>
+</tr>
+<tr>
+<td>每 &#x2F; 人均 &#x2F; 万人拥有</td>
+<td>平均数</td>
+<td>$\dfrac{\text{分子}}{\text{分母}}$</td>
+<td>分母是谁要看题；单位常是元&#x2F;人、张&#x2F;千人，别漏乘群体数</td>
+</tr>
+<tr>
+<td>占比 &#x2F; 比重</td>
+<td>部分占整体的比例</td>
+<td>$\dfrac{\text{部分}}{\text{整体}}$</td>
+<td>求的是现期比重还是基期比重；基期要再乘 $\dfrac{1+r_{\text{整}}}{1+r_{\text{部}}}$</td>
+</tr>
+<tr>
+<td>增量 &#x2F; 增长量</td>
+<td>$\Delta$</td>
+<td>$A-B$，或 $\dfrac{Ar}{1+r}$，或 $\dfrac{A}{n+1}$</td>
+<td>「增长了」是 $\Delta$，「增长到」是 $A$</td>
+</tr>
+<tr>
+<td>增速 &#x2F; 增长率</td>
+<td>$r$</td>
+<td>$\dfrac{A-B}{B}$，或 $\dfrac{A}{B}-1$</td>
+<td>与「百分点」混；$\pm$ 号要带住</td>
+</tr>
+<tr>
+<td>倍数</td>
+<td>$A$ 是 $B$ 的几倍</td>
+<td>$\dfrac{A}{B}$</td>
+<td>「是几倍」用 $\dfrac{A}{B}$；「增长了几倍」用 $\dfrac{A}{B}-1$，两者差 1</td>
+</tr>
+<tr>
+<td>翻番</td>
+<td>翻 $m$ 番</td>
+<td>$\times2^{m}$</td>
+<td>翻一番是 2 倍，翻两番是 4 倍，不是 3 倍</td>
+</tr>
+<tr>
+<td>百分点</td>
+<td>两个百分数之差</td>
+<td>$r_{1}-r_{2}$</td>
+<td>答案单位是百分点，后面不带 $\%$；$12\%-7\%=5$ 个百分点，不是 $5\%$</td>
+</tr>
+<tr>
+<td>两期比重差</td>
+<td>现期比重 $-$ 基期比重</td>
+<td>$=\text{现期比重}\times\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$</td>
+<td>判升降只看 $r_{\text{部}}$ 与 $r_{\text{整}}$ 谁大，不用算</td>
+</tr>
+<tr>
+<td>平均数增长率</td>
+<td>平均数的增速</td>
+<td>$\dfrac{r_{\text{总}}-r_{\text{份}}}{1+r_{\text{份}}}$</td>
+<td>分子是「总量的增速 $-$ 份数的增速」，别反</td>
+</tr>
+<tr>
+<td>顺差 &#x2F; 逆差</td>
+<td>出口 $-$ 进口 &#x2F; 进口 $-$ 出口</td>
+<td>直接减</td>
+<td>单位（亿元 &#x2F; 亿美元）要跟材料一致；正负号别丢</td>
+</tr>
+<tr>
+<td>同比 &#x2F; 环比</td>
+<td>基期不同</td>
+<td>同比比的是上年同期，环比比的是上一期</td>
+<td>1—2 月常合并发布；「累计」列不能直接当单月用</td>
+</tr>
+<tr>
+<td>增速最快 &#x2F; 最慢</td>
+<td>比 $r$</td>
+<td>比增长率</td>
+<td>与「增量最多 &#x2F; 最少」不是一回事，题目常混着问</td>
+</tr>
+</tbody></table>
+<h2 id="2-三个高频分辨"><a href="#2-三个高频分辨" class="headerlink" title="2. 三个高频分辨"></a>2. 三个高频分辨</h2><p><strong>「增长到」与「增长了」</strong>：「增长到」后面是现期量 $A$，「增长了」后面是增长量 $\Delta$。题目给「增长到 120 亿」，问增长量，得先减基期。</p>
+<p><strong>「是几倍」与「增长几倍」</strong>：$A$ 是 $B$ 的 3 倍 $\Rightarrow A/B=3$；$A$ 比 $B$ 增长 3 倍 $\Rightarrow A/B=4$。差一个 1，选项里专门放这个。</p>
+<p><strong>「比重」与「平均数」</strong>：比重是部分 ÷ 整体，单位是 $\%$；平均数是总量 ÷ 份数，单位是复合单位。两者都写成「$\dfrac{\text{甲}}{\text{乙}}$」，但增长率公式不同——比重差用 $\dfrac{r_{\text{部}}-r_{\text{整}}}{1+r_{\text{部}}}$，平均数增长率用 $\dfrac{r_{\text{总}}-r_{\text{份}}}{1+r_{\text{份}}}$。</p>
+<h2 id="3-综合判断题"><a href="#3-综合判断题" class="headerlink" title="3. 综合判断题"></a>3. 综合判断题</h2><p>「以下说法正确的是」这类，一套材料通常一道。</p>
+<ul>
+<li><strong>放最后做</strong>，前面四题的数据正好都用过了</li>
+<li>从<strong>验证过程最简单</strong>的选项切入——不是最短的选项。短的选项也可能要跨表联动、要两个增长率联算，那就不简单</li>
+<li>验到一个成立的立刻停，不用把四个选项都验完</li>
+</ul>
+<h2 id="4-不做的事"><a href="#4-不做的事" class="headerlink" title="4. 不做的事"></a>4. 不做的事</h2><ul>
+<li>不掐秒表。计时靠流程省出来，不靠盯表</li>
+<li>不大段誊抄数据。原文圈画即可</li>
+<li>不留复查时间。每题一次做对，资料分析每题的分都很贵</li>
+</ul>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">YueYuan</div><div class="author-info-description">学习笔记与踩坑记录</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">0</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yueyuanyutong"><i class="fab fa-github"></i><span>GitHub</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">从对话、阅读与踩坑里沉淀下来的东西</div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-26T06:04:29.635Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 - 2026 By YueYuan</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: false,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = '/js/mathjax/tex-svg.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : document.addEventListener('DOMContentLoaded', loadMathjax)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script>
+  (function () {
+    var box = document.getElementById('article-container');
+    if (!box || box.textContent.indexOf('</html>) < 0) return;
+    var tip = document.createElement('div');
+    tip.className = 'kb-math-tip';
+    tip.textContent = '公式排版中…';
+    document.body.appendChild(tip);
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      if (tip.parentNode) tip.parentNode.removeChild(tip);
+    }
+    function wait() {
+      var mj = window.MathJax;
+      if (mj && mj.startup && mj.startup.promise) {
+        mj.startup.promise.then(finish, finish);
+      } else if (mj && mj.typesetPromise) {
+        mj.typesetPromise().then(finish, finish);
+      } else {
+        setTimeout(wait, 150);
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', wait);
+    } else {
+      wait();
+    }
+    setTimeout(finish, 20000);
+  })();
+</script></body></html>
